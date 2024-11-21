@@ -1,0 +1,74 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión - Loboteca</title>
+    <link rel="stylesheet" href="~/css/login.css"> <!-- Enlace al archivo CSS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Carga jQuery -->
+    <script src="~/js/html5-qrcode.min.js"></script> <!-- Enlaza el archivo local de html5-qrcode -->
+    <script src="~/js/qr-reader-2.js"></script> <!-- Enlaza tu archivo JavaScript -->
+
+    <style>
+        /* Estilos para el lector QR */
+        #reader {
+            width: 300px; /* Ajusta el ancho como necesites */
+            height: 300px; /* Ajusta la altura como necesites */
+            display: none; /* Oculto por defecto */
+            margin-top: 20px; /* Espacio superior */
+            border: 1px solid #ccc; /* Borde opcional para el contenedor */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="left-panel">
+            <img src="~/images/LogoSinFondo.png" alt="Logo Loboteca" class="logo">
+        </div>
+        <div class="right-panel">
+            <h2>Iniciar sesión</h2>
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="error-message">
+                    @ViewBag.ErrorMessage
+                </div>
+            }
+            <form method="post" id="loginForm">
+                <div class="form-group">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" name="username" class="form-control" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" class="form-control" required />
+                </div>
+                <div class="forgot-password">
+                    <a href="@Url.Action("RestablecerContraseña", "RestablecerContraseña")">Olvidé mi contraseña</a>
+                </div>
+                <div class="form-actions">
+                    <!-- Botón de Registrar con redirección -->
+                    <button type="button" id="btnRegistrar" class="btn btn-secondary">Registrar</button>
+                    <!-- Botón de Ingresar con envío del formulario -->
+                    <button type="submit" class="btn btn-primary">Ingresar</button>
+                </div>
+            </form>
+
+            <div id="reader"></div> <!-- Contenedor para el lector QR -->
+            <div id="resultado" style="margin-top: 20px;"></div> <!-- Contenedor para el resultado -->
+            <input type="text" id="scannedResult" class="form-control" placeholder="Código QR escaneado" readonly style="margin-top: 20px;"> <!-- Cuadro de texto para mostrar el resultado -->
+        </div>
+    </div>
+
+    <script>
+        // Al hacer clic en el botón "Registrar", redirige a la página de registro
+        document.getElementById("btnRegistrar").addEventListener("click", function () {
+            window.location.href = '@Url.Action("RegistroAlumno", "RegistroAlumno")'; // Redirige a la acción Registrar
+        });
+    </script>
+</body>
+</html>
