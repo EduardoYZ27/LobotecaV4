@@ -1,0 +1,88 @@
+﻿@model Loboteca.Models.RegistroAlumno
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Alumno - Loboteca</title>
+    <link rel="stylesheet" href="~/css/login.css"> <!-- Enlace al archivo CSS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Carga jQuery -->
+</head>
+<body>
+    <div class="login-container">
+        <div class="left-panel">
+            <img src="~/images/LogoSinFondo.png" alt="Logo Loboteca" class="logo">
+        </div>
+        <div class="right-panel">
+            <h2>Registrar Alumno</h2>
+
+            <!-- Mensajes de éxito o error -->
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="success-message">
+                    @TempData["SuccessMessage"]
+                </div>
+            }
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="error-message">
+                    @ViewBag.ErrorMessage
+                </div>
+            }
+
+            <!-- Formulario para registrar un nuevo alumno -->
+            <form asp-action="RegistroAlumno" method="post">
+                <div class="form-group">
+                    <label for="Nombre" class="control-label">Nombre</label>
+                    <input asp-for="Nombre" class="form-control" required />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="ApellidoPaterno" class="control-label">Apellido Paterno</label>
+                    <input asp-for="ApellidoPaterno" class="form-control" required />
+                    <span asp-validation-for="ApellidoPaterno" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="ApellidoMaterno" class="control-label">Apellido Materno</label>
+                    <input asp-for="ApellidoMaterno" class="form-control" required />
+                    <span asp-validation-for="ApellidoMaterno" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="Matricula" class="control-label">Matrícula</label>
+                    <input asp-for="Matricula" class="form-control" required />
+                    <span asp-validation-for="Matricula" class="text-danger"></span>
+                </div>
+
+                <!-- Estado (campo oculto para evitar edición) -->
+                <input asp-for="Estado" type="hidden" value="Activo" />
+
+                <!-- Selección de Carrera -->
+                <div class="form-group">
+                    <label for="IdCarrera" class="control-label">Carrera</label>
+                    <select asp-for="IdCarrera" class="form-control" asp-items="@(new SelectList(ViewBag.Carreras, "Value", "Text"))" required>
+                        <option value="">Seleccione una carrera</option>
+                    </select>
+                    <span asp-validation-for="IdCarrera" class="text-danger"></span>
+                </div>
+
+                <div class="botones">
+                    <input type="submit" value="Registrar" class="btn btn-primary" />
+                    <input type="button" value="Regresar" class="btn btn-secondary" onclick="window.location.href='@Url.Action("Login", "Login")'" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @section Scripts {
+        @await Html.PartialAsync("_ValidationScriptsPartial")
+    }
+</body>
+</html>
