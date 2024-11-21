@@ -1,0 +1,58 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #781c2e;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+.main-section {
+    padding: 20px;
+}
+
+.section-title {
+    text-align: center;
+    color: #781c2e;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+    .table th, .table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
+
+.btn-success, .btn-warning, .btn-info, .btn-danger {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.btn-success {
+    background-color: #4caf50;
+}
+
+.btn-warning {
+    background-color: #ffa500;
+}
+
+.btn-info {
+    background-color: #007bff;
+}
+
+.btn-danger {
+    background-color: #f44336;
+}

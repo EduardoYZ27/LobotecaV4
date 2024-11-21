@@ -1,0 +1,75 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="~/css/Admin/admin.css">
+    <style>
+        /* Estilos para el botón de cerrar sesión */
+        .logout-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #781c2e;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .logout-button:hover {
+            background-color: #a02e3d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Menú lateral -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="@Url.Action("Index", "Administrador")"><img src="~/images/Admin.png" alt="Admin"> Administrador</a></li>
+                <li><a href="@Url.Action("Index", "Usuarios")"><img src="~/images/Alumno.png " alt="Usuarios"> Usuarios</a></li>
+                <li><a href="@Url.Action("Index", "Autor")"><img src="~/images/Autor.png" alt="Autor"> Autor</a></li>
+                <li><a href="@Url.Action("Index", "AutorELibro")"><img src="~/images/AutorElibro.png" alt="Autor ELibro"> Autor ELibro</a></li>
+                <li><a href="@Url.Action("Index", "AutorLibro")"><img src="~/images/AutorLibro.png" alt="Autor Libro"> Autor Libro</a></li>
+                <li><a href="@Url.Action("Index", "AutorRevista")"><img src="~/images/AutorRevista.png" alt="Autor Revista"> Autor Revista</a></li>
+                <li><a href="@Url.Action("Index", "Carreras")"><img src="~/images/Carreras.png" alt="Carreras"> Carreras</a></li>
+                <li><a href="@Url.Action("Index", "Editorial")"><img src="~/images/Editorial.png" alt="Editorial"> Editorial</a></li>
+                <li><a href="@Url.Action("Index", "ConfiguracionPenalizaciones")"><img src="~/images/Penalizaciones.png" alt="Configuracion Penalizaciones"> Configuración Penalizaciones</a></li>
+                <li><a href="@Url.Action("Index", "ELibro")"><img src="~/images/ELibro.png" alt="ELibro"> ELibro</a></li>
+                <li><a href="@Url.Action("Index", "Libro")"><img src="~/images/Libro.png" alt="Libro"> Libro</a></li>
+                <li><a href="@Url.Action("Index", "Prestamo")"><img src="~/images/Prestamo.png" alt="Prestamo"> Préstamo</a></li>
+                <li><a href="@Url.Action("Index", "Revista")"><img src="~/images/Revista.png" alt="Revista"> Revista</a></li>
+            </ul>
+        </nav>
+
+        <!-- Área de contenido -->
+        <div class="content">
+            <h1>Bienvenido al Sistema de Administración</h1>
+            <img src="~/images/Loboteca.png" alt="Imagen biblioteca">
+            <button class="logout-button" onclick="cerrarSesion()">Cerrar Sesión</button> <!-- Botón para cerrar sesión -->
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Derechos Reservados Universidad Politécnica del Valle de Toluca</p>
+    </footer>
+
+    <script>
+        function cerrarSesion() {
+            // Lógica para cerrar sesión
+            localStorage.removeItem("carreraSeleccionada");
+            alert("Has cerrado sesión.");
+            window.location.href = "/Login/Login"; // Redirigir a la página de login
+        }
+    </script>
+</body>
+</html>

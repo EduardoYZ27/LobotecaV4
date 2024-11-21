@@ -1,0 +1,141 @@
+﻿/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: #781c2e;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Barra de navegación secundaria */
+.navbar2 {
+    padding-top: 50px;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+}
+
+    .navbar2 ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+        .navbar2 ul li {
+            margin: 0 20px;
+            display: flex;
+            align-items: center;
+        }
+
+            .navbar2 ul li img {
+                width: 50px; /* Tamaño uniforme para todos los íconos */
+                height: 50px;
+                margin-bottom: 5px; /* Espacio entre el ícono y el texto */
+            }
+
+            .navbar2 ul li a {
+                color: black;
+                text-decoration: none;
+                font-size: 18px;
+                display: inline-block;
+                text-align: center;
+            }
+
+                .navbar2 ul li a:hover {
+                    background-color: #993333;
+                    border-radius: 5px;
+                    padding: 5px;
+                }
+
+/* Sección principal */
+.main-section {
+    padding: 40px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    color: #781c2e;
+    margin-bottom: 40px;
+}
+
+.busqueda-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+/* Estilos para el formulario de búsqueda */
+.formulario-busqueda {
+    width: 45%;
+}
+
+    .formulario-busqueda label {
+        display: block;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .formulario-busqueda input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+/* Botones */
+.botones {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-mostrar, .btn-buscar, .btn-guardar {
+    background-color: #781c2e;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .btn-mostrar:hover, .btn-buscar:hover, .btn-guardar:hover {
+        background-color: #993333;
+    }
+
+/* Estilos para el listado de búsqueda */
+.listado-busqueda {
+    width: 45%;
+}
+
+    .listado-busqueda textarea {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .listado-busqueda input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+/* Pie de página */
+footer {
+    background-color: #781c2e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}

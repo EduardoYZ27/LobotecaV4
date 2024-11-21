@@ -1,0 +1,101 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingeniería en Mecánica - Loboteca</title>
+    <link rel="stylesheet" href="~/css/Mecanica/mecanica.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header>
+        <nav class="navbar">
+            <h1>MECÁNICA</h1>
+        </nav>
+
+        <nav class="navbar2">
+            <ul>
+                <li><img src="~/images/libros_n.png" alt="TroncoComun" class="TroncoComun"><a href="@Url.Action("TroncoComun", "TroncoComun")">Libros de Tronco Común</a></li>
+                <li><img src="~/images/revistaMecatro.png" alt="Revistas" class="revistas"><a href="#revistas">Revistas</a></li>
+                <li><img src="~/images/sancionMecatro.png" alt="Sanciones" class="sanciones"><a href="@Url.Action("Sanciones", "Sanciones")">Sanciones</a></li>
+                <li><img src="~/images/login_n.png" alt="Perfil" class="perfil"><a href="@Url.Action("Info_user", "Info_user")">Perfil</a></li>
+                <li><button id="logoutButton" class="logout-button">Cerrar Sesión</button></li> <!-- Botón de cerrar sesión -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección principal -->
+    <main>
+        <!-- Sección de Libros -->
+        <section class="books-section">
+            <div class="section-title">
+                <h2>Libros</h2>
+            </div>
+            <div class="carousel-container">
+                <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+                <div class="carousel">
+                    @foreach (var libro in ViewBag.LibrosRecientes)
+                    {
+                        <div class="book">
+                            <img src="@libro.RutaImagen" alt="@libro.Titulo">
+                            <!-- Botón Leer Libro -->
+                            <button class="read-button" onclick="window.open('@libro.Archivo', '_blank')">Leer Libro</button>
+                            <p class="available">@libro.Estado</p>
+                        </div>
+                    }
+                </div>
+                <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- Sección de Revistas -->
+        <section class="magazines-section" id="revistas">
+            <div class="section-title">
+                <h2>Revistas</h2>
+            </div>
+            <div class="carousel-container">
+                <button class="prev" onclick="moveCarouselMagazines(-1)">&#10094;</button>
+                <div class="carousel">
+                    @foreach (var revista in ViewBag.RevistasRecientes)
+                    {
+                        <div class="magazine">
+                            <img src="@revista.RutaImagen" alt="@revista.Titulo">
+                            <!-- Botón Leer Revista -->
+                            <button class="read-button" onclick="window.open('@revista.Archivo', '_blank')">Leer Revista</button>
+                            <p class="available">@revista.Estado</p>
+                        </div>
+                    }
+                </div>
+                <button class="next" onclick="moveCarouselMagazines(1)">&#10095;</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; Derechos Reservados Universidad Politécnica del Valle de Toluca</p>
+        <div class="social-icons">
+            <a href="#"><img src="~/images/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="~/images/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="~/images/email.png" alt="Correo"></a>
+        </div>
+    </footer>
+
+    <script src="~/js/carrusel.js"></script>
+    <script>
+        // Manejador de clic en el botón de cerrar sesión
+        document.getElementById("logoutButton").addEventListener("click", function () {
+            const confirmLogout = confirm("¿Estás seguro de que deseas cerrar sesión?");
+            if (confirmLogout) {
+                localStorage.removeItem("carreraSeleccionada"); // Eliminar la carrera seleccionada del localStorage
+                alert("Has cerrado sesión.");
+                window.location.href = "/Login/Login"; // Redirigir a la página de inicio de sesión
+            }
+        });
+    </script>
+</body>
+</html>

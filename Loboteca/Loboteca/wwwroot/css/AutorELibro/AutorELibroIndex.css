@@ -1,0 +1,176 @@
+﻿/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: #781c2e;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .navbar h1 {
+        color: white;
+        margin-left: 1.5cm;
+    }
+
+/* Logo a la izquierda */
+.logo-left {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 10px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* Cuenta a la derecha */
+.account-right {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    top: 16px;
+}
+
+    .account-right li {
+        margin: 0 20px;
+        display: flex;
+        align-items: center;
+    }
+
+        .account-right li img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .account-right li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+            .account-right li a:hover {
+                background-color: #D291BC;
+                border-radius: 5px;
+                padding: 5px;
+            }
+
+/* Sección principal */
+.main-section {
+    padding: 20px;
+}
+
+.section-title {
+    text-align: center;
+    color: #781c2e;
+    margin-bottom: 20px;
+}
+
+/* Tabla */
+.table-container {
+    margin-top: 20px;
+}
+
+.table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+    .table th {
+        background-color: #781c2e;
+        color: white;
+        padding: 12px;
+        font-size: 18px;
+        border-bottom: 2px solid #ddd;
+    }
+
+    .table td {
+        padding: 12px;
+        text-align: center;
+        font-size: 16px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table tr:hover {
+        background-color: #f2f2f2;
+    }
+
+/* Botones */
+.btn {
+    padding: 8px 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 4px;
+}
+
+.btn-success {
+    background-color: #781c2e;
+    color: white;
+    margin-left: 18.2cm;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: white;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Pie de página */
+footer {
+    background-color: #781c2e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 320px;
+}
+
+    footer p {
+        margin: 10px 0;
+    }
+
+.social-icons {
+    margin-top: 10px;
+}
+
+    .social-icons a img {
+        width: 30px;
+        margin: 0 10px;
+    }
+
+        .social-icons a img:hover {
+            opacity: 0.7;
+        }

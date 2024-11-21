@@ -1,47 +1,86 @@
 ﻿@model IEnumerable<Loboteca.Models.Autor>
 
 @{
-    ViewData["Title"] = "Index";
+    Layout = null;
 }
 
-<h1>Index</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de autores - Loboteca</title>
+    <link rel="stylesheet" href="~/css/Autor/AutorIndex.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header>
+        <nav class="navbar">
+            <ul class="logo-left">
+                <li>
+                    <img src="~/images/logo.png" alt="Logo" class="logo">
+                </li>
+            </ul>
+            <h1>LOBOTECA</h1>
+            <ul class="account-right">
+                <!-- Botón Inicio añadido -->
+                <li>
+                    <img src="~/images/Inicio_Admin.png" alt="Inicio" class="icono">
+                    <a href="@Url.Action("Admin", "Admin")">Inicio</a>
+                </li>
+                <li>
+                    <img src="~/images/cuenta.png" alt="Cuenta" class="icono">
+                    <a href="@Url.Action("Perfil", "Perfil")">Cuenta</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApellidoPaterno)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ApellidoMaterno)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApellidoPaterno)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ApellidoMaterno)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <!-- Contenido principal -->
+    <main class="main-section">
+        <h2>Lista de autores</h2>
+
+        <p>
+            <a asp-action="Create" class="btn btn-success">Crear Nuevo</a>
+        </p>
+
+        <div class="table-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+                        <th>@Html.DisplayNameFor(model => model.ApellidoPaterno)</th>
+                        <th>@Html.DisplayNameFor(model => model.ApellidoMaterno)</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                            <td>@Html.DisplayFor(modelItem => item.ApellidoPaterno)</td>
+                            <td>@Html.DisplayFor(modelItem => item.ApellidoMaterno)</td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a> |
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detalles</a> |
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; Derechos Reservados Universidad Politécnica del Valle de Toluca</p>
+        <div class="social-icons">
+            <a href="#"><img src="~/images/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="~/images/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="~/images/email.png" alt="Correo"></a>
+        </div>
+    </footer>
+</body>
+</html>
