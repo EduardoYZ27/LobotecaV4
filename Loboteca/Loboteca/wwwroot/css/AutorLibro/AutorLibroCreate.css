@@ -1,0 +1,154 @@
+﻿/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: #781c2e;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .navbar h1 {
+        color: white;
+        margin-left: 1.5cm;
+    }
+
+/* Logo a la izquierda */
+.logo-left {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 10px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* Cuenta a la derecha */
+.account-right {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    top: 16px;
+}
+
+    .account-right li {
+        margin: 0 20px;
+        display: flex;
+        align-items: center;
+    }
+
+        .account-right li img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .account-right li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+            .account-right li a:hover {
+                background-color: #D291BC;
+                border-radius: 5px;
+                padding: 5px;
+            }
+
+/* Sección principal */
+.main-section {
+    padding: 20px;
+}
+
+.section-title {
+    text-align: center;
+    color: #781c2e;
+    margin-bottom: 20px;
+}
+
+/* Formulario */
+.formulario-altas {
+    width: 50%;
+    margin: 40px auto;
+    padding: 30px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+    .form-group label {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #781c2e;
+    }
+
+    .form-group input, .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+.text-danger {
+    color: #d9534f;
+}
+
+/* Botones */
+.botones {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-success, .btn-secondary {
+    background-color: #781c2e;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+    .btn-success:hover, .btn-secondary:hover {
+        background-color: #993333;
+    }
+
+/* Pie de página */
+footer {
+    background-color: #781c2e;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 55px;
+}
+
+.social-icons a img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+    .social-icons a img:hover {
+        opacity: 0.7;
+    }

@@ -1,0 +1,103 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 200px; /* Reduce el ancho de la barra lateral */
+    padding-top: 10px; /* Ajusta el padding superior */
+}
+
+    .sidebar ul {
+        list-style-type: none;
+    }
+
+        .sidebar ul li {
+            margin: 20px 0;
+        }
+
+            .sidebar ul li a {
+                text-decoration: none;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                padding: 8px; /* Reduce el padding de los botones */
+                transition: background 0.3s;
+                font-size: 14px; /* Reduce el tamaño del texto */
+            }
+
+                .sidebar ul li a img {
+                    width: 25px; /* Reduce el tamaño del ícono */
+                    margin-right: 10px; /* Ajusta el espacio entre ícono y texto */
+                }
+
+                .sidebar ul li a:hover {
+                    background-color:darkolivegreen;
+                }
+
+.content {
+    flex: 1;
+    padding: 20px; /* Ajuste el padding */
+    text-align: center;
+    overflow: hidden; /* Asegura que no haya desbordamiento */
+}
+
+    .content h1 {
+        color: #781c2e;
+    }
+
+    .content img {
+        margin-top: 1.5cm;
+        max-width: 600px;
+        height: auto;
+        border-radius: 10px;
+    }
+
+.container {
+    display: flex;
+    min-height: 100vh; /* Asegura que ocupe toda la pantalla */
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #781c2e;
+    padding-top: 20px;
+    height: 115vh; /* Asegura que la barra lateral ocupe toda la altura de la ventana */
+}
+
+footer {
+    background-color: #781c2e;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.logout-button {
+    position: fixed; /* Fijo para que se mantenga en la esquina superior derecha */
+    top: 20px; /* Espaciado desde la parte superior */
+    right: 20px; /* Espaciado desde la derecha */
+    padding: 10px 15px; /* Espaciado interno del botón */
+    background-color: #781c2e; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar el ratón */
+}
+
+    .logout-button:hover {
+        background-color: darkolivegreen; /* Cambia el color al pasar el ratón */
+    }

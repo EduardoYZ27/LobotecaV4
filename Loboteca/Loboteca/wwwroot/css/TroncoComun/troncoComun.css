@@ -1,0 +1,226 @@
+﻿/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: #781c2e;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Barra de navegación */
+.navbar2 {
+    padding-top: 50px;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+}
+
+    .navbar2 ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+        .navbar2 ul li {
+            margin: 0 20px;
+            display: flex;
+            align-items: center;
+            position: relative; /* Añadir esta línea */
+        }
+
+            .navbar2 ul li img {
+                width: 50px; /* Tamaño uniforme para todos los íconos */
+                height: 50px;
+                margin-bottom: 5px; /* Espacio entre el ícono y el texto */
+                margin-right: 25px;
+            }
+
+            .navbar2 ul li a {
+                color: black;
+                text-decoration: none;
+                font-size: 18px;
+                display: inline-block;
+                text-align: center;
+                margin-right: 35px;
+            }
+
+                .navbar2 ul li a:hover {
+                    background-color: #d2c1c1;
+                    border-radius: 5px;
+                }
+
+        .navbar2 ul .submenu {
+            display: none; /* Asegúrate de que esté oculto por defecto */
+        }
+
+/* Submenú oculto por defecto */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%; /*Desplázalo justo debajo del contenedor relativo */
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1000;
+    white-space: nowrap;
+}
+
+.navbar2 ul.submenu.show {
+    display: block; /* Solo se mostrará cuando tenga la clase 'show' */
+}
+
+
+.submenu li {
+    margin-bottom: 10px;
+}
+
+    .submenu li a {
+        text-decoration: none;
+        color: #333;
+    }
+
+        .submenu li a:hover {
+            color: #993333;
+        }
+
+/* Estilo para los libros */
+.libros-section {
+    padding: 40px;
+    text-align: center;
+}
+
+    .libros-section h1 {
+        font-size: 36px;
+        color: #781c2e;
+        margin-bottom: 40px;
+    }
+
+.categoria h2 {
+    font-size: 28px;
+    color: #781c2e;
+    margin-bottom: 20px;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 80%;
+    justify-content: center;
+}
+
+.book {
+    margin: 0 10px;
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
+    width: 200px; /* Ancho fijo para las imágenes */
+}
+
+    .book img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+        border: 2px solid #781c2e; /* Borde morado oscuro */
+    }
+
+    .book p {
+        margin-top: 10px;
+        color: #781c2e; /* Texto morado oscuro para disponibilidad */
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+/* Botón para leer libros */
+.read-button {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #781c2e; /* Color azul oscuro */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px #999; /* Sombra para el efecto 3D */
+    transition: 0.3s ease;
+}
+
+/* Mostrar el botón cuando el usuario pasa el ratón sobre el libro */
+.book:hover .read-button {
+    display: block;
+}
+
+/* Cambiar el color y efecto cuando el botón está en hover */
+.read-button:hover {
+    background-color: #781c2e; /* Un tono más oscuro de azul */
+    box-shadow: 0 2px #666; /* Sombra más pequeña */
+    transform: translate(-50%, -50%) translateY(2px); /* Efecto de presión hacia abajo */
+}
+
+/* Efecto cuando se presiona el botón */
+.read-button:active {
+    box-shadow: 0 0 #666; /* Sin sombra cuando está presionado */
+    transform: translate(-50%, -50%) translateY(4px); /* Se presiona más */
+}
+
+
+/* Botones de navegación del carrusel */
+button.prev, button.next {
+    background-color: #781c2e; /* Color morado oscuro para los botones del carrusel */
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #781c2e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+    footer p {
+        margin: 10px 0;
+    }
+
+.social-icons a img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+    .social-icons a img:hover {
+        opacity: 0.7;
+    }

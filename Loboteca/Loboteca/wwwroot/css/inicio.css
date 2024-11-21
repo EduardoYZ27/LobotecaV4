@@ -1,0 +1,225 @@
+﻿/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: #781c2e;
+    padding: 40px;
+    text-align: center;
+}
+
+.navbar2 {
+    padding-top: 50px;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+}
+
+    .navbar2 ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+        .navbar2 ul li {
+            margin: 0 20px;
+            display: flex;
+            align-items: center;
+        }
+
+            .navbar2 ul li img {
+                width: 50px;
+                height: 50px;
+                margin-bottom: 5px;
+                margin-right: 25px;
+            }
+
+            .navbar2 ul li a {
+                color: black;
+                text-decoration: none;
+                font-size: 18px;
+                display: inline-block;
+                text-align: center;
+                margin-right: 35px;
+            }
+
+                .navbar2 ul li a:hover {
+                    background-color: #993333;
+                    border-radius: 5px;
+                }
+
+/* Sección principal */
+.main-section {
+    background-color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+    .main-section .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+.slogan {
+    width: 50%;
+    text-align: left;
+}
+
+    .slogan h1 {
+        font-size: 66px;
+        margin-bottom: 30px;
+    }
+
+    .slogan .btn-primary {
+        background-color: #781c2e;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 36px;
+        margin-top: 15px;
+    }
+
+        .slogan .btn-primary:hover {
+            background-color: #993333;
+        }
+
+.books {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .books img {
+        max-width: 1000px;
+        width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        margin: 0 10px;
+    }
+
+/* Sección de Nosotros */
+.seccion-nosotros {
+    padding: 40px;
+    background-color: lightgray;
+}
+
+    .seccion-nosotros h3 {
+        text-align: center;
+    }
+
+    .seccion-nosotros h2 {
+        text-align: center;
+    }
+
+.nosotros-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.column {
+    width: 45%;
+    padding: 10px;
+}
+
+    .column h3 {
+        font-size: 24px;
+    }
+
+    .column p {
+        text-align: justify;
+    }
+
+/* Sección de Informes */
+.informes {
+    padding: 40px;
+    background-color: #ffffff;
+}
+
+    .informes h2 {
+        text-align: center;
+    }
+
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
+}
+
+/* Ajuste del ancho del contenedor del carrusel */
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%; /* Ajusta el ancho del carrusel */
+    justify-content: center;
+}
+
+/* Imagen del carrusel */
+.carousel-image {
+    margin: 0 10px;
+    width: 7 0%; /* Aumenta el ancho para que ocupe el 100% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    max-height: 500px; /* Aumenta la altura máxima de la imagen */
+    border-radius: 5px; /* Borde redondeado */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+
+button.prev, button.next {
+    background-color: #781c2e;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+/* Pie de página */
+footer {
+    background-color: #781c2e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+    footer p {
+        margin: 10px 0;
+    }
+
+.social-icons {
+    margin-top: 10px;
+}
+
+    .social-icons a img {
+        width: 30px;
+        margin: 0 10px;
+    }
+
+        .social-icons a img:hover {
+            opacity: 0.7;
+        }

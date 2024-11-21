@@ -1,0 +1,109 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-image: url('/images/BIBLIOTECA.jpg'); /* Imagen de fondo de la página */
+    background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen de fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    margin: 0;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente el contenido */
+    padding: 50px 10%; /* Agrega espacio en los lados */
+    min-height: 50vh; /* Asegura que el contenedor ocupe al menos el 100% de la pantalla */
+    align-items: stretch; /* Asegura que los paneles tengan la misma altura */
+    padding-top: 200px;
+}
+
+.left-panel {
+    background-color: #781c2e; /* Color de fondo sólido */
+    width: 40%; /* 40% del ancho */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 0 0 10px; /* Bordes redondeados solo en el lado izquierdo */
+}
+
+.logo {
+    max-width: 500px; /* Ajuste del tamaño del logo */
+    height: auto;
+}
+
+.right-panel {
+    background-color: #fff; /* Fondo blanco sólido para el formulario */
+    width: 60%; /* 60% del ancho */
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 0 10px 10px 0; /* Bordes redondeados solo en el lado derecho */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+}
+
+    .right-panel h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px; /* Tamaño de letra más grande */
+    }
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 48%; /* Ajusta el tamaño de los botones para que estén uno junto al otro */
+    font-size: 16px;
+}
+
+.btn-primary {
+    background-color: #1d4ed8;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #38a169;
+    color: white;
+}
+
+.forgot-password {
+    text-align: center;
+    margin-top: 15px;
+}
+
+    .forgot-password a {
+        color: #888;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+#reader {
+    width: 100%; /* Ancho completo */
+    height: 300px; /* Altura para la visualización de la cámara */
+    border: 1px solid #ccc; /* Borde opcional para el contenedor */
+    display: none; /* Oculto por defecto */
+    margin-top: 20px; /* Espacio superior */
+}

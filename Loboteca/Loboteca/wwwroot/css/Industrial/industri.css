@@ -1,0 +1,246 @@
+﻿/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: #003366; /* Color azul oscuro para el menú superior */
+    padding: 20px;
+    text-align: center;
+}
+
+    .navbar h1 {
+        font-size: 30px;
+        color: aliceblue;
+    }
+
+.navbar2 {
+    padding-top: 50px;
+    padding: 10px;
+    text-align: center;
+    background-color: #e6e6e6; /* Color gris claro para el menú secundario */
+    margin-top: 1cm;
+}
+
+    .navbar2 ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+        .navbar2 ul li {
+            margin: 0 20px;
+            display: flex;
+            align-items: center;
+        }
+
+            .navbar2 ul li img {
+                width: 50px;
+                height: 50px;
+                margin-bottom: 5px;
+                margin-right: 25px;
+            }
+
+            .navbar2 ul li a {
+                color: black;
+                text-decoration: none;
+                font-size: 18px;
+                display: inline-block;
+                text-align: center;
+                margin-right: 35px;
+            }
+
+                .navbar2 ul li a:hover {
+                    background-color: #b3c6e0; /* Un azul claro al pasar el ratón */
+                    border-radius: 5px;
+                }
+
+/* Estilo del botón "Cerrar Sesión" */
+.logout-button {
+    background-color: #d9534f; /* Color rojo para el fondo */
+    color: white; /* Texto en blanco */
+    border: none; /* Sin borde */
+    padding: 10px 15px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cursor de mano al pasar sobre el botón */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s, transform 0.2s; /* Transición suave */
+    margin-left: 20px; /* Espacio a la izquierda */
+}
+
+    .logout-button:hover {
+        background-color: #c9302c; /* Color más oscuro al pasar el mouse */
+        transform: translateY(-2px); /* Efecto de elevar el botón */
+    }
+
+    .logout-button:active {
+        background-color: #ac2925; /* Color aún más oscuro al hacer clic */
+        transform: translateY(0); /* Regresar a la posición original al hacer clic */
+    }
+
+/* Título de las secciones */
+.section-title h2 {
+    background-color: #003366; /* Color azul oscuro para los títulos de las secciones */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 200px;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-top: 2cm;
+}
+
+/* Carousel Styles */
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 80%;
+    justify-content: center;
+}
+
+.book, .magazine {
+    margin: 0 10px;
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
+    width: 200px; /* Ancho fijo para las imágenes */
+}
+
+    .book img, .magazine img {
+        width: 100%; /* Las imágenes ocuparán todo el ancho del contenedor */
+        height: 250px; /* Altura fija para las imágenes */
+        object-fit: cover; /* Mantiene las proporciones */
+        border-radius: 10px;
+        border: 2px solid #003366; /* Borde azul oscuro */
+    }
+
+    .book p, .magazine p {
+        margin-top: 10px;
+        color: #003366; /* Texto azul oscuro para disponibilidad */
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+button.prev, button.next {
+    background-color: #003366; /* Color azul oscuro para los botones del carrusel */
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+/* Estilo del botón "Leer Libro" */
+.book .read-button {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #003366; /* Color amarillo */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px #999; /* Sombra para el efecto 3D */
+    transition: 0.3s ease;
+}
+
+.book:hover .read-button {
+    display: block;
+}
+
+.read-button:hover {
+    background-color: #003366; /* Un tono más oscuro de amarillo al hacer hover */
+    box-shadow: 0 2px #666; /* Sombra más pequeña en hover */
+    transform: translate(-50%, -50%) translateY(2px); /* Efecto de presionar hacia abajo */
+}
+
+.read-button:active {
+    box-shadow: 0 0 #666; /* Sin sombra al presionar */
+    transform: translate(-50%, -50%) translateY(4px); /* Se presiona más al hacer clic */
+}
+
+/* Estilo del botón "Leer Revista" */
+.magazine .read-button {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #003366; /* Color amarillo */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px #999; /* Sombra para el efecto 3D */
+    transition: 0.3s ease;
+}
+
+.magazine:hover .read-button {
+    display: block;
+}
+
+.magazine .read-button:hover {
+    background-color: #003366; /* Un tono más oscuro de amarillo al hacer hover */
+    box-shadow: 0 2px #666; /* Sombra más pequeña en hover */
+    transform: translate(-50%, -50%) translateY(2px); /* Efecto de presionar hacia abajo */
+}
+
+.magazine .read-button:active {
+    box-shadow: 0 0 #666; /* Sin sombra al presionar */
+    transform: translate(-50%, -50%) translateY(4px); /* Se presiona más al hacer clic */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #003366; /* Color azul oscuro para el pie de página */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+    footer p {
+        margin: 10px 0;
+    }
+
+.social-icons {
+    margin-top: 10px;
+}
+
+    .social-icons a img {
+        width: 30px;
+        margin: 0 10px;
+    }
+
+        .social-icons a img:hover {
+            opacity: 0.7;
+        }

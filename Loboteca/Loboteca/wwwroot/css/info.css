@@ -1,0 +1,253 @@
+﻿/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: #781c2e; /* Granate oscuro */
+    padding: 40px;
+    text-align: center;
+}
+
+.navbar2 {
+    padding-top: 50px;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+}
+
+    .navbar2 ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+        .navbar2 ul li {
+            margin: 0 20px;
+            display: flex;
+            align-items: center;
+        }
+
+            .navbar2 ul li img {
+                width: 50px;
+                height: 50px;
+                margin-bottom: 5px;
+                margin-right: 25px;
+            }
+
+            .navbar2 ul li a {
+                color: black;
+                text-decoration: none;
+                font-size: 18px;
+                display: inline-block;
+                text-align: center;
+                margin-right: 35px;
+            }
+
+                .navbar2 ul li a:hover {
+                    background-color: #993333; /* Granate más claro */
+                    border-radius: 5px;
+                }
+
+/* Sección del perfil de usuario */
+.profile-section {
+    padding: 10px;
+    background-color: white;
+    width: 60%; /* Controla la anchura del contenedor */
+    margin: 0 auto; /* Centrar el contenedor horizontalmente */
+    border-radius: 10px; /* Bordes redondeados para un mejor diseño */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+    .profile-container h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+.profile-image {
+    margin-bottom: 20px;
+}
+
+    .profile-image img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .profile-image button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #781c2e; /* Granate oscuro */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .profile-image button:hover {
+            background-color: #993333; /* Granate más claro */
+        }
+
+/* Datos del usuario */
+.user-info {
+    margin-top: 20px;
+    text-align: left;
+}
+
+    .user-info h3 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .user-info p {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+/* Opciones del perfil */
+.profile-options {
+    margin-top: 30px;
+}
+
+.btn-option {
+    background-color: #781c2e; /* Granate oscuro */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .btn-option:hover {
+        background-color: #993333; /* Granate más claro */
+    }
+
+
+/* Burbuja flotante de adeudos */
+.burbuja-adeudos {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #781c2e;
+    color: white;
+    padding: 20px;
+    border-radius: 50px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    animation: parpadeo 1.5s infinite, rotacion 3s infinite linear; /* Parpadeo y rotación */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    z-index: 100; /* Asegura que esté por encima de otros elementos */
+    margin-left: 4cm; /* Mueve hacia el centror */
+    margin-top: 5cm; /* Mueve hacia abajo */
+}
+
+    .burbuja-adeudos:hover {
+        background-color: #993333; /* Cambia el color al pasar el cursor */
+    }
+
+/* Animación de parpadeo */
+@keyframes parpadeo {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Rercuadro flotante de adeudos */
+.adeudos-flotante {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid #781c2e;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 100;
+}
+
+    .adeudos-flotante h4 {
+        color: #781c2e;
+        margin-bottom: 20px;
+    }
+
+.tabla-sanciones {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+    .tabla-sanciones th, .tabla-sanciones td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .tabla-sanciones th {
+        background-color: #781c2e;
+        color: white;
+    }
+
+.btn-cerrar {
+    background-color: #781c2e;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .btn-cerrar:hover {
+        background-color: #993333;
+    }
+
+/* Pie de página */
+footer {
+    background-color: #781c2e; /* Granate oscuro */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+    footer p {
+        margin: 10px 0;
+    }
+
+.social-icons a img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+    .social-icons a img:hover {
+        opacity: 0.7;
+    }
