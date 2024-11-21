@@ -1,36 +1,75 @@
 ﻿@model Loboteca.Models.AutorRevistum
 
 @{
-    ViewData["Title"] = "Create";
+    Layout = null;
 }
 
-<h1>Create</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Autor-Revista - Loboteca</title>
+    <link rel="stylesheet" href="~/css/AutorRevista/AutorRevistaCreate.css">
+</head>
+<body>
+    <!-- Encabezado principal -->
+    <header>
+        <nav class="navbar">
+            <ul class="logo-left">
+                <li>
+                    <img src="~/images/logo.png" alt="Logo" class="logo">
+                </li>
+            </ul>
+            <h1>LOBOTECA</h1>
+            <ul class="account-right">
+                <li>
+                    <img src="~/images/cuenta.png" alt="Cuenta" class="icono">
+                    <a href="@Url.Action("Perfil", "Perfil")">Cuenta</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-<h4>AutorRevistum</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="IdAutor" class="control-label"></label>
-                <select asp-for="IdAutor" class ="form-control" asp-items="ViewBag.IdAutor"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdRevista" class="control-label"></label>
-                <select asp-for="IdRevista" class ="form-control" asp-items="ViewBag.IdRevista"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
+    <!-- Contenido principal -->
+    <main class="main-section">
+        <h2 class="section-title">Crear Autor-Revista</h2>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+        <div class="row formulario-altas">
+            <div class="col-md-4">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="IdAutor" class="control-label">Autor</label>
+                        <select asp-for="IdAutor" class="form-control" asp-items="ViewBag.IdAutor"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="IdRevista" class="control-label">Revista</label>
+                        <select asp-for="IdRevista" class="form-control" asp-items="ViewBag.IdRevista"></select>
+                    </div>
+                    <div class="botones">
+                        <input type="submit" value="Crear" class="btn btn-success" />
+                        <a asp-action="Index" class="btn btn-secondary">Regresar a la lista</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; Derechos Reservados Universidad Politécnica del Valle de Toluca</p>
+        <div class="social-icons">
+            <a href="#"><img src="~/images/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="~/images/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="~/images/email.png" alt="Correo"></a>
+        </div>
+    </footer>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</body>
+</html>
