@@ -1,0 +1,367 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Loboteca
+build_property.RootNamespace = Loboteca
+build_property.ProjectDir = C:\Users\eduar\OneDrive\Escritorio\TAI\LobotecaV4\Loboteca\Loboteca\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\eduar\OneDrive\Escritorio\TAI\LobotecaV4\Loboteca\Loboteca
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Administrador/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Administrador/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvclxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Administrador/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvclxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Administrador/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvclxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Administrador/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5pc3RyYWRvclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/AutorELibro/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b3JFTGlicm9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/AutorELibro/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b3JFTGlicm9cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/AutorELibro/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b3JFTGlicm9cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/AutorELibro/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b3JFTGlicm9cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/AutorELibro/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b3JFTGlicm9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/AutorRevista/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b3JSZXZpc3RhXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/AutorRevista/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b3JSZXZpc3RhXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/AutorRevista/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b3JSZXZpc3RhXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/AutorRevista/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b3JSZXZpc3RhXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/AutorRevista/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b3JSZXZpc3RhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Autor/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b3JcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Autor/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b3JcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Autor/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b3JcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Autor/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b3JcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Autor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0b3JcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Carreras/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FycmVyYXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Carreras/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FycmVyYXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Carreras/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FycmVyYXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Carreras/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FycmVyYXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Carreras/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FycmVyYXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Devoluciones/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2b2x1Y2lvbmVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Devoluciones/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2b2x1Y2lvbmVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Devoluciones/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2b2x1Y2lvbmVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Devoluciones/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2b2x1Y2lvbmVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Devoluciones/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV2b2x1Y2lvbmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Editorial/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWRpdG9yaWFsXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Editorial/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWRpdG9yaWFsXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Editorial/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWRpdG9yaWFsXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Editorial/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWRpdG9yaWFsXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Editorial/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWRpdG9yaWFsXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/ELibro/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRUxpYnJvXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/ELibro/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRUxpYnJvXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/ELibro/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRUxpYnJvXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/ELibro/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRUxpYnJvXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/ELibro/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRUxpYnJvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Ingresoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ncmVzb2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Ingresoes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ncmVzb2VzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Ingresoes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ncmVzb2VzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Ingresoes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ncmVzb2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Ingresoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ncmVzb2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/InventarioLibroes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb0xpYnJvZXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/InventarioLibroes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb0xpYnJvZXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/InventarioLibroes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb0xpYnJvZXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/InventarioLibroes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb0xpYnJvZXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/InventarioLibroes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb0xpYnJvZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Inventarios/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Inventarios/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Inventarios/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Inventarios/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Inventarios/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50YXJpb3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Libro/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Libro/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Libro/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Libro/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Libro/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGlicm9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Prestamo/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Prestamo/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Prestamo/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Prestamo/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Prestamo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Revista/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aXN0YVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Revista/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aXN0YVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Revista/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aXN0YVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Revista/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aXN0YVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Revista/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aXN0YVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Sanciones/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FuY2lvbmVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Sanciones/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FuY2lvbmVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Sanciones/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FuY2lvbmVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Sanciones/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FuY2lvbmVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Sanciones/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2FuY2lvbmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Usuarios/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Usuarios/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Usuarios/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Usuarios/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Usuarios/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/eduar/OneDrive/Escritorio/TAI/LobotecaV4/Loboteca/Loboteca/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-u73ffo9rxa

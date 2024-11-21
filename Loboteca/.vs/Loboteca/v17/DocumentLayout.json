@@ -1,0 +1,343 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|c:\\users\\eduar\\onedrive\\escritorio\\tai\\lobotecav4\\loboteca\\loboteca\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|solutionrelative:loboteca\\controllers\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|c:\\users\\eduar\\onedrive\\escritorio\\tai\\lobotecav4\\loboteca\\loboteca\\controllers\\sancionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|solutionrelative:loboteca\\controllers\\sancionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|c:\\users\\eduar\\onedrive\\escritorio\\tai\\lobotecav4\\loboteca\\loboteca\\controllers\\revistacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|solutionrelative:loboteca\\controllers\\revistacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|c:\\users\\eduar\\onedrive\\escritorio\\tai\\lobotecav4\\loboteca\\loboteca\\controllers\\prestamocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|solutionrelative:loboteca\\controllers\\prestamocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|c:\\users\\eduar\\onedrive\\escritorio\\tai\\lobotecav4\\loboteca\\loboteca\\controllers\\librocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|solutionrelative:loboteca\\controllers\\librocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|c:\\users\\eduar\\onedrive\\escritorio\\tai\\lobotecav4\\loboteca\\loboteca\\controllers\\inventariolibroescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|solutionrelative:loboteca\\controllers\\inventariolibroescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|c:\\users\\eduar\\onedrive\\escritorio\\tai\\lobotecav4\\loboteca\\loboteca\\controllers\\inventarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|solutionrelative:loboteca\\controllers\\inventarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|c:\\users\\eduar\\onedrive\\escritorio\\tai\\lobotecav4\\loboteca\\loboteca\\controllers\\ingresoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|solutionrelative:loboteca\\controllers\\ingresoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|c:\\users\\eduar\\onedrive\\escritorio\\tai\\lobotecav4\\loboteca\\loboteca\\controllers\\elibrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|solutionrelative:loboteca\\controllers\\elibrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|c:\\users\\eduar\\onedrive\\escritorio\\tai\\lobotecav4\\loboteca\\loboteca\\controllers\\editorialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|solutionrelative:loboteca\\controllers\\editorialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|c:\\users\\eduar\\onedrive\\escritorio\\tai\\lobotecav4\\loboteca\\loboteca\\controllers\\devolucionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|solutionrelative:loboteca\\controllers\\devolucionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|c:\\users\\eduar\\onedrive\\escritorio\\tai\\lobotecav4\\loboteca\\loboteca\\controllers\\carrerascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|solutionrelative:loboteca\\controllers\\carrerascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|c:\\users\\eduar\\onedrive\\escritorio\\tai\\lobotecav4\\loboteca\\loboteca\\controllers\\autorrevistacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|solutionrelative:loboteca\\controllers\\autorrevistacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|c:\\users\\eduar\\onedrive\\escritorio\\tai\\lobotecav4\\loboteca\\loboteca\\controllers\\autorelibrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|solutionrelative:loboteca\\controllers\\autorelibrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|c:\\users\\eduar\\onedrive\\escritorio\\tai\\lobotecav4\\loboteca\\loboteca\\controllers\\autorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|solutionrelative:loboteca\\controllers\\autorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|c:\\users\\eduar\\onedrive\\escritorio\\tai\\lobotecav4\\loboteca\\loboteca\\controllers\\administradorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|solutionrelative:loboteca\\controllers\\administradorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|c:\\users\\eduar\\onedrive\\escritorio\\tai\\lobotecav4\\loboteca\\loboteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|solutionrelative:loboteca\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|c:\\users\\eduar\\onedrive\\escritorio\\tai\\lobotecav4\\loboteca\\loboteca\\models\\lobotecacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|solutionrelative:loboteca\\models\\lobotecacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|c:\\users\\eduar\\onedrive\\escritorio\\tai\\lobotecav4\\loboteca\\loboteca\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{51282A0C-CA19-487A-9DFB-A274AAC98FD6}|Loboteca\\Loboteca.csproj|solutionrelative:loboteca\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsuariosController.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\UsuariosController.cs",
+              "RelativeDocumentMoniker": "Loboteca\\Controllers\\UsuariosController.cs",
+              "ToolTip": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\UsuariosController.cs",
+              "RelativeToolTip": "Loboteca\\Controllers\\UsuariosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T03:27:14.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SancionesController.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\SancionesController.cs",
+              "RelativeDocumentMoniker": "Loboteca\\Controllers\\SancionesController.cs",
+              "ToolTip": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\SancionesController.cs",
+              "RelativeToolTip": "Loboteca\\Controllers\\SancionesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T03:26:37.849Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RevistaController.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\RevistaController.cs",
+              "RelativeDocumentMoniker": "Loboteca\\Controllers\\RevistaController.cs",
+              "ToolTip": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\RevistaController.cs",
+              "RelativeToolTip": "Loboteca\\Controllers\\RevistaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T03:25:52.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PrestamoController.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\PrestamoController.cs",
+              "RelativeDocumentMoniker": "Loboteca\\Controllers\\PrestamoController.cs",
+              "ToolTip": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\PrestamoController.cs",
+              "RelativeToolTip": "Loboteca\\Controllers\\PrestamoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T03:25:06.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LibroController.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\LibroController.cs",
+              "RelativeDocumentMoniker": "Loboteca\\Controllers\\LibroController.cs",
+              "ToolTip": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\LibroController.cs",
+              "RelativeToolTip": "Loboteca\\Controllers\\LibroController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T03:24:27.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "InventarioLibroesController.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\InventarioLibroesController.cs",
+              "RelativeDocumentMoniker": "Loboteca\\Controllers\\InventarioLibroesController.cs",
+              "ToolTip": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\InventarioLibroesController.cs",
+              "RelativeToolTip": "Loboteca\\Controllers\\InventarioLibroesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T03:23:46.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "InventariosController.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\InventariosController.cs",
+              "RelativeDocumentMoniker": "Loboteca\\Controllers\\InventariosController.cs",
+              "ToolTip": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\InventariosController.cs",
+              "RelativeToolTip": "Loboteca\\Controllers\\InventariosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T03:23:08.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IngresoesController.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\IngresoesController.cs",
+              "RelativeDocumentMoniker": "Loboteca\\Controllers\\IngresoesController.cs",
+              "ToolTip": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\IngresoesController.cs",
+              "RelativeToolTip": "Loboteca\\Controllers\\IngresoesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T03:22:20.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ELibroController.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\ELibroController.cs",
+              "RelativeDocumentMoniker": "Loboteca\\Controllers\\ELibroController.cs",
+              "ToolTip": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\ELibroController.cs",
+              "RelativeToolTip": "Loboteca\\Controllers\\ELibroController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T03:21:34.599Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EditorialController.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\EditorialController.cs",
+              "RelativeDocumentMoniker": "Loboteca\\Controllers\\EditorialController.cs",
+              "ToolTip": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\EditorialController.cs",
+              "RelativeToolTip": "Loboteca\\Controllers\\EditorialController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T03:20:46.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DevolucionesController.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\DevolucionesController.cs",
+              "RelativeDocumentMoniker": "Loboteca\\Controllers\\DevolucionesController.cs",
+              "ToolTip": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\DevolucionesController.cs",
+              "RelativeToolTip": "Loboteca\\Controllers\\DevolucionesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T03:20:08.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CarrerasController.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\CarrerasController.cs",
+              "RelativeDocumentMoniker": "Loboteca\\Controllers\\CarrerasController.cs",
+              "ToolTip": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\CarrerasController.cs",
+              "RelativeToolTip": "Loboteca\\Controllers\\CarrerasController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T03:19:15.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AutorRevistaController.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\AutorRevistaController.cs",
+              "RelativeDocumentMoniker": "Loboteca\\Controllers\\AutorRevistaController.cs",
+              "ToolTip": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\AutorRevistaController.cs",
+              "RelativeToolTip": "Loboteca\\Controllers\\AutorRevistaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T03:18:20.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AutorELibroController.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\AutorELibroController.cs",
+              "RelativeDocumentMoniker": "Loboteca\\Controllers\\AutorELibroController.cs",
+              "ToolTip": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\AutorELibroController.cs",
+              "RelativeToolTip": "Loboteca\\Controllers\\AutorELibroController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T03:17:33.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AutorController.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\AutorController.cs",
+              "RelativeDocumentMoniker": "Loboteca\\Controllers\\AutorController.cs",
+              "ToolTip": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\AutorController.cs",
+              "RelativeToolTip": "Loboteca\\Controllers\\AutorController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T03:16:37.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AdministradorController.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\AdministradorController.cs",
+              "RelativeDocumentMoniker": "Loboteca\\Controllers\\AdministradorController.cs",
+              "ToolTip": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Controllers\\AdministradorController.cs",
+              "RelativeToolTip": "Loboteca\\Controllers\\AdministradorController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T03:15:55.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Program.cs",
+              "RelativeDocumentMoniker": "Loboteca\\Program.cs",
+              "ToolTip": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Program.cs",
+              "RelativeToolTip": "Loboteca\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T03:12:38.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\appsettings.json",
+              "RelativeDocumentMoniker": "Loboteca\\appsettings.json",
+              "ToolTip": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\appsettings.json",
+              "RelativeToolTip": "Loboteca\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-21T03:11:48.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "LobotecaContext.cs",
+              "DocumentMoniker": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Models\\LobotecaContext.cs",
+              "RelativeDocumentMoniker": "Loboteca\\Models\\LobotecaContext.cs",
+              "ToolTip": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\Models\\LobotecaContext.cs",
+              "RelativeToolTip": "Loboteca\\Models\\LobotecaContext.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAkwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-21T03:11:36.838Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
