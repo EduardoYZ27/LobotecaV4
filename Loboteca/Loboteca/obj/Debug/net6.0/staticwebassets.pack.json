@@ -5,12 +5,912 @@
       "PackagePath": "staticwebassets\\Loboteca.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Admin\\admin.css",
+      "PackagePath": "staticwebassets\\css\\Admin\\admin.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Administrador\\AdministradorCreate.css",
+      "PackagePath": "staticwebassets\\css\\Administrador\\AdministradorCreate.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Administrador\\AdministradorDelete.css",
+      "PackagePath": "staticwebassets\\css\\Administrador\\AdministradorDelete.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Administrador\\AdministradorDetails.css",
+      "PackagePath": "staticwebassets\\css\\Administrador\\AdministradorDetails.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Administrador\\AdministradorEdit.css",
+      "PackagePath": "staticwebassets\\css\\Administrador\\AdministradorEdit.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Administrador\\AdministradorIndex.css",
+      "PackagePath": "staticwebassets\\css\\Administrador\\AdministradorIndex.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Alumno\\AlumnoCreate.css",
+      "PackagePath": "staticwebassets\\css\\Alumno\\AlumnoCreate.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Alumno\\AlumnoDelete.css",
+      "PackagePath": "staticwebassets\\css\\Alumno\\AlumnoDelete.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Alumno\\AlumnoDetails.css",
+      "PackagePath": "staticwebassets\\css\\Alumno\\AlumnoDetails.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Alumno\\AlumnoEdit.css",
+      "PackagePath": "staticwebassets\\css\\Alumno\\AlumnoEdit.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Alumno\\AlumnoIndex.css",
+      "PackagePath": "staticwebassets\\css\\Alumno\\AlumnoIndex.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\AutorELibro\\AutorELibroCreate.css",
+      "PackagePath": "staticwebassets\\css\\AutorELibro\\AutorELibroCreate.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\AutorELibro\\AutorELibroDelete.css",
+      "PackagePath": "staticwebassets\\css\\AutorELibro\\AutorELibroDelete.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\AutorELibro\\AutorELibroDetails.css",
+      "PackagePath": "staticwebassets\\css\\AutorELibro\\AutorELibroDetails.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\AutorELibro\\AutorELibroEdit.css",
+      "PackagePath": "staticwebassets\\css\\AutorELibro\\AutorELibroEdit.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\AutorELibro\\AutorELibroIndex.css",
+      "PackagePath": "staticwebassets\\css\\AutorELibro\\AutorELibroIndex.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\AutorLibro\\AutorLibroCreate.css",
+      "PackagePath": "staticwebassets\\css\\AutorLibro\\AutorLibroCreate.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\AutorLibro\\AutorLibroDelete.css",
+      "PackagePath": "staticwebassets\\css\\AutorLibro\\AutorLibroDelete.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\AutorLibro\\AutorLibroDetails.css",
+      "PackagePath": "staticwebassets\\css\\AutorLibro\\AutorLibroDetails.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\AutorLibro\\AutorLibroEdit.css",
+      "PackagePath": "staticwebassets\\css\\AutorLibro\\AutorLibroEdit.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\AutorLibro\\AutorLibroIndex.css",
+      "PackagePath": "staticwebassets\\css\\AutorLibro\\AutorLibroIndex.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\AutorRevista\\AutorRevistaCreate.css",
+      "PackagePath": "staticwebassets\\css\\AutorRevista\\AutorRevistaCreate.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\AutorRevista\\AutorRevistaDelete.css",
+      "PackagePath": "staticwebassets\\css\\AutorRevista\\AutorRevistaDelete.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\AutorRevista\\AutorRevistaDetails.css",
+      "PackagePath": "staticwebassets\\css\\AutorRevista\\AutorRevistaDetails.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\AutorRevista\\AutorRevistaEdit.css",
+      "PackagePath": "staticwebassets\\css\\AutorRevista\\AutorRevistaEdit.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\AutorRevista\\AutorRevistaIndex.css",
+      "PackagePath": "staticwebassets\\css\\AutorRevista\\AutorRevistaIndex.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Autor\\AutorCreate.css",
+      "PackagePath": "staticwebassets\\css\\Autor\\AutorCreate.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Autor\\AutorDelete.css",
+      "PackagePath": "staticwebassets\\css\\Autor\\AutorDelete.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Autor\\AutorDetails.css",
+      "PackagePath": "staticwebassets\\css\\Autor\\AutorDetails.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Autor\\AutorEdit.css",
+      "PackagePath": "staticwebassets\\css\\Autor\\AutorEdit.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Autor\\AutorIndex.css",
+      "PackagePath": "staticwebassets\\css\\Autor\\AutorIndex.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Biotecnologia\\biotecnologia.css",
+      "PackagePath": "staticwebassets\\css\\Biotecnologia\\biotecnologia.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\BookSuggestions\\Suggestions.css",
+      "PackagePath": "staticwebassets\\css\\BookSuggestions\\Suggestions.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Carreras\\CarreraCreate.css",
+      "PackagePath": "staticwebassets\\css\\Carreras\\CarreraCreate.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Carreras\\CarreraDelete.css",
+      "PackagePath": "staticwebassets\\css\\Carreras\\CarreraDelete.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Carreras\\CarreraDetails.css",
+      "PackagePath": "staticwebassets\\css\\Carreras\\CarreraDetails.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Carreras\\CarreraEdit.css",
+      "PackagePath": "staticwebassets\\css\\Carreras\\CarreraEdit.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Carreras\\CarrerasIndex.css",
+      "PackagePath": "staticwebassets\\css\\Carreras\\CarrerasIndex.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\ConfiguracionPenalizaciones\\ConfiguracionPenalizacionesCreate.css",
+      "PackagePath": "staticwebassets\\css\\ConfiguracionPenalizaciones\\ConfiguracionPenalizacionesCreate.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\ConfiguracionPenalizaciones\\ConfiguracionPenalizacionesDelete.css",
+      "PackagePath": "staticwebassets\\css\\ConfiguracionPenalizaciones\\ConfiguracionPenalizacionesDelete.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\ConfiguracionPenalizaciones\\ConfiguracionPenalizacionesDetails.css",
+      "PackagePath": "staticwebassets\\css\\ConfiguracionPenalizaciones\\ConfiguracionPenalizacionesDetails.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\ConfiguracionPenalizaciones\\ConfiguracionPenalizacionesEdit.css",
+      "PackagePath": "staticwebassets\\css\\ConfiguracionPenalizaciones\\ConfiguracionPenalizacionesEdit.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\ConfiguracionPenalizaciones\\ConfiguracionPenalizacionesIndex.css",
+      "PackagePath": "staticwebassets\\css\\ConfiguracionPenalizaciones\\ConfiguracionPenalizacionesIndex.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\ELibro\\ELibroCreateV2.css",
+      "PackagePath": "staticwebassets\\css\\ELibro\\ELibroCreateV2.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\ELibro\\ELibroDelete.css",
+      "PackagePath": "staticwebassets\\css\\ELibro\\ELibroDelete.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\ELibro\\ELibroDetails.css",
+      "PackagePath": "staticwebassets\\css\\ELibro\\ELibroDetails.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\ELibro\\ELibroEdit.css",
+      "PackagePath": "staticwebassets\\css\\ELibro\\ELibroEdit.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\ELibro\\ELibroIndex.css",
+      "PackagePath": "staticwebassets\\css\\ELibro\\ELibroIndex.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Editorial\\EditorialCreate.css",
+      "PackagePath": "staticwebassets\\css\\Editorial\\EditorialCreate.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Editorial\\EditorialDelete.css",
+      "PackagePath": "staticwebassets\\css\\Editorial\\EditorialDelete.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Editorial\\EditorialDetails.css",
+      "PackagePath": "staticwebassets\\css\\Editorial\\EditorialDetails.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Editorial\\EditorialEdit.css",
+      "PackagePath": "staticwebassets\\css\\Editorial\\EditorialEdit.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Editorial\\EditorialIndex.css",
+      "PackagePath": "staticwebassets\\css\\Editorial\\EditorialIndex.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Energia\\energia.css",
+      "PackagePath": "staticwebassets\\css\\Energia\\energia.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Industrial\\industri.css",
+      "PackagePath": "staticwebassets\\css\\Industrial\\industri.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Ingreso\\Ingresos.css",
+      "PackagePath": "staticwebassets\\css\\Ingreso\\Ingresos.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Libro\\LibroCreate.css",
+      "PackagePath": "staticwebassets\\css\\Libro\\LibroCreate.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Libro\\LibroDelete.css",
+      "PackagePath": "staticwebassets\\css\\Libro\\LibroDelete.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Libro\\LibroDetails.css",
+      "PackagePath": "staticwebassets\\css\\Libro\\LibroDetails.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Libro\\LibroEdit.css",
+      "PackagePath": "staticwebassets\\css\\Libro\\LibroEdit.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Libro\\LibroIndex.css",
+      "PackagePath": "staticwebassets\\css\\Libro\\LibroIndex.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Mecanica\\mecanica.css",
+      "PackagePath": "staticwebassets\\css\\Mecanica\\mecanica.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Mecatronica\\mecatronica.css",
+      "PackagePath": "staticwebassets\\css\\Mecatronica\\mecatronica.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Negocios\\negocios.css",
+      "PackagePath": "staticwebassets\\css\\Negocios\\negocios.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Prestamo\\PrestamoCreate.css",
+      "PackagePath": "staticwebassets\\css\\Prestamo\\PrestamoCreate.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Prestamo\\PrestamoDelete.css",
+      "PackagePath": "staticwebassets\\css\\Prestamo\\PrestamoDelete.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Prestamo\\PrestamoDetails.css",
+      "PackagePath": "staticwebassets\\css\\Prestamo\\PrestamoDetails.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Prestamo\\PrestamoEdit.css",
+      "PackagePath": "staticwebassets\\css\\Prestamo\\PrestamoEdit.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Prestamo\\PrestamoIndex.css",
+      "PackagePath": "staticwebassets\\css\\Prestamo\\PrestamoIndex.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Revista\\RevistaCreate.css",
+      "PackagePath": "staticwebassets\\css\\Revista\\RevistaCreate.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Revista\\RevistaDelete.css",
+      "PackagePath": "staticwebassets\\css\\Revista\\RevistaDelete.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Revista\\RevistaDetails.css",
+      "PackagePath": "staticwebassets\\css\\Revista\\RevistaDetails.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Revista\\RevistaIndex.css",
+      "PackagePath": "staticwebassets\\css\\Revista\\RevistaIndex.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Revista\\RevistumEdit.css",
+      "PackagePath": "staticwebassets\\css\\Revista\\RevistumEdit.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Tecnologias\\tecnologias.css",
+      "PackagePath": "staticwebassets\\css\\Tecnologias\\tecnologias.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\TroncoComun\\troncoComun.css",
+      "PackagePath": "staticwebassets\\css\\TroncoComun\\troncoComun.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\Wiki\\Search.css",
+      "PackagePath": "staticwebassets\\css\\Wiki\\Search.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\busqueda.css",
+      "PackagePath": "staticwebassets\\css\\busqueda.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\info.css",
+      "PackagePath": "staticwebassets\\css\\info.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\inicio.css",
+      "PackagePath": "staticwebassets\\css\\inicio.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\login.css",
+      "PackagePath": "staticwebassets\\css\\login.css"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\restablecer-contraseña.css",
+      "PackagePath": "staticwebassets\\css\\restablecer-contraseña.css"
+    },
+    {
       "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\79353798410be1e5a1f52727176b6034.jpg",
+      "PackagePath": "staticwebassets\\images\\79353798410be1e5a1f52727176b6034.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\Admin.png",
+      "PackagePath": "staticwebassets\\images\\Admin.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\Alumno.png",
+      "PackagePath": "staticwebassets\\images\\Alumno.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\Autor.png",
+      "PackagePath": "staticwebassets\\images\\Autor.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\AutorElibro.png",
+      "PackagePath": "staticwebassets\\images\\AutorElibro.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\AutorLibro.png",
+      "PackagePath": "staticwebassets\\images\\AutorLibro.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\AutorRevista.png",
+      "PackagePath": "staticwebassets\\images\\AutorRevista.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\BIBLIOTECA.jpg",
+      "PackagePath": "staticwebassets\\images\\BIBLIOTECA.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\Captura de pantalla 2024-10-04 160619.png",
+      "PackagePath": "staticwebassets\\images\\Captura de pantalla 2024-10-04 160619.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\Carreras.png",
+      "PackagePath": "staticwebassets\\images\\Carreras.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\CatalogoLibros.png",
+      "PackagePath": "staticwebassets\\images\\CatalogoLibros.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\ELibro.png",
+      "PackagePath": "staticwebassets\\images\\ELibro.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\Editorial.png",
+      "PackagePath": "staticwebassets\\images\\Editorial.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\Iluminá tu mundo con fragancias increíbles (6).jpg",
+      "PackagePath": "staticwebassets\\images\\Iluminá tu mundo con fragancias increíbles (6).jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\Inicio_Admin.png",
+      "PackagePath": "staticwebassets\\images\\Inicio_Admin.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\LOGO1.jpeg",
+      "PackagePath": "staticwebassets\\images\\LOGO1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\LOGO2.jpeg",
+      "PackagePath": "staticwebassets\\images\\LOGO2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\Libro.png",
+      "PackagePath": "staticwebassets\\images\\Libro.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\Loboteca.png",
+      "PackagePath": "staticwebassets\\images\\Loboteca.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\Logo.png",
+      "PackagePath": "staticwebassets\\images\\Logo.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\LogoSinFondo.png",
+      "PackagePath": "staticwebassets\\images\\LogoSinFondo.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\OSI.jpg",
+      "PackagePath": "staticwebassets\\images\\OSI.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\Penalizaciones.png",
+      "PackagePath": "staticwebassets\\images\\Penalizaciones.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\Prestamo.png",
+      "PackagePath": "staticwebassets\\images\\Prestamo.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\Revista de Ingeniería Industrial Cover.jpg",
+      "PackagePath": "staticwebassets\\images\\Revista de Ingeniería Industrial Cover.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\Revista de Tecbologia e Innovación.png",
+      "PackagePath": "staticwebassets\\images\\Revista de Tecbologia e Innovación.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\Revista.png",
+      "PackagePath": "staticwebassets\\images\\Revista.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\Tecnologias de la Información y Derecho a Saber.jpg",
+      "PackagePath": "staticwebassets\\images\\Tecnologias de la Información y Derecho a Saber.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\WhatsApp Image 2024-10-06 at 13.01.38 (1).jpeg",
+      "PackagePath": "staticwebassets\\images\\WhatsApp Image 2024-10-06 at 13.01.38 (1).jpeg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\administracion1.jfif",
+      "PackagePath": "staticwebassets\\images\\administracion1.jfif"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\bibliotecaN.png",
+      "PackagePath": "staticwebassets\\images\\bibliotecaN.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\bio.jpg",
+      "PackagePath": "staticwebassets\\images\\bio.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\bio1.jpg",
+      "PackagePath": "staticwebassets\\images\\bio1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\bio2.jpg",
+      "PackagePath": "staticwebassets\\images\\bio2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\bio3.jpg",
+      "PackagePath": "staticwebassets\\images\\bio3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\biorev1.jpg",
+      "PackagePath": "staticwebassets\\images\\biorev1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\biorev2.jpg",
+      "PackagePath": "staticwebassets\\images\\biorev2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\biorev3.jpg",
+      "PackagePath": "staticwebassets\\images\\biorev3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\black-hole idea 1.1.jpg",
+      "PackagePath": "staticwebassets\\images\\black-hole idea 1.1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\carrera.png",
+      "PackagePath": "staticwebassets\\images\\carrera.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\castigoMeca.png",
+      "PackagePath": "staticwebassets\\images\\castigoMeca.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\catalogo.jpg",
+      "PackagePath": "staticwebassets\\images\\catalogo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\contacto.png",
+      "PackagePath": "staticwebassets\\images\\contacto.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\contacto_a.png",
+      "PackagePath": "staticwebassets\\images\\contacto_a.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\contacto_ama.png",
+      "PackagePath": "staticwebassets\\images\\contacto_ama.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\contacto_az.png",
+      "PackagePath": "staticwebassets\\images\\contacto_az.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\contacto_gri.png",
+      "PackagePath": "staticwebassets\\images\\contacto_gri.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\contacto_mor.png",
+      "PackagePath": "staticwebassets\\images\\contacto_mor.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\contacto_n.png",
+      "PackagePath": "staticwebassets\\images\\contacto_n.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\contacto_v.png",
+      "PackagePath": "staticwebassets\\images\\contacto_v.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\correcciones.jpg",
+      "PackagePath": "staticwebassets\\images\\correcciones.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\cuenta.png",
+      "PackagePath": "staticwebassets\\images\\cuenta.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\dc8adde10421648e4b7bf30cf4a7c30b.jpg",
+      "PackagePath": "staticwebassets\\images\\dc8adde10421648e4b7bf30cf4a7c30b.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\descarga.jpeg",
+      "PackagePath": "staticwebassets\\images\\descarga.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\ebook.jpg",
+      "PackagePath": "staticwebassets\\images\\ebook.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\email.png",
+      "PackagePath": "staticwebassets\\images\\email.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\ene1.jpg",
+      "PackagePath": "staticwebassets\\images\\ene1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\ene2.jpg",
+      "PackagePath": "staticwebassets\\images\\ene2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\ene3.jpg",
+      "PackagePath": "staticwebassets\\images\\ene3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\entrevista.png",
+      "PackagePath": "staticwebassets\\images\\entrevista.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\ethernet-1685294_1280.jpg",
+      "PackagePath": "staticwebassets\\images\\ethernet-1685294_1280.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\f577b424ba16f97a0e9d85196811b608.jpg",
+      "PackagePath": "staticwebassets\\images\\f577b424ba16f97a0e9d85196811b608.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\facebook.png",
+      "PackagePath": "staticwebassets\\images\\facebook.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\fisica1.jpg",
+      "PackagePath": "staticwebassets\\images\\fisica1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\fondo.png",
+      "PackagePath": "staticwebassets\\images\\fondo.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\habilidades1.jfif",
+      "PackagePath": "staticwebassets\\images\\habilidades1.jfif"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\home.png",
+      "PackagePath": "staticwebassets\\images\\home.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\homeI.png",
+      "PackagePath": "staticwebassets\\images\\homeI.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\idea1-black hole.jpg",
+      "PackagePath": "staticwebassets\\images\\idea1-black hole.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\indu1.jpg",
+      "PackagePath": "staticwebassets\\images\\indu1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\indu2.jpg",
+      "PackagePath": "staticwebassets\\images\\indu2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\indu3.jpg",
+      "PackagePath": "staticwebassets\\images\\indu3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\industrial.jpg",
+      "PackagePath": "staticwebassets\\images\\industrial.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\informes1.jpeg",
+      "PackagePath": "staticwebassets\\images\\informes1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\informes2.png",
+      "PackagePath": "staticwebassets\\images\\informes2.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\ingresar.png",
+      "PackagePath": "staticwebassets\\images\\ingresar.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\inicio_v.png",
+      "PackagePath": "staticwebassets\\images\\inicio_v.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\instagram.png",
+      "PackagePath": "staticwebassets\\images\\instagram.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\inventario.png",
+      "PackagePath": "staticwebassets\\images\\inventario.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\libros.png",
+      "PackagePath": "staticwebassets\\images\\libros.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\libros_a.png",
+      "PackagePath": "staticwebassets\\images\\libros_a.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\libros_ama.png",
+      "PackagePath": "staticwebassets\\images\\libros_ama.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\libros_az.png",
+      "PackagePath": "staticwebassets\\images\\libros_az.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\libros_gri.png",
+      "PackagePath": "staticwebassets\\images\\libros_gri.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\libros_mor.png",
+      "PackagePath": "staticwebassets\\images\\libros_mor.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\libros_n.png",
+      "PackagePath": "staticwebassets\\images\\libros_n.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\libros_v.png",
+      "PackagePath": "staticwebassets\\images\\libros_v.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\login.png",
+      "PackagePath": "staticwebassets\\images\\login.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\login_a.png",
+      "PackagePath": "staticwebassets\\images\\login_a.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\login_ama.png",
+      "PackagePath": "staticwebassets\\images\\login_ama.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\login_az.png",
+      "PackagePath": "staticwebassets\\images\\login_az.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\login_gri.png",
+      "PackagePath": "staticwebassets\\images\\login_gri.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\login_mor.png",
+      "PackagePath": "staticwebassets\\images\\login_mor.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\login_n.png",
+      "PackagePath": "staticwebassets\\images\\login_n.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\login_v.png",
+      "PackagePath": "staticwebassets\\images\\login_v.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\logo upvt.png",
+      "PackagePath": "staticwebassets\\images\\logo upvt.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\logo_f.jpg",
+      "PackagePath": "staticwebassets\\images\\logo_f.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\mat1.jpg",
+      "PackagePath": "staticwebassets\\images\\mat1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\meca1.jpg",
+      "PackagePath": "staticwebassets\\images\\meca1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\meca2.jpg",
+      "PackagePath": "staticwebassets\\images\\meca2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\meca3.jpg",
+      "PackagePath": "staticwebassets\\images\\meca3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\meca4.png",
+      "PackagePath": "staticwebassets\\images\\meca4.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\mecanica.jpg",
+      "PackagePath": "staticwebassets\\images\\mecanica.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\mecatr1.jpg",
+      "PackagePath": "staticwebassets\\images\\mecatr1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\mecatr2.jpg",
+      "PackagePath": "staticwebassets\\images\\mecatr2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\mecatr3.jpg",
+      "PackagePath": "staticwebassets\\images\\mecatr3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\mecatronica.jpg",
+      "PackagePath": "staticwebassets\\images\\mecatronica.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\nego1.jpg",
+      "PackagePath": "staticwebassets\\images\\nego1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\nego2.jpg",
+      "PackagePath": "staticwebassets\\images\\nego2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\nego3.jpg",
+      "PackagePath": "staticwebassets\\images\\nego3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\negocios.jpg",
+      "PackagePath": "staticwebassets\\images\\negocios.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\nosotros.png",
+      "PackagePath": "staticwebassets\\images\\nosotros.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\periodico.jpg",
+      "PackagePath": "staticwebassets\\images\\periodico.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\photo_2024-10-14_12-11-39 (3).jpg",
+      "PackagePath": "staticwebassets\\images\\photo_2024-10-14_12-11-39 (3).jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\publicaciones.jpg",
+      "PackagePath": "staticwebassets\\images\\publicaciones.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\quijote.jpg",
+      "PackagePath": "staticwebassets\\images\\quijote.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\quimica1.jpg",
+      "PackagePath": "staticwebassets\\images\\quimica1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\recursos digitales.jpg",
+      "PackagePath": "staticwebassets\\images\\recursos digitales.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\registro.png",
+      "PackagePath": "staticwebassets\\images\\registro.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\revistaE.png",
+      "PackagePath": "staticwebassets\\images\\revistaE.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\revistaI.png",
+      "PackagePath": "staticwebassets\\images\\revistaI.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\revistaIn.png",
+      "PackagePath": "staticwebassets\\images\\revistaIn.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\revistaMecatro.png",
+      "PackagePath": "staticwebassets\\images\\revistaMecatro.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\revista_az.png",
+      "PackagePath": "staticwebassets\\images\\revista_az.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\revista_ne.png",
+      "PackagePath": "staticwebassets\\images\\revista_ne.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\revistas.jpg",
+      "PackagePath": "staticwebassets\\images\\revistas.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\revistasB.png",
+      "PackagePath": "staticwebassets\\images\\revistasB.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\revistasMECA.png",
+      "PackagePath": "staticwebassets\\images\\revistasMECA.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\revistasN.png",
+      "PackagePath": "staticwebassets\\images\\revistasN.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\sancionIn.png",
+      "PackagePath": "staticwebassets\\images\\sancionIn.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\sancionMecatro.png",
+      "PackagePath": "staticwebassets\\images\\sancionMecatro.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\sanciones.png",
+      "PackagePath": "staticwebassets\\images\\sanciones.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\sancionesB.png",
+      "PackagePath": "staticwebassets\\images\\sancionesB.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\sancionesE.png",
+      "PackagePath": "staticwebassets\\images\\sancionesE.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\sancionesI.png",
+      "PackagePath": "staticwebassets\\images\\sancionesI.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\sancionesN.png",
+      "PackagePath": "staticwebassets\\images\\sancionesN.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\sanciones_az.png",
+      "PackagePath": "staticwebassets\\images\\sanciones_az.png"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\tec1.jpg",
+      "PackagePath": "staticwebassets\\images\\tec1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\tec2.jpg",
+      "PackagePath": "staticwebassets\\images\\tec2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\tec3.jpg",
+      "PackagePath": "staticwebassets\\images\\tec3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\tec4.jpg",
+      "PackagePath": "staticwebassets\\images\\tec4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\tics.jpg",
+      "PackagePath": "staticwebassets\\images\\tics.jpg"
+    },
+    {
+      "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\images\\user_info.png",
+      "PackagePath": "staticwebassets\\images\\user_info.png"
     },
     {
       "Id": "C:\\Users\\eduar\\OneDrive\\Escritorio\\TAI\\LobotecaV4\\Loboteca\\Loboteca\\wwwroot\\js\\site.js",
