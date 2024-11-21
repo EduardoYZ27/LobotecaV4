@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loboteca", "Loboteca\Loboteca.csproj", "{51282A0C-CA19-487A-9DFB-A274AAC98FD6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loboteca", "Loboteca\Loboteca.csproj", "{4971A795-2613-4BDF-B468-F281F7E57047}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{51282A0C-CA19-487A-9DFB-A274AAC98FD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51282A0C-CA19-487A-9DFB-A274AAC98FD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51282A0C-CA19-487A-9DFB-A274AAC98FD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51282A0C-CA19-487A-9DFB-A274AAC98FD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4971A795-2613-4BDF-B468-F281F7E57047}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4971A795-2613-4BDF-B468-F281F7E57047}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4971A795-2613-4BDF-B468-F281F7E57047}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4971A795-2613-4BDF-B468-F281F7E57047}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {FACB5B77-176A-4EA6-98FA-92A8E2DFA7A9}
+		SolutionGuid = {3DFFE38C-810F-429D-A81F-B23235654681}
 	EndGlobalSection
 EndGlobal

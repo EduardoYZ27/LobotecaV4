@@ -36,7 +36,6 @@ namespace Loboteca.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -111,13 +110,11 @@ namespace Loboteca.Models
                 entity.HasOne(d => d.IdAutorNavigation)
                     .WithMany(p => p.AutorELibros)
                     .HasForeignKey(d => d.IdAutor)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_autor_e_libro_autor");
 
                 entity.HasOne(d => d.IdELibroNavigation)
                     .WithMany(p => p.AutorELibros)
                     .HasForeignKey(d => d.IdELibro)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_autor_e_libro_e_libro");
             });
 
@@ -134,13 +131,11 @@ namespace Loboteca.Models
                 entity.HasOne(d => d.IdAutorNavigation)
                     .WithMany(p => p.AutorLibros)
                     .HasForeignKey(d => d.IdAutor)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_autor_libro_autor");
 
                 entity.HasOne(d => d.IdLibroNavigation)
                     .WithMany(p => p.AutorLibros)
                     .HasForeignKey(d => d.IdLibro)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_autor_libro_libro");
             });
 
@@ -157,13 +152,11 @@ namespace Loboteca.Models
                 entity.HasOne(d => d.IdAutorNavigation)
                     .WithMany(p => p.AutorRevista)
                     .HasForeignKey(d => d.IdAutor)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_autor_revista_autor");
 
                 entity.HasOne(d => d.IdRevistaNavigation)
                     .WithMany(p => p.AutorRevista)
                     .HasForeignKey(d => d.IdRevista)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_autor_revista_revista");
             });
 
@@ -208,19 +201,16 @@ namespace Loboteca.Models
                 entity.HasOne(d => d.IdAdministradorNavigation)
                     .WithMany(p => p.Devoluciones)
                     .HasForeignKey(d => d.IdAdministrador)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_devoluciones_administrador");
 
                 entity.HasOne(d => d.IdPrestamoNavigation)
                     .WithMany(p => p.Devoluciones)
                     .HasForeignKey(d => d.IdPrestamo)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_devoluciones_prestamo");
 
                 entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Devoluciones)
                     .HasForeignKey(d => d.IdUsuario)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_devoluciones_usuario");
             });
 
@@ -273,7 +263,6 @@ namespace Loboteca.Models
                 entity.HasOne(d => d.IdEditorialNavigation)
                     .WithMany(p => p.ELibros)
                     .HasForeignKey(d => d.IdEditorial)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_e_libro_editorial");
             });
 
@@ -311,7 +300,6 @@ namespace Loboteca.Models
                 entity.HasOne(d => d.IdLibroNavigation)
                     .WithMany(p => p.Ingresos)
                     .HasForeignKey(d => d.IdLibro)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ingresos_libro");
             });
 
@@ -357,13 +345,11 @@ namespace Loboteca.Models
                 entity.HasOne(d => d.IdInventarioNavigation)
                     .WithMany(p => p.InventarioLibros)
                     .HasForeignKey(d => d.IdInventario)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_inventario_libro_inventario");
 
                 entity.HasOne(d => d.IdLibroNavigation)
                     .WithMany(p => p.InventarioLibros)
                     .HasForeignKey(d => d.IdLibro)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_inventario_libro_libro");
             });
 
@@ -411,7 +397,6 @@ namespace Loboteca.Models
                 entity.HasOne(d => d.IdEditorialNavigation)
                     .WithMany(p => p.Libros)
                     .HasForeignKey(d => d.IdEditorial)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_libro_editorial");
             });
 
@@ -438,19 +423,16 @@ namespace Loboteca.Models
                 entity.HasOne(d => d.IdAdministradorNavigation)
                     .WithMany(p => p.Prestamos)
                     .HasForeignKey(d => d.IdAdministrador)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_prestamo_administrador");
 
                 entity.HasOne(d => d.IdLibroNavigation)
                     .WithMany(p => p.Prestamos)
                     .HasForeignKey(d => d.IdLibro)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_prestamo_libro");
 
                 entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Prestamos)
                     .HasForeignKey(d => d.IdUsuario)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_prestamo_usuario");
             });
 
@@ -503,7 +485,6 @@ namespace Loboteca.Models
                 entity.HasOne(d => d.IdEditorialNavigation)
                     .WithMany(p => p.Revista)
                     .HasForeignKey(d => d.IdEditorial)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_revista_editorial");
             });
 
@@ -529,13 +510,11 @@ namespace Loboteca.Models
                 entity.HasOne(d => d.IdPrestamoNavigation)
                     .WithMany(p => p.Sanciones)
                     .HasForeignKey(d => d.IdPrestamo)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_sanciones_prestamo");
 
                 entity.HasOne(d => d.IdUsuarioNavigation)
                     .WithMany(p => p.Sanciones)
                     .HasForeignKey(d => d.IdUsuario)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_sanciones_usuario");
             });
 
@@ -575,7 +554,6 @@ namespace Loboteca.Models
                 entity.HasOne(d => d.IdCarreraNavigation)
                     .WithMany(p => p.Usuarios)
                     .HasForeignKey(d => d.IdCarrera)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_usuario_carrera");
             });
 

@@ -19,9 +19,9 @@ namespace Loboteca.Models
         public string RutaDeImagen { get; set; } = null!;
         public string Archivo { get; set; } = null!;
         public DateTime FechaDeAlta { get; set; }
-        public int IdEditorial { get; set; }
+        public int? IdEditorial { get; set; }
 
-        public virtual Editorial IdEditorialNavigation { get; set; } = null!;
+        public virtual Editorial? IdEditorialNavigation { get; set; }
         public virtual ICollection<AutorRevistum> AutorRevista { get; set; }
     }
 }

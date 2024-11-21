@@ -17,10 +17,10 @@ namespace Loboteca.Models
         public string ApellidoPaterno { get; set; } = null!;
         public string ApellidoMaterno { get; set; } = null!;
         public string Matricula { get; set; } = null!;
-        public int IdCarrera { get; set; }
+        public int? IdCarrera { get; set; }
         public string Estado { get; set; } = null!;
 
-        public virtual Carrera IdCarreraNavigation { get; set; } = null!;
+        public virtual Carrera? IdCarreraNavigation { get; set; }
         public virtual ICollection<Devolucione> Devoluciones { get; set; }
         public virtual ICollection<Prestamo> Prestamos { get; set; }
         public virtual ICollection<Sancione> Sanciones { get; set; }

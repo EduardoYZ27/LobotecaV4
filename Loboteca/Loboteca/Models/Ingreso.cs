@@ -6,10 +6,10 @@ namespace Loboteca.Models
     public partial class Ingreso
     {
         public int Id { get; set; }
-        public int IdLibro { get; set; }
+        public int? IdLibro { get; set; }
         public DateTime FechaIngreso { get; set; }
         public int Ejemplares { get; set; }
 
-        public virtual Libro IdLibroNavigation { get; set; } = null!;
+        public virtual Libro? IdLibroNavigation { get; set; }
     }
 }

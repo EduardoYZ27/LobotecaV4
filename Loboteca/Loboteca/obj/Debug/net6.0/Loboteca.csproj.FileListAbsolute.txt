@@ -58,6 +58,7 @@ C:\Users\eduar\OneDrive\Escritorio\TAI\LobotecaV4\Loboteca\Loboteca\obj\Debug\ne
 C:\Users\eduar\OneDrive\Escritorio\TAI\LobotecaV4\Loboteca\Loboteca\obj\Debug\net6.0\Loboteca.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\eduar\OneDrive\Escritorio\TAI\LobotecaV4\Loboteca\Loboteca\obj\Debug\net6.0\Loboteca.RazorAssemblyInfo.cache
 C:\Users\eduar\OneDrive\Escritorio\TAI\LobotecaV4\Loboteca\Loboteca\obj\Debug\net6.0\Loboteca.RazorAssemblyInfo.cs
+C:\Users\eduar\OneDrive\Escritorio\TAI\LobotecaV4\Loboteca\Loboteca\obj\Debug\net6.0\Loboteca.sourcelink.json
 C:\Users\eduar\OneDrive\Escritorio\TAI\LobotecaV4\Loboteca\Loboteca\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\eduar\OneDrive\Escritorio\TAI\LobotecaV4\Loboteca\Loboteca\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\eduar\OneDrive\Escritorio\TAI\LobotecaV4\Loboteca\Loboteca\obj\Debug\net6.0\staticwebassets\msbuild.Loboteca.Microsoft.AspNetCore.StaticWebAssets.props
