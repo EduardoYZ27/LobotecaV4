@@ -1,8 +1,10 @@
 ﻿@model IEnumerable<Loboteca.Models.Ingreso>
 
 @{
+
      Layout = null;
 }
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -34,6 +36,8 @@
             </ul>
         </nav>
     </header>
+
+
     <!-- Contenido principal -->
     <main class="main-section">
         <h2 class="section-title">Lista de Ingresos</h2>
@@ -46,11 +50,13 @@
             <table class="table">
                 <thead>
                     <tr>
+
                         <th>@Html.DisplayNameFor(model => model.FechaIngreso)</th>
                         <th>@Html.DisplayNameFor(model => model.Ejemplares)</th>
                         <th>@Html.DisplayNameFor(model => model.IdLibroNavigation)</th>
                         <th>@Html.DisplayNameFor(model => model.FirstOrDefault().FechaIngreso)</th>
                         <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Ejemplares)</th>
+
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -60,7 +66,9 @@
                         <tr>
                             <td>@Html.DisplayFor(modelItem => item.FechaIngreso)</td>
                             <td>@Html.DisplayFor(modelItem => item.Ejemplares)</td>
+
                             <td>@Html.DisplayFor(modelItem => item.IdLibroNavigation.Id)</td>
+
                             <td>
                                 <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a> |
                                 <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detalles</a> |
@@ -84,4 +92,5 @@
     </footer>
 </body>
 </html>
+
 
