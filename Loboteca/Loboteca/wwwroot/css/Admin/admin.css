@@ -73,7 +73,7 @@ body {
     width: 250px;
     background-color: #781c2e;
     padding-top: 20px;
-    height: 130vh; /* Asegura que la barra lateral ocupe toda la altura de la ventana */
+    height: 140vh; /* Asegura que la barra lateral ocupe toda la altura de la ventana */
 }
 
 footer {
