@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Loboteca.Models
 {
@@ -20,6 +21,7 @@ namespace Loboteca.Models
         public int? IdCarrera { get; set; }
         public string Estado { get; set; } = null!;
 
+        [Display(Name = "Carrera")]
         public virtual Carrera? IdCarreraNavigation { get; set; }
         public virtual ICollection<Devolucione> Devoluciones { get; set; }
         public virtual ICollection<Prestamo> Prestamos { get; set; }
