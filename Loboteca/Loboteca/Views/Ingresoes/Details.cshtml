@@ -1,36 +1,72 @@
 ﻿@model Loboteca.Models.Ingreso
 
 @{
-    ViewData["Title"] = "Details";
+    Layout = null;
 }
 
-<h1>Details</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Ingreso - Loboteca</title>
+    <link rel="stylesheet" href="~/css/Ingresoes/IngresoesDetails.css" />
+</head>
+<body>
+    <!-- Encabezado principal -->
+    <header>
+        <nav class="navbar">
+            <ul class="logo-left">
+                <li>
+                    <img src="~/images/logo.png" alt="Logo" class="logo">
+                </li>
+            </ul>
+            <h1>LOBOTECA</h1>
+            <ul class="account-right">
+                <li>
+                    <img src="~/images/cuenta.png" alt="Cuenta" class="icono">
+                    <a href="@Url.Action("Perfil", "Perfil")">Cuenta</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-<div>
-    <h4>Ingreso</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaIngreso)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaIngreso)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Ejemplares)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Ejemplares)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdLibroNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdLibroNavigation.Id)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+    <!-- Contenido principal -->
+    <main class="main-section">
+        <h2 class="section-title">Detalles del Ingreso</h2>
+
+        <div class="row">
+            <div class="col-md-4 formulario-altas">
+                <h4>Ingreso</h4>
+                <hr />
+                <dl class="row">
+                    <dt class="col-sm-4">Fecha de Ingreso</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.FechaIngreso)</dd>
+
+                    <dt class="col-sm-4">Ejemplares</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.Ejemplares)</dd>
+
+                    <dt class="col-sm-4">Libro</dt>
+                    <dd class="col-sm-8">@Html.DisplayFor(model => model.IdLibroNavigation.Id)</dd>
+                </dl>
+
+                <div class="botones">
+                    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn-success">Editar</a>
+                    <a asp-action="Index" class="btn-secondary">Regresar a la lista</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; Derechos Reservados Universidad Politécnica del Valle de Toluca</p>
+        <div class="social-icons">
+            <a href="#"><img src="~/images/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="~/images/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="~/images/email.png" alt="Correo"></a>
+        </div>
+    </footer>
+</body>
+</html>
+

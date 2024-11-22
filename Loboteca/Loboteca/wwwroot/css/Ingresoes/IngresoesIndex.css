@@ -70,6 +70,8 @@ body {
             color: white;
             text-decoration: none;
             font-size: 18px;
+            display: inline-block;
+            text-align: center;
         }
 
             .account-right li a:hover {
@@ -90,18 +92,11 @@ body {
     margin-bottom: 20px;
 }
 
-/* Botón "Crear Nuevo" */
-.button-container {
-    text-align: center; /* Centra el botón "Crear Nuevo" */
-    margin: 20px 0; /* Añade margen arriba y abajo del botón */
-}
-
-/* Tabla de ELibros */
+/* Tabla de carreras */
 .table-container {
     width: 80%;
-    margin: 0 auto; /* Centra el contenedor de la tabla */
+    margin: 0 auto;
     margin-top: 20px;
-    overflow-x: auto; /* Permite el desplazamiento horizontal si es necesario */
 }
 
 .table {
@@ -133,11 +128,6 @@ body {
     }
 
 /* Botones */
-.acciones {
-    display: flex; /* Alinea los botones horizontalmente */
-    justify-content: center; /* Centra los botones en su celda */
-}
-
 .btn {
     padding: 8px 16px;
     border-radius: 5px;

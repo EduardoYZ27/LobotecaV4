@@ -49,9 +49,9 @@ namespace Loboteca.Controllers
         // GET: Devoluciones/Create
         public IActionResult Create()
         {
-            ViewData["IdAdministrador"] = new SelectList(_context.Administradors, "Id", "Id");
+            ViewData["IdAdministrador"] = new SelectList(_context.Administradors, "Id", "Nombre");
             ViewData["IdPrestamo"] = new SelectList(_context.Prestamos, "Id", "Id");
-            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Id");
+            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Nombre");
             return View();
         }
 
@@ -68,9 +68,9 @@ namespace Loboteca.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdAdministrador"] = new SelectList(_context.Administradors, "Id", "Id", devolucione.IdAdministrador);
+            ViewData["IdAdministrador"] = new SelectList(_context.Administradors, "Id", "Nombre", devolucione.IdAdministrador);
             ViewData["IdPrestamo"] = new SelectList(_context.Prestamos, "Id", "Id", devolucione.IdPrestamo);
-            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Id", devolucione.IdUsuario);
+            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Nombre", devolucione.IdUsuario);
             return View(devolucione);
         }
 
@@ -87,9 +87,9 @@ namespace Loboteca.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdAdministrador"] = new SelectList(_context.Administradors, "Id", "Id", devolucione.IdAdministrador);
+            ViewData["IdAdministrador"] = new SelectList(_context.Administradors, "Id", "Nombre", devolucione.IdAdministrador);
             ViewData["IdPrestamo"] = new SelectList(_context.Prestamos, "Id", "Id", devolucione.IdPrestamo);
-            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Id", devolucione.IdUsuario);
+            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Nombre", devolucione.IdUsuario);
             return View(devolucione);
         }
 
@@ -125,9 +125,9 @@ namespace Loboteca.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdAdministrador"] = new SelectList(_context.Administradors, "Id", "Id", devolucione.IdAdministrador);
+            ViewData["IdAdministrador"] = new SelectList(_context.Administradors, "Id", "Nombre", devolucione.IdAdministrador);
             ViewData["IdPrestamo"] = new SelectList(_context.Prestamos, "Id", "Id", devolucione.IdPrestamo);
-            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Id", devolucione.IdUsuario);
+            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Nombre", devolucione.IdUsuario);
             return View(devolucione);
         }
 

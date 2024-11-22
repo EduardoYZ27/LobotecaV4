@@ -47,7 +47,7 @@ namespace Loboteca.Controllers
         // GET: Usuarios/Create
         public IActionResult Create()
         {
-            ViewData["IdCarrera"] = new SelectList(_context.Carreras, "Id", "Id");
+            ViewData["IdCarrera"] = new SelectList(_context.Carreras, "Id", "Nombre");
             return View();
         }
 
@@ -81,7 +81,7 @@ namespace Loboteca.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdCarrera"] = new SelectList(_context.Carreras, "Id", "Id", usuario.IdCarrera);
+            ViewData["IdCarrera"] = new SelectList(_context.Carreras, "Id", "Nombre", usuario.IdCarrera);
             return View(usuario);
         }
 
@@ -117,7 +117,7 @@ namespace Loboteca.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdCarrera"] = new SelectList(_context.Carreras, "Id", "Id", usuario.IdCarrera);
+            ViewData["IdCarrera"] = new SelectList(_context.Carreras, "Id", "Nombre", usuario.IdCarrera);
             return View(usuario);
         }
 
