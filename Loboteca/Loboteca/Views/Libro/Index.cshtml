@@ -31,47 +31,48 @@
                 @Html.DisplayNameFor(model => model.FechaDeAlta)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.RutaDeImagen)
+                Imagen
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdEditorialNavigation)
+                @Html.DisplayNameFor(model => model.IdEditorialNavigation.Nombre)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Titulo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Isbn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaDePublicacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genero)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Estado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaDeAlta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RutaDeImagen)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdEditorialNavigation.Id)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Isbn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaDePublicacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaDeAlta)
+                </td>
+                <td>
+                    <img src="@item.RutaDeImagen" alt="Imagen del libro" style="max-width: 100px; max-height: 100px;" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdEditorialNavigation.Nombre)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

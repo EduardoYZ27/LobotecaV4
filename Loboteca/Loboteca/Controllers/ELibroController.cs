@@ -47,7 +47,7 @@ namespace Loboteca.Controllers
         // GET: ELibro/Create
         public IActionResult Create()
         {
-            ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Id");
+            ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre");
             return View();
         }
 
@@ -56,16 +56,91 @@ namespace Loboteca.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Titulo,Isbn,FechaDePublicacion,Genero,Estado,RutaDeImagen,Archivo,FechaDeAlta,IdEditorial")] ELibro eLibro)
+        public async Task<IActionResult> Create(ELibro eLibro, IFormFile Imagen, IFormFile Archivo)
         {
-            if (ModelState.IsValid)
+            try
             {
+                // Validar que el archivo de imagen fue enviado
+                if (Imagen != null && Imagen.Length > 0)
+                {
+                    // Validar formatos permitidos para imagen
+                    var permittedImageExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
+                    var imageExtension = Path.GetExtension(Imagen.FileName).ToLowerInvariant();
+
+                    if (string.IsNullOrEmpty(imageExtension) || !permittedImageExtensions.Contains(imageExtension))
+                    {
+                        ModelState.AddModelError("RutaDeImagen", "Formato de imagen no permitido. Los formatos permitidos son: .jpg, .jpeg, .png, .gif.");
+                        ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", eLibro.IdEditorial);
+                        return View(eLibro);
+                    }
+
+                    // Guardar imagen
+                    string imageFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+                    if (!Directory.Exists(imageFolder))
+                    {
+                        Directory.CreateDirectory(imageFolder);
+                    }
+
+                    string uniqueImageName = Guid.NewGuid().ToString() + Path.GetExtension(Imagen.FileName);
+                    string imagePath = Path.Combine(imageFolder, uniqueImageName);
+
+                    using (var stream = new FileStream(imagePath, FileMode.Create))
+                    {
+                        await Imagen.CopyToAsync(stream);
+                    }
+
+                    eLibro.RutaDeImagen = $"/images/{uniqueImageName}";
+                }
+
+                // Validar que el archivo PDF fue enviado
+                if (Archivo != null && Archivo.Length > 0)
+                {
+                    // Validar formatos permitidos para archivo
+                    var permittedFileExtensions = new[] { ".pdf" };
+                    var fileExtension = Path.GetExtension(Archivo.FileName).ToLowerInvariant();
+
+                    if (string.IsNullOrEmpty(fileExtension) || !permittedFileExtensions.Contains(fileExtension))
+                    {
+                        ModelState.AddModelError("Archivo", "Formato de archivo no permitido. Solo se permiten archivos PDF.");
+                        ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", eLibro.IdEditorial);
+                        return View(eLibro);
+                    }
+
+                    // Guardar archivo PDF
+                    string pdfFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "pdf");
+                    if (!Directory.Exists(pdfFolder))
+                    {
+                        Directory.CreateDirectory(pdfFolder);
+                    }
+
+                    string uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(Archivo.FileName);
+                    string pdfPath = Path.Combine(pdfFolder, uniqueFileName);
+
+                    using (var stream = new FileStream(pdfPath, FileMode.Create))
+                    {
+                        await Archivo.CopyToAsync(stream);
+                    }
+
+                    eLibro.Archivo = $"/pdf/{uniqueFileName}";
+                }
+
+                // Asignar valores por defecto si es necesario
+                if (eLibro.FechaDeAlta == default(DateTime))
+                {
+                    eLibro.FechaDeAlta = DateTime.Now;
+                }
+
+                // Guardar en la base de datos
                 _context.Add(eLibro);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Id", eLibro.IdEditorial);
-            return View(eLibro);
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", $"Error al guardar el registro: {ex.Message}");
+                ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", eLibro.IdEditorial);
+                return View(eLibro);
+            }
         }
 
         // GET: ELibro/Edit/5
@@ -155,7 +230,7 @@ namespace Loboteca.Controllers
                 _context.ELibros.Remove(eLibro);
             }
             
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(    );
             return RedirectToAction(nameof(Index));
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System;
 using System.Collections.Generic;
 
 namespace Loboteca.Models
@@ -11,6 +12,7 @@ namespace Loboteca.Models
             Ingresos = new HashSet<Ingreso>();
             InventarioLibros = new HashSet<InventarioLibro>();
             Prestamos = new HashSet<Prestamo>();
+            FechaDeAlta = DateTime.Now;
         }
 
         public int Id { get; set; }
@@ -21,6 +23,7 @@ namespace Loboteca.Models
         public string Estado { get; set; } = null!;
         public DateTime FechaDeAlta { get; set; }
         public int? IdEditorial { get; set; }
+        [BindNever] // Excluye esta propiedad de la validación inicial
         public string RutaDeImagen { get; set; } = null!;
 
         public virtual Editorial? IdEditorialNavigation { get; set; }

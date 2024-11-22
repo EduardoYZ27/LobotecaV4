@@ -10,59 +10,59 @@
     <h4>ELibro</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Titulo)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Titulo)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Isbn)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Isbn)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.FechaDePublicacion)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FechaDePublicacion)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Genero)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Genero)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Estado)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Estado)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RutaDeImagen)
+        <dt class="col-sm-2">
+            Imagen
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.RutaDeImagen)
+        <dd class="col-sm-10">
+            <img src="@Model.RutaDeImagen" alt="Imagen del ELibro" style="max-width: 200px; max-height: 200px;" />
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Archivo)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Archivo)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.FechaDeAlta)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.FechaDeAlta)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdEditorialNavigation)
+        <dt class="col-sm-2">
+            Editorial
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdEditorialNavigation.Id)
+        <dd class="col-sm-10">
+            @Model.IdEditorialNavigation?.Nombre
         </dd>
     </dl>
 </div>

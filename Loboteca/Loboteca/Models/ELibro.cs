@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System;
 using System.Collections.Generic;
 
 namespace Loboteca.Models
@@ -16,6 +17,7 @@ namespace Loboteca.Models
         public DateTime FechaDePublicacion { get; set; }
         public string Genero { get; set; } = null!;
         public string Estado { get; set; } = null!;
+        [BindNever] // Excluye esta propiedad de la validación inicial
         public string RutaDeImagen { get; set; } = null!;
         public string Archivo { get; set; } = null!;
         public DateTime FechaDeAlta { get; set; }
