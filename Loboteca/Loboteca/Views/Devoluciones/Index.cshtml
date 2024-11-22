@@ -61,9 +61,9 @@
                         <tr>
                             <td>@Html.DisplayFor(modelItem => item.Fecha)</td>
                             <td>@Html.DisplayFor(modelItem => item.Condiciones)</td>
-                            <td>@Html.DisplayFor(modelItem => item.IdAdministradorNavigation.Id)</td>
+                            <td>@Html.DisplayFor(modelItem => item.IdAdministradorNavigation.Nombre)</td>
                             <td>@Html.DisplayFor(modelItem => item.IdPrestamoNavigation.Id)</td>
-                            <td>@Html.DisplayFor(modelItem => item.IdUsuarioNavigation.Id)</td>
+                            <td>@Html.DisplayFor(modelItem => item.IdUsuarioNavigation.Nombre)</td>
                             <td>
                                 <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a> |
                                 <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detalles</a> |
