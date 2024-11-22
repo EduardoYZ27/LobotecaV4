@@ -1,0 +1,85 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Loboteca</title>
+    <!-- Ruta CSS corregida -->
+    <link rel="stylesheet" href="/css/inicio.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header>
+        <nav class="navbar"></nav>
+
+        <nav class="navbar2">
+            <ul>
+                <li><img src="/images/libros.png" alt="libros" class="libros"> <a href="#" class="libros-link">Libros</a></li>
+                <li><img src="/images/contacto.png" alt="Contacto" class="contacto"><a href="#informes">Información</a></li>
+                <li><img src="/images/nosotros.png" alt="nosotros" class="nosotros"><a href="#nosotros">Nosotros</a></li>
+                <li><img src="/images/login.png" alt="perfil" class="perfil"><a href="@Url.Action("Login", "Login")">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección principal con eslogan -->
+    <main class="main-section">
+        <div class="content">
+            <div class="slogan">
+                <h1>Conocimiento sin límites, al alcance de todos.</h1>
+                <a href="#" class="btn-primary" id="startQrButton">MIRAR MAS...</a>
+            </div>
+            <div class="books">
+                <img src="/images/CatalogoLibros.png" alt="Libro 1">
+            </div>
+        </div>
+    </main>
+
+    <!-- Sección de Nosotros -->
+    <section class="seccion-nosotros" id="nosotros">
+        <h2>Nosotros</h2>
+        <div class="nosotros-content">
+            <div class="column">
+                <h3>Misión</h3>
+                <p>Proporcionar acceso a la información y recursos necesarios para apoyar el aprendizaje, la investigación y la formación integral de nuestros estudiantes y la comunidad universitaria.</p>
+            </div>
+            <div class="column">
+                <h3>Visión</h3>
+                <p>Ser una biblioteca de referencia, innovadora y accesible, que fomente la cultura del conocimiento y el aprendizaje continuo en un entorno colaborativo y de apoyo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Informes -->
+    <section class="informes" id="informes">
+        <h2>Informes</h2>
+        <div class="carousel-container">
+            <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <div class="carousel">
+                <img src="/images/informes1.jpeg" alt="Informe 1" class="carousel-image">
+                <img src="/images/informes2.png" alt="Informe 2" class="carousel-image">
+            </div>
+            <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; Derechos Reservados Universidad Politécnica del Valle de Toluca</p>
+        <div class="social-icons">
+            <a href="#"><img src="/images/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="/images/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="/images/email.png" alt="Correo"></a>
+        </div>
+    </footer>
+
+    <!-- Enlazar el archivo JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/carru_inicio.js"></script>
+    
+</body>
+</html>

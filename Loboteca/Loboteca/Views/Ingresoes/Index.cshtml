@@ -1,45 +1,7 @@
 ﻿@model IEnumerable<Loboteca.Models.Ingreso>
 
 @{
-<<<<<<< HEAD
      Layout = null;
-}
-
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Ingresos - Loboteca</title>
-    <link rel="stylesheet" href="~/css/Ingresoes/IngresoesIndex.css" />
-</head>
-<body>
-    <!-- Barra de navegación -->
-    <header>
-        <nav class="navbar">
-            <ul class="logo-left">
-                <li>
-                    <img src="~/images/logo.png" alt="Logo" class="logo">
-                </li>
-            </ul>
-            <h1>LOBOTECA</h1>
-            <ul class="account-right">
-                <!-- Botón Inicio añadido -->
-                <li>
-                    <img src="~/images/Inicio_Admin.png" alt="Inicio" class="icono">
-                    <a href="@Url.Action("Admin", "Admin")">Inicio</a>
-                </li>
-                <li>
-                    <img src="~/images/cuenta.png" alt="Cuenta" class="icono">
-                    <a href="@Url.Action("Perfil", "Perfil")">Cuenta</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-
-=======
-    Layout = null;
 }
 
 <!DOCTYPE html>
@@ -72,8 +34,6 @@
             </ul>
         </nav>
     </header>
-
->>>>>>> e27217ff36af1c7ba5306a1124e187b720759648
     <!-- Contenido principal -->
     <main class="main-section">
         <h2 class="section-title">Lista de Ingresos</h2>
@@ -86,14 +46,11 @@
             <table class="table">
                 <thead>
                     <tr>
-<<<<<<< HEAD
                         <th>@Html.DisplayNameFor(model => model.FechaIngreso)</th>
                         <th>@Html.DisplayNameFor(model => model.Ejemplares)</th>
                         <th>@Html.DisplayNameFor(model => model.IdLibroNavigation)</th>
-=======
                         <th>@Html.DisplayNameFor(model => model.FirstOrDefault().FechaIngreso)</th>
                         <th>@Html.DisplayNameFor(model => model.FirstOrDefault().Ejemplares)</th>
->>>>>>> e27217ff36af1c7ba5306a1124e187b720759648
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -103,10 +60,7 @@
                         <tr>
                             <td>@Html.DisplayFor(modelItem => item.FechaIngreso)</td>
                             <td>@Html.DisplayFor(modelItem => item.Ejemplares)</td>
-<<<<<<< HEAD
                             <td>@Html.DisplayFor(modelItem => item.IdLibroNavigation.Id)</td>
-=======
->>>>>>> e27217ff36af1c7ba5306a1124e187b720759648
                             <td>
                                 <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a> |
                                 <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detalles</a> |
@@ -130,7 +84,4 @@
     </footer>
 </body>
 </html>
-<<<<<<< HEAD
 
-=======
->>>>>>> e27217ff36af1c7ba5306a1124e187b720759648
