@@ -11,7 +11,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar Alumno - Loboteca</title>
     <link rel="stylesheet" href="~/css/login.css"> <!-- Enlace al archivo CSS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Carga jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script> <!-- Librería para QR -->
+    <style>
+        .qr-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        #qr-code {
+            border: 1px solid #ccc;
+            background: #f9f9f9;
+        }
+    </style>
 </head>
 <body>
     <div class="login-container">
@@ -24,15 +35,15 @@
             <!-- Mensajes de éxito o error -->
             @if (TempData["SuccessMessage"] != null)
             {
-                <div class="success-message">
+                    <div class="success-message">
                     @TempData["SuccessMessage"]
-                </div>
+                    </div>
             }
             @if (ViewBag.ErrorMessage != null)
             {
-                <div class="error-message">
+                    <div class="error-message">
                     @ViewBag.ErrorMessage
-                </div>
+                    </div>
             }
 
             <!-- Formulario para registrar un nuevo alumno -->
@@ -57,8 +68,16 @@
 
                 <div class="form-group">
                     <label for="Matricula" class="control-label">Matrícula</label>
-                    <input asp-for="Matricula" class="form-control" required />
+                    <input asp-for="Matricula" id="matricula" class="form-control" required maxlength="10" pattern="\d{10}" title="Debe ser un número de 10 dígitos" />
                     <span asp-validation-for="Matricula" class="text-danger"></span>
+                </div>
+
+                <!-- Contenedor para el QR generado -->
+                <div class="qr-container">
+                    <canvas id="qr-code" width="150" height="150"></canvas>
+                </div>
+                <div class="qr-container">
+                    <button type="button" id="download-qr" class="btn btn-primary">Descargar QR</button>
                 </div>
 
                 <!-- Estado (campo oculto para evitar edición) -->
@@ -81,8 +100,42 @@
         </div>
     </div>
 
-    @section Scripts {
-        @await Html.PartialAsync("_ValidationScriptsPartial")
-    }
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const qrCodeCanvas = document.getElementById("qr-code");
+            const qr = new QRious({
+                element: qrCodeCanvas,
+                size: 150,
+                value: "", // Inicialmente vacío
+            });
+
+            // Generar QR cuando el usuario cambia de campo
+            document.getElementById("matricula").addEventListener("blur", function () {
+                const matricula = this.value.trim();
+
+                if (/^\d{10}$/.test(matricula)) {
+                    qr.value = matricula; // Actualizar el contenido del QR
+                } else {
+                    qr.value = ""; // Limpiar QR si el campo no cumple con el formato
+                    alert("La matrícula debe ser un número de 10 dígitos.");
+                }
+            });
+
+            // Descargar QR
+            document.getElementById("download-qr").addEventListener("click", function () {
+                const matricula = document.getElementById("matricula").value.trim();
+
+                if (!/^\d{10}$/.test(matricula)) {
+                    alert("Primero ingresa una matrícula válida para generar el QR.");
+                    return;
+                }
+
+                const link = document.createElement("a");
+                link.href = qrCodeCanvas.toDataURL("image/png");
+                link.download = "qr_matricula.png";
+                link.click();
+            });
+        });
+    </script>
 </body>
 </html>
