@@ -138,7 +138,7 @@ namespace Loboteca.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Id", revistum.IdEditorial);
+            ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", revistum.IdEditorial);
             return View(revistum);
         }
 

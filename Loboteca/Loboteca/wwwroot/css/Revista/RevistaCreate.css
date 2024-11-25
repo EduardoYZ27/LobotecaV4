@@ -86,22 +86,23 @@ body {
 
 /* Formulario */
 .formulario-container {
-    width: 40%;
-    margin: 40px auto;
-    padding: 30px;
+    width: 35%; /* Reducido para que el formulario sea menos ancho */
+    margin: 50px auto; /* Centra horizontal y verticalmente */
+    padding: 20px; /* Reduce el relleno interno */
     border: 2px solid #ccc;
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Ajustar los campos del formulario */
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 10px; /* Reduce la separación entre los campos */
 }
 
     .form-group label {
-        font-size: 18px;
-        margin-bottom: 10px;
+        font-size: 16px; /* Reduce el tamaño de las etiquetas */
+        margin-bottom: 5px;
         color: #781c2e;
     }
 
@@ -109,7 +110,7 @@ body {
     .form-group input[type="date"],
     .form-group select {
         width: 100%;
-        padding: 10px;
+        padding: 8px; /* Reduce el tamaño del campo */
         border: 1px solid #ccc;
         border-radius: 5px;
         transition: border-color 0.3s;
@@ -129,17 +130,18 @@ body {
 
 /* Botones */
 .btn-primary {
-    background-color: #781c2e;
-    color: white;
+    background-color: transparent;
+    color: #781c2e;
+    border: 2px solid #781c2e;
     padding: 10px 20px;
     border-radius: 5px;
-    border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
     .btn-primary:hover {
-        background-color: #993333;
+        background-color: #781c2e;
+        color: white;
     }
 
 .btn-secondary {
