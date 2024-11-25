@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -24,24 +25,6 @@ namespace Loboteca.Controllers
             return View(await lobotecaContext.ToListAsync());
         }
 
-        // GET: Revista/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null || _context.Revista == null)
-            {
-                return NotFound();
-            }
-
-            var revistum = await _context.Revista.FindAsync(id);
-            if (revistum == null)
-            {
-                return NotFound();
-            }
-
-            ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", revistum.IdEditorial);
-            return View(revistum);
-        }
-
         // GET: Revista/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -50,22 +33,22 @@ namespace Loboteca.Controllers
                 return NotFound();
             }
 
-            var revistum = await _context.Revista
+            var revista = await _context.Revista
                 .Include(r => r.IdEditorialNavigation)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (revistum == null)
+            if (revista == null)
             {
                 return NotFound();
             }
 
-            return View(revistum);
+            return View(revista);
         }
 
         // GET: Revista/Create
         public IActionResult Create()
         {
             ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre");
-            ViewData["IdAutor"] = new SelectList(_context.Autors, "Id", "Nombre"); // Aseguramos que los autores estén disponibles
+            ViewData["IdAutor"] = new SelectList(_context.Autors, "Id", "Nombre");
             return View();
         }
 
@@ -126,6 +109,24 @@ namespace Loboteca.Controllers
             }
         }
 
+        // GET: Revista/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null || _context.Revista == null)
+            {
+                return NotFound();
+            }
+
+            var revista = await _context.Revista.FindAsync(id);
+            if (revista == null)
+            {
+                return NotFound();
+            }
+
+            ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", revista.IdEditorial);
+            return View(revista);
+        }
+
         // POST: Revista/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -155,8 +156,7 @@ namespace Loboteca.Controllers
                         await Imagen.CopyToAsync(stream);
                     }
 
-                    // Eliminar la imagen anterior si existe y no es la predeterminada
-                    if (!string.IsNullOrEmpty(revista.RutaDeImagen) && !revista.RutaDeImagen.Contains("default.jpg"))
+                    if (!string.IsNullOrEmpty(revista.RutaDeImagen))
                     {
                         string oldImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", revista.RutaDeImagen.TrimStart('/'));
                         if (System.IO.File.Exists(oldImagePath))
@@ -185,7 +185,6 @@ namespace Loboteca.Controllers
                         await Archivo.CopyToAsync(stream);
                     }
 
-                    // Eliminar el archivo PDF anterior si existe
                     if (!string.IsNullOrEmpty(revista.Archivo))
                     {
                         string oldPdfPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", revista.Archivo.TrimStart('/'));
@@ -198,12 +197,10 @@ namespace Loboteca.Controllers
                     revista.Archivo = $"/pdf/{uniqueFileName}";
                 }
 
-                // Actualizar los datos de la revista
                 _context.Update(revista);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-<<<<<<< HEAD
             catch (DbUpdateConcurrencyException)
             {
                 if (!RevistumExists(revista.Id))
@@ -220,13 +217,8 @@ namespace Loboteca.Controllers
                 ModelState.AddModelError("", $"Error al actualizar los datos: {ex.Message}");
             }
 
-            // Volver a cargar las opciones de editoriales en caso de error
             ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", revista.IdEditorial);
             return View(revista);
-=======
-            ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", revistum.IdEditorial);
-            return View(revistum);
->>>>>>> 221e2f61ba7d513e841793ee53431e6634bcfa7e
         }
 
         // GET: Revista/Delete/5
@@ -237,15 +229,15 @@ namespace Loboteca.Controllers
                 return NotFound();
             }
 
-            var revistum = await _context.Revista
+            var revista = await _context.Revista
                 .Include(r => r.IdEditorialNavigation)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (revistum == null)
+            if (revista == null)
             {
                 return NotFound();
             }
 
-            return View(revistum);
+            return View(revista);
         }
 
         // POST: Revista/Delete/5
@@ -253,28 +245,18 @@ namespace Loboteca.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Revista == null)
+            var revista = await _context.Revista.FindAsync(id);
+            if (revista != null)
             {
-                return Problem("Entity set 'LobotecaContext.Revista' is null.");
-            }
-
-            // Obtener el registro de la revista
-            var revistum = await _context.Revista.FindAsync(id);
-            if (revistum != null)
-            {
-                // Eliminar los registros relacionados en la tabla intermedia AutorRevista
                 var autorRevistas = _context.AutorRevista.Where(ar => ar.IdRevista == id);
                 _context.AutorRevista.RemoveRange(autorRevistas);
 
-                // Eliminar la revista
-                _context.Revista.Remove(revistum);
-
-                // Guardar cambios en la base de datos
+                _context.Revista.Remove(revista);
                 await _context.SaveChangesAsync();
             }
-
             return RedirectToAction(nameof(Index));
         }
+
         private bool RevistumExists(int id)
         {
             return _context.Revista.Any(e => e.Id == id);
