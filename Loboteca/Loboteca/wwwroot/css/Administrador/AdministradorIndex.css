@@ -152,19 +152,19 @@ body {
 }
 
 .btn-success {
-    background-color: transparent;
-    color: #781c2e;
-    border: 2px solid #781c2e;
-    padding: 10px 20px;
+    background-color: #781c2e;
+    color: white;
+    padding: 8px 16px;
     border-radius: 5px;
+    border: none;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-    margin-left: 18cm;
+    font-size: 14px;
+    position: relative;
+    margin-left: 18.2cm;
 }
 
     .btn-success:hover {
-        background-color:darkolivegreen;
-        color: white;
+        opacity: 0.8;
     }
 
 /* Pie de página */

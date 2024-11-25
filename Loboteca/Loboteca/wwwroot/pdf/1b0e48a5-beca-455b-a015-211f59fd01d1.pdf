@@ -1,0 +1,6 @@
+<br />
+<b>Fatal error</b>:  Uncaught mysqli_sql_exception: Unknown column 'id' in 'where clause' in C:\xampp\htdocs\PAGINA_TAQUERIA\generar_pdf.php:44
+Stack trace:
+#0 C:\xampp\htdocs\PAGINA_TAQUERIA\generar_pdf.php(44): mysqli-&gt;query('SELECT * FROM c...')
+#1 {main}
+  thrown in <b>C:\xampp\htdocs\PAGINA_TAQUERIA\generar_pdf.php</b> on line <b>44</b><br />

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -32,22 +33,22 @@ namespace Loboteca.Controllers
                 return NotFound();
             }
 
-            var revistum = await _context.Revista
+            var revista = await _context.Revista
                 .Include(r => r.IdEditorialNavigation)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (revistum == null)
+            if (revista == null)
             {
                 return NotFound();
             }
 
-            return View(revistum);
+            return View(revista);
         }
 
         // GET: Revista/Create
         public IActionResult Create()
         {
             ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre");
-            ViewData["IdAutor"] = new SelectList(_context.Autors, "Id", "Nombre"); // Aseguramos que los autores estén disponibles
+            ViewData["IdAutor"] = new SelectList(_context.Autors, "Id", "Nombre");
             return View();
         }
 
@@ -108,38 +109,116 @@ namespace Loboteca.Controllers
             }
         }
 
-        // POST: Revista/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Titulo,Issn,FechaDePublicacion,Genero,Estado,RutaDeImagen,Archivo,FechaDeAlta,IdEditorial")] Revistum revistum)
+        // GET: Revista/Edit/5
+        public async Task<IActionResult> Edit(int? id)
         {
-            if (id != revistum.Id)
+            if (id == null || _context.Revista == null)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            var revista = await _context.Revista.FindAsync(id);
+            if (revista == null)
             {
-                try
+                return NotFound();
+            }
+
+            ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", revista.IdEditorial);
+            return View(revista);
+        }
+
+        // POST: Revista/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, Revistum revista, IFormFile Imagen, IFormFile Archivo)
+        {
+            if (id != revista.Id)
+            {
+                return NotFound();
+            }
+
+            try
+            {
+                // Procesar la imagen si se seleccionó una nueva
+                if (Imagen != null && Imagen.Length > 0)
                 {
-                    _context.Update(revistum);
-                    await _context.SaveChangesAsync();
+                    string imageFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+                    if (!Directory.Exists(imageFolder))
+                    {
+                        Directory.CreateDirectory(imageFolder);
+                    }
+
+                    string uniqueImageName = Guid.NewGuid().ToString() + Path.GetExtension(Imagen.FileName);
+                    string imagePath = Path.Combine(imageFolder, uniqueImageName);
+
+                    using (var stream = new FileStream(imagePath, FileMode.Create))
+                    {
+                        await Imagen.CopyToAsync(stream);
+                    }
+
+                    if (!string.IsNullOrEmpty(revista.RutaDeImagen))
+                    {
+                        string oldImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", revista.RutaDeImagen.TrimStart('/'));
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                    }
+
+                    revista.RutaDeImagen = $"/images/{uniqueImageName}";
                 }
-                catch (DbUpdateConcurrencyException)
+
+                // Procesar el archivo PDF si se seleccionó uno nuevo
+                if (Archivo != null && Archivo.Length > 0)
                 {
-                    if (!RevistumExists(revistum.Id))
+                    string pdfFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/pdf");
+                    if (!Directory.Exists(pdfFolder))
                     {
-                        return NotFound();
+                        Directory.CreateDirectory(pdfFolder);
                     }
-                    else
+
+                    string uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(Archivo.FileName);
+                    string pdfPath = Path.Combine(pdfFolder, uniqueFileName);
+
+                    using (var stream = new FileStream(pdfPath, FileMode.Create))
                     {
-                        throw;
+                        await Archivo.CopyToAsync(stream);
                     }
+
+                    if (!string.IsNullOrEmpty(revista.Archivo))
+                    {
+                        string oldPdfPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", revista.Archivo.TrimStart('/'));
+                        if (System.IO.File.Exists(oldPdfPath))
+                        {
+                            System.IO.File.Delete(oldPdfPath);
+                        }
+                    }
+
+                    revista.Archivo = $"/pdf/{uniqueFileName}";
                 }
+
+                _context.Update(revista);
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", revistum.IdEditorial);
-            return View(revistum);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!RevistumExists(revista.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", $"Error al actualizar los datos: {ex.Message}");
+            }
+
+            ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", revista.IdEditorial);
+            return View(revista);
         }
 
         // GET: Revista/Delete/5
@@ -150,15 +229,15 @@ namespace Loboteca.Controllers
                 return NotFound();
             }
 
-            var revistum = await _context.Revista
+            var revista = await _context.Revista
                 .Include(r => r.IdEditorialNavigation)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (revistum == null)
+            if (revista == null)
             {
                 return NotFound();
             }
 
-            return View(revistum);
+            return View(revista);
         }
 
         // POST: Revista/Delete/5
@@ -166,23 +245,21 @@ namespace Loboteca.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Revista == null)
+            var revista = await _context.Revista.FindAsync(id);
+            if (revista != null)
             {
-                return Problem("Entity set 'LobotecaContext.Revista'  is null.");
-            }
-            var revistum = await _context.Revista.FindAsync(id);
-            if (revistum != null)
-            {
-                _context.Revista.Remove(revistum);
-            }
+                var autorRevistas = _context.AutorRevista.Where(ar => ar.IdRevista == id);
+                _context.AutorRevista.RemoveRange(autorRevistas);
 
-            await _context.SaveChangesAsync();
+                _context.Revista.Remove(revista);
+                await _context.SaveChangesAsync();
+            }
             return RedirectToAction(nameof(Index));
         }
 
         private bool RevistumExists(int id)
         {
-            return (_context.Revista?.Any(e => e.Id == id)).GetValueOrDefault();
+            return _context.Revista.Any(e => e.Id == id);
         }
     }
 }
