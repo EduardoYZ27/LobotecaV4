@@ -65,8 +65,7 @@
                         <tr>
                             <td>@Html.DisplayFor(modelItem => item.FechaIngreso)</td>
                             <td>@Html.DisplayFor(modelItem => item.Ejemplares)</td>
-
-                            <td>@Html.DisplayFor(modelItem => item.IdLibroNavigation.Id)</td>
+                            <td>@Html.DisplayFor(modelItem => item.IdLibroNavigation.Titulo)</td>
 
                             <td>
                                 <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a> |
