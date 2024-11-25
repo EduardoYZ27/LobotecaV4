@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Loboteca.Models;
+using Loboteca.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<LobotecaContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("cadenaSQL"))
+
 );
+
+builder.Services.AddHttpClient<MediaWikiService>();
+builder.Services.AddHttpClient<GoogleBooksService>();
+
 
 var app = builder.Build();
 

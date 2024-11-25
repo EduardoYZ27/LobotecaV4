@@ -1,0 +1,24 @@
+﻿@model List<Loboteca.Services.BookSuggestion>
+
+<h1>Sugerencias de Libros</h1>
+
+@if (Model != null && Model.Any())
+{
+    <ul>
+        @foreach (var book in Model)
+        {
+            <li>
+                <h2>@book.Title</h2>
+                <p>@book.Description</p>
+                @if (!string.IsNullOrEmpty(book.GoogleDocsLink))
+                {
+                    <a href="@book.GoogleDocsLink" target="_blank">Leer en Google Docs</a>
+                }
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No hay sugerencias disponibles en este momento. Intenta más tarde.</p>
+}
