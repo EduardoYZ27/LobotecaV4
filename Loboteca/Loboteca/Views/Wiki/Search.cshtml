@@ -1,0 +1,26 @@
+﻿@model List<Loboteca.Services.SearchResult>
+
+<h1>Buscar en Wikipedia</h1>
+
+<form asp-action="Search" method="post">
+    <input type="text" name="query" placeholder="Ingrese un término de búsqueda" required />
+    <button type="submit">Buscar</button>
+</form>
+
+@if (Model != null && Model.Any())
+{
+    <h2>Resultados de la búsqueda:</h2>
+    <ul>
+        @foreach (var result in Model)
+        {
+            <li>
+                <a href="@result.Url" target="_blank"><strong>@result.Title</strong></a><br />
+                <span>@result.Snippet</span>
+            </li>
+        }
+    </ul>
+}
+else if (ViewBag.Message != null)
+{
+    <p>@ViewBag.Message</p>
+}
