@@ -6,11 +6,9 @@
 
 <h1>Edit</h1>
 
-<h4>Libro</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit" enctype="multipart/form-data" method="post">
+    <div class="col-md-6">
+        <form asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
 
@@ -40,18 +38,15 @@
 
             <div class="form-group">
                 <label asp-for="Estado" class="control-label"></label>
-                <input asp-for="Estado" class="form-control" />
+                <select asp-for="Estado" class="form-control">
+                    <option value="Activo" selected>Activo</option>
+                    <option value="Inactivo">Inactivo</option>
+                </select>
                 <span asp-validation-for="Estado" class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label asp-for="FechaDeAlta" class="control-label"></label>
-                <input asp-for="FechaDeAlta" type="date" class="form-control" />
-                <span asp-validation-for="FechaDeAlta" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="IdEditorial" class="control-label"></label>
+                <label asp-for="IdEditorial" class="control-label">Editorial</label>
                 <select asp-for="IdEditorial" class="form-control" asp-items="ViewBag.IdEditorial"></select>
                 <span asp-validation-for="IdEditorial" class="text-danger"></span>
             </div>
@@ -64,20 +59,13 @@
             </div>
 
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Guardar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
     <script>
         function previewImage(event) {
             const imgPreview = document.getElementById('preview');

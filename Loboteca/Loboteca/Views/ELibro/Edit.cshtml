@@ -1,74 +1,84 @@
 ﻿@model Loboteca.Models.ELibro
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit ELibro";
 }
 
-<h1>Edit</h1>
+<h1>Edit ELibro</h1>
 
-<h4>ELibro</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+    <div class="col-md-6">
+        <form asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
+
             <div class="form-group">
                 <label asp-for="Titulo" class="control-label"></label>
                 <input asp-for="Titulo" class="form-control" />
                 <span asp-validation-for="Titulo" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Isbn" class="control-label"></label>
                 <input asp-for="Isbn" class="form-control" />
                 <span asp-validation-for="Isbn" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="FechaDePublicacion" class="control-label"></label>
-                <input asp-for="FechaDePublicacion" class="form-control" />
+                <input asp-for="FechaDePublicacion" type="date" class="form-control" />
                 <span asp-validation-for="FechaDePublicacion" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Genero" class="control-label"></label>
                 <input asp-for="Genero" class="form-control" />
                 <span asp-validation-for="Genero" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Estado" class="control-label"></label>
-                <input asp-for="Estado" class="form-control" />
+                <label asp-for="Estado" class="control-label">Estado</label>
+                <select asp-for="Estado" class="form-control">
+                    <option value="Activo" selected="@Model.Estado == " Activo"">Activo</option>
+                    <option value="Inactivo" selected="@Model.Estado == " Inactivo"">Inactivo</option>
+                </select>
                 <span asp-validation-for="Estado" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="RutaDeImagen" class="control-label"></label>
-                <input asp-for="RutaDeImagen" class="form-control" />
-                <span asp-validation-for="RutaDeImagen" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Archivo" class="control-label"></label>
-                <input asp-for="Archivo" class="form-control" />
-                <span asp-validation-for="Archivo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaDeAlta" class="control-label"></label>
-                <input asp-for="FechaDeAlta" class="form-control" />
-                <span asp-validation-for="FechaDeAlta" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdEditorial" class="control-label"></label>
+                <label asp-for="IdEditorial" class="control-label">Editorial</label>
                 <select asp-for="IdEditorial" class="form-control" asp-items="ViewBag.IdEditorial"></select>
                 <span asp-validation-for="IdEditorial" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <label asp-for="RutaDeImagen" class="control-label">Imagen</label>
+                <input type="file" name="Imagen" class="form-control" accept=".jpg,.jpeg,.png,.gif" onchange="previewImage(event)" />
+                <img id="preview" src="@Model.RutaDeImagen" alt="Previsualización" style="max-width: 200px; margin-top: 10px;" />
+                <span asp-validation-for="RutaDeImagen" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Archivo" class="control-label">Archivo PDF</label>
+                <input type="file" name="Archivo" class="form-control" accept=".pdf" />
+                <span asp-validation-for="Archivo" class="text-danger"></span>
+                @if (!string.IsNullOrEmpty(Model.Archivo))
+                {
+                    <p>Archivo actual: <a href="@Model.Archivo" target="_blank">Ver archivo</a></p>
+                }
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+<script>
+    function previewImage(event) {
+        const imgPreview = document.getElementById('preview');
+        imgPreview.src = URL.createObjectURL(event.target.files[0]);
+        imgPreview.style.display = 'block';
+    }
+</script>

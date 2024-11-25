@@ -133,35 +133,102 @@ namespace Loboteca.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Titulo,Isbn,FechaDePublicacion,Genero,Estado,RutaDeImagen,Archivo,FechaDeAlta,IdEditorial")] ELibro eLibro)
+        public async Task<IActionResult> Edit(int id, ELibro eLibro, IFormFile Imagen, IFormFile Archivo)
         {
             if (id != eLibro.Id)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            using var transaction = await _context.Database.BeginTransactionAsync();
+            try
             {
-                try
+                // Obtener el registro existente
+                var existingELibro = await _context.ELibros.AsNoTracking().FirstOrDefaultAsync(e => e.Id == id);
+                if (existingELibro == null)
                 {
-                    _context.Update(eLibro);
-                    await _context.SaveChangesAsync();
+                    return NotFound();
                 }
-                catch (DbUpdateConcurrencyException)
+
+                // Validar y procesar la imagen
+                if (Imagen != null && Imagen.Length > 0)
                 {
-                    if (!ELibroExists(eLibro.Id))
+                    string imagePath = Path.Combine("wwwroot/images", Guid.NewGuid() + Path.GetExtension(Imagen.FileName));
+                    if (!Directory.Exists("wwwroot/images"))
                     {
-                        return NotFound();
+                        Directory.CreateDirectory("wwwroot/images");
                     }
-                    else
+
+                    using (var stream = new FileStream(imagePath, FileMode.Create))
                     {
-                        throw;
+                        await Imagen.CopyToAsync(stream);
+                    }
+
+                    eLibro.RutaDeImagen = imagePath.Replace("wwwroot", "").Replace("\\", "/");
+
+                    // Eliminar la imagen anterior si no es la predeterminada
+                    if (!string.IsNullOrEmpty(existingELibro.RutaDeImagen) && !existingELibro.RutaDeImagen.Contains("default.jpg"))
+                    {
+                        var oldImagePath = Path.Combine("wwwroot", existingELibro.RutaDeImagen.TrimStart('/'));
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
                     }
                 }
+                else
+                {
+                    // Si no se subió nueva imagen, mantener la existente
+                    eLibro.RutaDeImagen = existingELibro.RutaDeImagen;
+                }
+
+                // Validar y procesar el archivo PDF
+                if (Archivo != null && Archivo.Length > 0)
+                {
+                    string pdfPath = Path.Combine("wwwroot/pdf", Guid.NewGuid() + Path.GetExtension(Archivo.FileName));
+                    if (!Directory.Exists("wwwroot/pdf"))
+                    {
+                        Directory.CreateDirectory("wwwroot/pdf");
+                    }
+
+                    using (var stream = new FileStream(pdfPath, FileMode.Create))
+                    {
+                        await Archivo.CopyToAsync(stream);
+                    }
+
+                    eLibro.Archivo = pdfPath.Replace("wwwroot", "").Replace("\\", "/");
+
+                    // Eliminar el archivo PDF anterior si existe
+                    if (!string.IsNullOrEmpty(existingELibro.Archivo))
+                    {
+                        var oldPdfPath = Path.Combine("wwwroot", existingELibro.Archivo.TrimStart('/'));
+                        if (System.IO.File.Exists(oldPdfPath))
+                        {
+                            System.IO.File.Delete(oldPdfPath);
+                        }
+                    }
+                }
+                else
+                {
+                    // Si no se subió nuevo archivo, mantener el existente
+                    eLibro.Archivo = existingELibro.Archivo;
+                }
+
+                // Actualizar el registro en la base de datos
+                _context.Update(eLibro);
+                await _context.SaveChangesAsync();
+
+                // Confirmar la transacción
+                await transaction.CommitAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Id", eLibro.IdEditorial);
-            return View(eLibro);
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync();
+                ModelState.AddModelError("", $"Error al actualizar el registro: {ex.Message}");
+                ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", eLibro.IdEditorial);
+                return View(eLibro);
+            }
         }
 
         // GET: ELibro/Delete/5
@@ -190,21 +257,48 @@ namespace Loboteca.Controllers
         {
             if (_context.ELibros == null)
             {
-                return Problem("Entity set 'LobotecaContext.ELibros'  is null.");
+                return Problem("Entity set 'LobotecaContext.ELibros' is null.");
             }
+
             var eLibro = await _context.ELibros.FindAsync(id);
             if (eLibro != null)
             {
+                // Eliminar registros relacionados en la tabla intermedia AutorELibro
+                var autorELibros = _context.AutorELibros.Where(ae => ae.IdELibro == id);
+                _context.AutorELibros.RemoveRange(autorELibros);
+
+                // Eliminar la imagen asociada al eLibro (si existe y no es predeterminada)
+                if (!string.IsNullOrEmpty(eLibro.RutaDeImagen) && !eLibro.RutaDeImagen.Contains("default.jpg"))
+                {
+                    var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", eLibro.RutaDeImagen.TrimStart('/'));
+                    if (System.IO.File.Exists(imagePath))
+                    {
+                        System.IO.File.Delete(imagePath);
+                    }
+                }
+
+                // Eliminar el archivo asociado al eLibro (si existe)
+                if (!string.IsNullOrEmpty(eLibro.Archivo))
+                {
+                    var pdfPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", eLibro.Archivo.TrimStart('/'));
+                    if (System.IO.File.Exists(pdfPath))
+                    {
+                        System.IO.File.Delete(pdfPath);
+                    }
+                }
+
+                // Eliminar el registro del eLibro
                 _context.ELibros.Remove(eLibro);
             }
-            
-            await _context.SaveChangesAsync(    );
+
+            // Guardar los cambios
+            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ELibroExists(int id)
         {
-          return (_context.ELibros?.Any(e => e.Id == id)).GetValueOrDefault();
+            return _context.ELibros.Any(e => e.Id == id);
         }
     }
 }

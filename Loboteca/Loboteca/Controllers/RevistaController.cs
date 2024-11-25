@@ -24,6 +24,24 @@ namespace Loboteca.Controllers
             return View(await lobotecaContext.ToListAsync());
         }
 
+        // GET: Revista/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null || _context.Revista == null)
+            {
+                return NotFound();
+            }
+
+            var revistum = await _context.Revista.FindAsync(id);
+            if (revistum == null)
+            {
+                return NotFound();
+            }
+
+            ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", revistum.IdEditorial);
+            return View(revistum);
+        }
+
         // GET: Revista/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -111,35 +129,99 @@ namespace Loboteca.Controllers
         // POST: Revista/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Titulo,Issn,FechaDePublicacion,Genero,Estado,RutaDeImagen,Archivo,FechaDeAlta,IdEditorial")] Revistum revistum)
+        public async Task<IActionResult> Edit(int id, Revistum revista, IFormFile Imagen, IFormFile Archivo)
         {
-            if (id != revistum.Id)
+            if (id != revista.Id)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            try
             {
-                try
+                // Procesar la imagen si se seleccionó una nueva
+                if (Imagen != null && Imagen.Length > 0)
                 {
-                    _context.Update(revistum);
-                    await _context.SaveChangesAsync();
+                    string imageFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+                    if (!Directory.Exists(imageFolder))
+                    {
+                        Directory.CreateDirectory(imageFolder);
+                    }
+
+                    string uniqueImageName = Guid.NewGuid().ToString() + Path.GetExtension(Imagen.FileName);
+                    string imagePath = Path.Combine(imageFolder, uniqueImageName);
+
+                    using (var stream = new FileStream(imagePath, FileMode.Create))
+                    {
+                        await Imagen.CopyToAsync(stream);
+                    }
+
+                    // Eliminar la imagen anterior si existe y no es la predeterminada
+                    if (!string.IsNullOrEmpty(revista.RutaDeImagen) && !revista.RutaDeImagen.Contains("default.jpg"))
+                    {
+                        string oldImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", revista.RutaDeImagen.TrimStart('/'));
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                    }
+
+                    revista.RutaDeImagen = $"/images/{uniqueImageName}";
                 }
-                catch (DbUpdateConcurrencyException)
+
+                // Procesar el archivo PDF si se seleccionó uno nuevo
+                if (Archivo != null && Archivo.Length > 0)
                 {
-                    if (!RevistumExists(revistum.Id))
+                    string pdfFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/pdf");
+                    if (!Directory.Exists(pdfFolder))
                     {
-                        return NotFound();
+                        Directory.CreateDirectory(pdfFolder);
                     }
-                    else
+
+                    string uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(Archivo.FileName);
+                    string pdfPath = Path.Combine(pdfFolder, uniqueFileName);
+
+                    using (var stream = new FileStream(pdfPath, FileMode.Create))
                     {
-                        throw;
+                        await Archivo.CopyToAsync(stream);
                     }
+
+                    // Eliminar el archivo PDF anterior si existe
+                    if (!string.IsNullOrEmpty(revista.Archivo))
+                    {
+                        string oldPdfPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", revista.Archivo.TrimStart('/'));
+                        if (System.IO.File.Exists(oldPdfPath))
+                        {
+                            System.IO.File.Delete(oldPdfPath);
+                        }
+                    }
+
+                    revista.Archivo = $"/pdf/{uniqueFileName}";
                 }
+
+                // Actualizar los datos de la revista
+                _context.Update(revista);
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Id", revistum.IdEditorial);
-            return View(revistum);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!RevistumExists(revista.Id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", $"Error al actualizar los datos: {ex.Message}");
+            }
+
+            // Volver a cargar las opciones de editoriales en caso de error
+            ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", revista.IdEditorial);
+            return View(revista);
         }
 
         // GET: Revista/Delete/5
@@ -168,21 +250,29 @@ namespace Loboteca.Controllers
         {
             if (_context.Revista == null)
             {
-                return Problem("Entity set 'LobotecaContext.Revista'  is null.");
+                return Problem("Entity set 'LobotecaContext.Revista' is null.");
             }
+
+            // Obtener el registro de la revista
             var revistum = await _context.Revista.FindAsync(id);
             if (revistum != null)
             {
+                // Eliminar los registros relacionados en la tabla intermedia AutorRevista
+                var autorRevistas = _context.AutorRevista.Where(ar => ar.IdRevista == id);
+                _context.AutorRevista.RemoveRange(autorRevistas);
+
+                // Eliminar la revista
                 _context.Revista.Remove(revistum);
+
+                // Guardar cambios en la base de datos
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
         private bool RevistumExists(int id)
         {
-            return (_context.Revista?.Any(e => e.Id == id)).GetValueOrDefault();
+            return _context.Revista.Any(e => e.Id == id);
         }
     }
 }
