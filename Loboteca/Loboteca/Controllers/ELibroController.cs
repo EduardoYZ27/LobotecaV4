@@ -48,7 +48,8 @@ namespace Loboteca.Controllers
         public IActionResult Create()
         {
             ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre");
-            return View();
+            ViewData["IdAutor"] = new SelectList(_context.Autors, "Id", "Nombre");
+            return View(); ;
         }
 
         // POST: ELibro/Create
@@ -56,89 +57,56 @@ namespace Loboteca.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(ELibro eLibro, IFormFile Imagen, IFormFile Archivo)
+        public async Task<IActionResult> Create(ELibro eLibro, IFormFile Imagen, IFormFile Archivo, int IdAutor)
         {
+            using var transaction = await _context.Database.BeginTransactionAsync();
             try
             {
-                // Validar que el archivo de imagen fue enviado
+                // Validar y guardar la imagen
                 if (Imagen != null && Imagen.Length > 0)
                 {
-                    // Validar formatos permitidos para imagen
-                    var permittedImageExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
-                    var imageExtension = Path.GetExtension(Imagen.FileName).ToLowerInvariant();
-
-                    if (string.IsNullOrEmpty(imageExtension) || !permittedImageExtensions.Contains(imageExtension))
-                    {
-                        ModelState.AddModelError("RutaDeImagen", "Formato de imagen no permitido. Los formatos permitidos son: .jpg, .jpeg, .png, .gif.");
-                        ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", eLibro.IdEditorial);
-                        return View(eLibro);
-                    }
-
-                    // Guardar imagen
-                    string imageFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
-                    if (!Directory.Exists(imageFolder))
-                    {
-                        Directory.CreateDirectory(imageFolder);
-                    }
-
-                    string uniqueImageName = Guid.NewGuid().ToString() + Path.GetExtension(Imagen.FileName);
-                    string imagePath = Path.Combine(imageFolder, uniqueImageName);
-
+                    string imagePath = Path.Combine("wwwroot/images", Guid.NewGuid() + Path.GetExtension(Imagen.FileName));
                     using (var stream = new FileStream(imagePath, FileMode.Create))
                     {
                         await Imagen.CopyToAsync(stream);
                     }
-
-                    eLibro.RutaDeImagen = $"/images/{uniqueImageName}";
+                    eLibro.RutaDeImagen = imagePath.Replace("wwwroot", "").Replace("\\", "/");
                 }
 
-                // Validar que el archivo PDF fue enviado
+                // Validar y guardar el archivo PDF
                 if (Archivo != null && Archivo.Length > 0)
                 {
-                    // Validar formatos permitidos para archivo
-                    var permittedFileExtensions = new[] { ".pdf" };
-                    var fileExtension = Path.GetExtension(Archivo.FileName).ToLowerInvariant();
-
-                    if (string.IsNullOrEmpty(fileExtension) || !permittedFileExtensions.Contains(fileExtension))
-                    {
-                        ModelState.AddModelError("Archivo", "Formato de archivo no permitido. Solo se permiten archivos PDF.");
-                        ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", eLibro.IdEditorial);
-                        return View(eLibro);
-                    }
-
-                    // Guardar archivo PDF
-                    string pdfFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "pdf");
-                    if (!Directory.Exists(pdfFolder))
-                    {
-                        Directory.CreateDirectory(pdfFolder);
-                    }
-
-                    string uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(Archivo.FileName);
-                    string pdfPath = Path.Combine(pdfFolder, uniqueFileName);
-
+                    string pdfPath = Path.Combine("wwwroot/pdf", Guid.NewGuid() + Path.GetExtension(Archivo.FileName));
                     using (var stream = new FileStream(pdfPath, FileMode.Create))
                     {
                         await Archivo.CopyToAsync(stream);
                     }
-
-                    eLibro.Archivo = $"/pdf/{uniqueFileName}";
+                    eLibro.Archivo = pdfPath.Replace("wwwroot", "").Replace("\\", "/");
                 }
 
-                // Asignar valores por defecto si es necesario
-                if (eLibro.FechaDeAlta == default(DateTime))
-                {
-                    eLibro.FechaDeAlta = DateTime.Now;
-                }
-
-                // Guardar en la base de datos
-                _context.Add(eLibro);
+                // Guardar el libro electrónico
+                eLibro.FechaDeAlta = DateTime.Now;
+                _context.ELibros.Add(eLibro);
                 await _context.SaveChangesAsync();
+
+                // Crear la relación en la tabla intermedia AutorELibro
+                var autorELibro = new AutorELibro
+                {
+                    IdAutor = IdAutor,
+                    IdELibro = eLibro.Id
+                };
+                _context.AutorELibros.Add(autorELibro);
+                await _context.SaveChangesAsync();
+
+                await transaction.CommitAsync();
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
+                await transaction.RollbackAsync();
                 ModelState.AddModelError("", $"Error al guardar el registro: {ex.Message}");
                 ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", eLibro.IdEditorial);
+                ViewData["IdAutor"] = new SelectList(_context.Autors, "Id", "Nombre", IdAutor);
                 return View(eLibro);
             }
         }

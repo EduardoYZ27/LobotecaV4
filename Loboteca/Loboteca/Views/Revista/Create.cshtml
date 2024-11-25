@@ -51,6 +51,12 @@
             </div>
 
             <div class="form-group">
+                <label asp-for="IdAutor" class="control-label">Autor</label>
+                <select asp-for="IdAutor" class="form-control" asp-items="ViewBag.IdAutor"></select>
+                <span asp-validation-for="IdAutor" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
                 <label asp-for="RutaDeImagen" class="control-label">Imagen</label>
                 <input type="file" name="Imagen" class="form-control" accept=".jpg,.jpeg,.png,.gif" onchange="previewImage(event)" />
                 <img id="preview" src="#" alt="Previsualización" style="display:none; max-width: 200px; margin-top: 10px;" />
