@@ -47,7 +47,7 @@ namespace Loboteca.Controllers
         // GET: Ingresoes/Create
         public IActionResult Create()
         {
-            ViewData["IdLibro"] = new SelectList(_context.Libros, "Id", "Id");
+            ViewData["IdLibro"] = new SelectList(_context.Libros, "Id", "Titulo");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace Loboteca.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdLibro"] = new SelectList(_context.Libros, "Id", "Id", ingreso.IdLibro);
+            ViewData["IdLibro"] = new SelectList(_context.Libros, "Id", "Titulo", ingreso.IdLibro);
             return View(ingreso);
         }
 
@@ -81,7 +81,7 @@ namespace Loboteca.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdLibro"] = new SelectList(_context.Libros, "Id", "Id", ingreso.IdLibro);
+            ViewData["IdLibro"] = new SelectList(_context.Libros, "Id", "Titulo", ingreso.IdLibro);
             return View(ingreso);
         }
 
@@ -117,7 +117,7 @@ namespace Loboteca.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdLibro"] = new SelectList(_context.Libros, "Id", "Id", ingreso.IdLibro);
+            ViewData["IdLibro"] = new SelectList(_context.Libros, "Id", "Titulo", ingreso.IdLibro);
             return View(ingreso);
         }
 

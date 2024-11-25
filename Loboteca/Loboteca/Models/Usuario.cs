@@ -15,7 +15,11 @@ namespace Loboteca.Models
 
         public int Id { get; set; }
         public string Nombre { get; set; } = null!;
+
+        [Display(Name = "Apellido Paterno")]
         public string ApellidoPaterno { get; set; } = null!;
+
+        [Display(Name = "Apellido Materno")]
         public string ApellidoMaterno { get; set; } = null!;
         public string Matricula { get; set; } = null!;
         public int? IdCarrera { get; set; }

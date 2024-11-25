@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Loboteca.Models
 {
@@ -17,8 +18,14 @@ namespace Loboteca.Models
         public DateTime Fecha { get; set; }
         public string Condiciones { get; set; } = null!;
 
+
+        [Display(Name = "Administrador")]
         public virtual Administrador? IdAdministradorNavigation { get; set; }
+
+        [Display(Name = "No. de Prestamo")]
         public virtual Prestamo? IdPrestamoNavigation { get; set; }
+
+        [Display(Name = "Usuario")]
         public virtual Usuario? IdUsuarioNavigation { get; set; }
         public virtual ICollection<Sancione> Sanciones { get; set; }
     }
