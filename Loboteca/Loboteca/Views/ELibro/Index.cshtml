@@ -1,91 +1,108 @@
 ﻿@model IEnumerable<Loboteca.Models.ELibro>
 
 @{
-    ViewData["Title"] = "Index";
+    Layout = null;
 }
 
-<h1>Index</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de E-Libros - Loboteca</title>
+    <link rel="stylesheet" href="~/css/ELibro/ELibroIndex.css" />
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header>
+        <nav class="navbar">
+            <ul class="logo-left">
+                <li>
+                    <img src="~/images/logo.png" alt="Logo" class="logo">
+                </li>
+            </ul>
+            <h1>LOBOTECA</h1>
+            <ul class="account-right">
+                <li>
+                    <img src="~/images/Inicio_Admin.png" alt="Inicio" class="icono">
+                    <a href="@Url.Action("Admin", "Admin")">Inicio</a>
+                </li>
+                <li>
+                    <img src="~/images/cuenta.png" alt="Cuenta" class="icono">
+                    <a href="@Url.Action("Perfil", "Perfil")">Cuenta</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Titulo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Isbn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaDePublicacion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Genero)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Estado)
-            </th>
-            <th>
-                Imagen
-            </th>
-            <th>
-                Archivo
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaDeAlta)
-            </th>
-            <th>
-                Editorial
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Titulo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Isbn)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FechaDePublicacion)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Genero)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Estado)
-                </td>
-                <td>
-                    <img src="@item.RutaDeImagen" alt="Imagen" style="max-width: 100px; max-height: 100px;" />
-                </td>
-                <td>
-                    @if (!string.IsNullOrEmpty(item.Archivo))
+    <!-- Contenido principal -->
+    <main class="main-section">
+        <h2 class="section-title">Lista de E-Libros</h2>
+
+        <div class="button-container">
+            <a asp-action="Create" class="btn btn-primary">Crear nuevo E-Libro</a>
+        </div>
+
+        <div class="table-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.Titulo)</th>
+                        <th>@Html.DisplayNameFor(model => model.Isbn)</th>
+                        <th>@Html.DisplayNameFor(model => model.FechaDePublicacion)</th>
+                        <th>@Html.DisplayNameFor(model => model.Genero)</th>
+                        <th>@Html.DisplayNameFor(model => model.Estado)</th>
+                        <th>Imagen</th>
+                        <th>Archivo</th>
+                        <th>@Html.DisplayNameFor(model => model.FechaDeAlta)</th>
+                        <th>Editorial</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
                     {
-                        <a href="@item.Archivo" target="_blank">Ver libro</a>
+                        <tr>
+                            <td>@item.Titulo</td>
+                            <td>@item.Isbn</td>
+                            <td>@item.FechaDePublicacion.ToShortDateString()</td>
+                            <td>@item.Genero</td>
+                            <td>@item.Estado</td>
+                            <td>
+                                <img src="@item.RutaDeImagen" alt="Imagen del E-Libro" style="max-width: 100px; max-height: 100px;" />
+                            </td>
+                            <td>
+                                @if (!string.IsNullOrEmpty(item.Archivo))
+                                {
+                                    <a href="@item.Archivo" target="_blank">Ver libro</a>
+                                }
+                                else
+                                {
+                                    <span>No disponible</span>
+                                }
+                            </td>
+                            <td>@item.FechaDeAlta.ToShortDateString()</td>
+                            <td>@item.IdEditorialNavigation?.Nombre</td>
+                            <td class="acciones">
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detalles</a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
                     }
-                    else
-                    {
-                        <span>No disponible</span>
-                    }
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FechaDeAlta)
-                </td>
-                <td>
-                    @item.IdEditorialNavigation?.Nombre
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; Derechos Reservados Universidad Politécnica del Valle de Toluca</p>
+        <div class="social-icons">
+            <a href="#"><img src="~/images/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="~/images/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="~/images/email.png" alt="Correo"></a>
+        </div>
+    </footer>
+</body>
+</html>

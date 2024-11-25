@@ -98,7 +98,7 @@ body {
     margin: 20px 0; /* Añade margen arriba y abajo del botón */
 }
 
-/* Tabla de ELibros */
+/* Tabla de Revistas */
 .table-container {
     width: 80%;
     margin: 0 auto; /* Centra el contenedor de la tabla */
@@ -149,7 +149,7 @@ body {
     margin: 4px;
 }
 
-.btn-success {
+.btn-primary {
     background-color: #781c2e;
     color: white;
 }

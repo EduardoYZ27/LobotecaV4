@@ -78,55 +78,65 @@ body {
     padding: 20px;
 }
 
-    .main-section h3 {
-        text-align: center;
-    }
-
 .section-title {
     text-align: center;
     color: #781c2e;
     margin-bottom: 20px;
 }
 
-/* Contenedor de los detalles */
-.details-container {
-    width: 60%;
-    margin: 0 auto;
-    padding: 20px;
+/* Contenido de la eliminación */
+.formulario-container {
+    width: 50%;
+    margin: 40px auto;
+    padding: 30px;
     border: 2px solid #ccc;
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-dl.row dt {
-    color: #781c2e;
-    font-weight: bold;
+dl.row {
+    margin-bottom: 15px;
 }
 
-dl.row dd {
-    padding: 10px;
+dt {
+    font-weight: bold;
+    color: #781c2e;
+    margin-bottom: 5px;
+}
+
+dd {
+    margin-bottom: 15px;
 }
 
 /* Botones */
-.botones {
-    display: flex;
-    justify-content: space-between;
-    width: 50%;
-    margin: 20px auto;
-}
-
-.btn-danger, .btn-secondary {
-    background-color: #781c2e;
+.btn-danger {
+    background-color: #dc3545;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-    .btn-danger:hover, .btn-secondary:hover {
-        background-color: #993333;
+    .btn-danger:hover {
+        background-color: #c82333;
+    }
+
+.btn-secondary {
+    background-color: transparent;
+    color: #781c2e;
+    border: 2px solid #781c2e;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+    .btn-secondary:hover {
+        background-color: #781c2e;
+        color: white;
     }
 
 /* Pie de página */

@@ -3,32 +3,37 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Barra de navegación */
 .navbar {
     background-color: #781c2e;
-    padding: 10px;
+    padding: 30px;
     color: white;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
     .navbar h1 {
         color: white;
+        margin: 0;
         margin-left: 1.5cm;
     }
 
 /* Logo a la izquierda */
 .logo-left {
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
     display: flex;
     align-items: center;
     position: absolute;
     left: 10px;
+    top: 3px;
 }
 
 .logo {
@@ -65,6 +70,8 @@ body {
             color: white;
             text-decoration: none;
             font-size: 18px;
+            display: inline-block;
+            text-align: center;
         }
 
             .account-right li a:hover {
@@ -73,9 +80,10 @@ body {
                 padding: 5px;
             }
 
-/* Sección principal */
+/* Contenido principal */
 .main-section {
     padding: 20px;
+    flex: 1; /* Permite que el contenido principal ocupe el espacio restante */
 }
 
 .section-title {
@@ -84,61 +92,86 @@ body {
     margin-bottom: 20px;
 }
 
-/* Formulario */
-.formulario-altas {
-    width: 50%;
-    margin: 40px auto;
-    padding: 30px;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+/* Botón "Crear Nuevo" */
+.button-container {
+    text-align: center; /* Centra el botón "Crear Nuevo" */
+    margin: 20px 0; /* Añade margen arriba y abajo del botón */
 }
 
-h2.section-title {
-    text-align: center;
-    color: #781c2e;
-    margin-bottom: 20px;
+/* Tabla de Revistas */
+.table-container {
+    width: 80%;
+    margin: 0 auto; /* Centra el contenedor de la tabla */
+    margin-top: 20px;
+    overflow-x: auto; /* Permite el desplazamiento horizontal si es necesario */
 }
 
-.form-group {
-    margin-bottom: 15px;
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-    .form-group label {
+    .table th {
+        background-color: #781c2e;
+        color: white;
+        padding: 12px;
         font-size: 18px;
-        margin-bottom: 10px;
-        color: #781c2e;
+        border-bottom: 2px solid #ddd;
     }
 
-    .form-group input {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
+    .table td {
+        padding: 12px;
+        text-align: center;
+        font-size: 16px;
+        border-bottom: 1px solid #ddd;
     }
 
-.text-danger {
-    color: #d9534f;
+    .table tr:hover {
+        background-color: #f2f2f2;
+    }
+
+/* Botones */
+.acciones {
+    display: flex; /* Alinea los botones horizontalmente */
+    justify-content: center; /* Centra los botones en su celda */
 }
 
-.botones {
-    display: flex;
-    justify-content: space-between;
-}
-
-.btn-success, .btn-secondary {
-    background-color: #781c2e;
-    color: white;
-    padding: 10px 20px;
+.btn {
+    padding: 8px 16px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
+    font-size: 14px;
+    margin: 4px;
 }
 
-    .btn-success:hover, .btn-secondary:hover {
-        background-color: #993333;
-    }
+.btn-primary {
+    background-color: #781c2e;
+    color: white;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: white;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
 
 /* Pie de página */
 footer {
@@ -146,14 +179,21 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-    margin-top: 55px;
 }
 
-.social-icons a img {
-    width: 30px;
-    margin: 0 10px;
-}
-
-    .social-icons a img:hover {
-        opacity: 0.7;
+    footer p {
+        margin: 10px 0;
     }
+
+.social-icons {
+    margin-top: 10px;
+}
+
+    .social-icons a img {
+        width: 30px;
+        margin: 0 10px;
+    }
+
+        .social-icons a img:hover {
+            opacity: 0.7;
+        }

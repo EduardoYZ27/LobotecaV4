@@ -84,32 +84,35 @@ body {
     margin-bottom: 20px;
 }
 
-/* Contenedor de los detalles */
-.details-container {
-    width: 60%;
-    margin: 0 auto;
-    padding: 20px;
+/* Contenido de los detalles */
+.formulario-container {
+    width: 50%;
+    margin: 40px auto;
+    padding: 30px;
     border: 2px solid #ccc;
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-dl.row dt {
-    color: #781c2e;
-    font-weight: bold;
+dl.row {
+    margin-bottom: 15px;
 }
 
-dl.row dd {
-    padding: 10px;
+dt {
+    font-weight: bold;
+    color: #781c2e;
+    margin-bottom: 5px;
+}
+
+dd {
+    margin-bottom: 15px;
 }
 
 /* Botones */
 .botones {
     display: flex;
     justify-content: space-between;
-    width: 50%;
-    margin: 20px auto;
 }
 
 .btn-success, .btn-secondary {

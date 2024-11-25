@@ -88,7 +88,7 @@ body {
 .formulario-container {
     width: 50%;
     margin: 40px auto;
-    padding: 30px;
+    padding: 40px;
     border: 2px solid #ccc;
     border-radius: 10px;
     background-color: #fff;
@@ -107,8 +107,7 @@ body {
 
     .form-group input[type="text"],
     .form-group input[type="date"],
-    .form-group select,
-    .form-group input[type="file"] {
+    .form-group select {
         width: 100%;
         padding: 10px;
         border: 1px solid #ccc;
@@ -175,4 +174,3 @@ footer {
     .social-icons a img:hover {
         opacity: 0.7;
     }
-
