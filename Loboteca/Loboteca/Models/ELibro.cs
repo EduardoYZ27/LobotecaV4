@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Loboteca.Models
 {
@@ -22,6 +23,8 @@ namespace Loboteca.Models
         public string Archivo { get; set; } = null!;
         public DateTime FechaDeAlta { get; set; }
         public int? IdEditorial { get; set; }
+        [NotMapped] // Esto asegura que no se mapeará a la base de datos
+        public int IdAutor { get; set; }
 
         public virtual Editorial? IdEditorialNavigation { get; set; }
         public virtual ICollection<AutorELibro> AutorELibros { get; set; }

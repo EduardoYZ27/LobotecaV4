@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Loboteca.Models
 {
@@ -25,6 +26,8 @@ namespace Loboteca.Models
         public int? IdEditorial { get; set; }
         [BindNever] // Excluye esta propiedad de la validación inicial
         public string RutaDeImagen { get; set; } = null!;
+        [NotMapped] // Indica que no debe ser mapeado a la base de datos
+        public int IdAutor { get; set; } // Propiedad temporal para el autor
 
         public virtual Editorial? IdEditorialNavigation { get; set; }
         public virtual ICollection<AutorLibro> AutorLibros { get; set; }

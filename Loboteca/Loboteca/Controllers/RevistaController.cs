@@ -54,101 +54,56 @@ namespace Loboteca.Controllers
         // POST: Revista/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Revistum revista, IFormFile Imagen, IFormFile Archivo, int idAutor)
+        public async Task<IActionResult> Create(Revistum revista, IFormFile Imagen, IFormFile Archivo, int IdAutor)
         {
+            using var transaction = await _context.Database.BeginTransactionAsync();
             try
             {
-                // Validar la imagen
+                // Procesar imagen
                 if (Imagen != null && Imagen.Length > 0)
                 {
-                    var permittedImageExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
-                    var imageExtension = Path.GetExtension(Imagen.FileName).ToLowerInvariant();
-
-                    if (string.IsNullOrEmpty(imageExtension) || !permittedImageExtensions.Contains(imageExtension))
-                    {
-                        ModelState.AddModelError("RutaDeImagen", "Formato de imagen no permitido. Solo se permiten .jpg, .jpeg, .png y .gif.");
-                        ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", revista.IdEditorial);
-                        return View(revista);
-                    }
-
-                    string imageFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
-                    if (!Directory.Exists(imageFolder))
-                        Directory.CreateDirectory(imageFolder);
-
-                    string uniqueImageName = Guid.NewGuid().ToString() + Path.GetExtension(Imagen.FileName);
-                    string imagePath = Path.Combine(imageFolder, uniqueImageName);
-
+                    string imagePath = Path.Combine("wwwroot/images", Guid.NewGuid() + Path.GetExtension(Imagen.FileName));
                     using (var stream = new FileStream(imagePath, FileMode.Create))
+                    {
                         await Imagen.CopyToAsync(stream);
-
-                    revista.RutaDeImagen = $"/images/{uniqueImageName}";
-                }
-                else
-                {
-                    ModelState.AddModelError("RutaDeImagen", "La imagen es obligatoria.");
-                    ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", revista.IdEditorial);
-                    return View(revista);
+                    }
+                    revista.RutaDeImagen = imagePath.Replace("wwwroot", "").Replace("\\", "/");
                 }
 
-                // Validar el archivo PDF
+                // Procesar archivo PDF
                 if (Archivo != null && Archivo.Length > 0)
                 {
-                    var permittedFileExtensions = new[] { ".pdf" };
-                    var fileExtension = Path.GetExtension(Archivo.FileName).ToLowerInvariant();
-
-                    if (string.IsNullOrEmpty(fileExtension) || !permittedFileExtensions.Contains(fileExtension))
-                    {
-                        ModelState.AddModelError("Archivo", "Formato de archivo no permitido. Solo se permite .pdf.");
-                        ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", revista.IdEditorial);
-                        return View(revista);
-                    }
-
-                    string pdfFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "pdf");
-                    if (!Directory.Exists(pdfFolder))
-                        Directory.CreateDirectory(pdfFolder);
-
-                    string uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(Archivo.FileName);
-                    string pdfPath = Path.Combine(pdfFolder, uniqueFileName);
-
+                    string pdfPath = Path.Combine("wwwroot/pdf", Guid.NewGuid() + Path.GetExtension(Archivo.FileName));
                     using (var stream = new FileStream(pdfPath, FileMode.Create))
+                    {
                         await Archivo.CopyToAsync(stream);
-
-                    revista.Archivo = $"/pdf/{uniqueFileName}";
-                }
-                else
-                {
-                    ModelState.AddModelError("Archivo", "El archivo PDF es obligatorio.");
-                    ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", revista.IdEditorial);
-                    return View(revista);
+                    }
+                    revista.Archivo = pdfPath.Replace("wwwroot", "").Replace("\\", "/");
                 }
 
-                // Asignar valores por defecto si es necesario
-                if (revista.FechaDeAlta == default(DateTime))
-                    revista.FechaDeAlta = DateTime.Now;
-
-                // Guardar la revista
-                _context.Add(revista);
+                // Guardar revista
+                revista.FechaDeAlta = DateTime.Now;
+                _context.Revista.Add(revista);
                 await _context.SaveChangesAsync();
 
-                // Insertar en la tabla intermedia autor_revista después de guardar la revista
-                if (idAutor != 0)
+                // Crear relación en AutorRevista
+                var autorRevista = new AutorRevistum
                 {
-                    var autorRevista = new AutorRevistum
-                    {
-                        IdAutor = idAutor,
-                        IdRevista = revista.Id // Relacionar el autor con la revista recién creada
-                    };
+                    IdAutor = IdAutor,
+                    IdRevista = revista.Id
+                };
+                _context.AutorRevista.Add(autorRevista);
+                await _context.SaveChangesAsync();
 
-                    _context.Add(autorRevista);
-                    await _context.SaveChangesAsync(); // Guardar la relación en la tabla autor_revista
-                }
-
+                await transaction.CommitAsync();
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError("", $"Error al guardar el registro: {ex.Message}");
+                await transaction.RollbackAsync();
+                ModelState.AddModelError("", $"Error al guardar los datos: {ex.Message}");
                 ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", revista.IdEditorial);
+                ViewData["IdAutor"] = new SelectList(_context.Autors, "Id", "Nombre", IdAutor);
                 return View(revista);
             }
         }

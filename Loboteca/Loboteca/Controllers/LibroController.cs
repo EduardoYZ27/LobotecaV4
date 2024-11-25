@@ -49,68 +49,68 @@ namespace Loboteca.Controllers
         public IActionResult Create()
         {
             ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre");
+            ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre");
+            ViewData["IdAutor"] = new SelectList(_context.Autors, "Id", "Nombre");
             return View();
         }
 
         // POST: Libro/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Libro libro, IFormFile Imagen)
+        public async Task<IActionResult> Create(Libro libro, IFormFile Imagen, int IdAutor)
         {
+            using var transaction = await _context.Database.BeginTransactionAsync();
             try
             {
-                // Validar que el archivo de imagen fue enviado
-                if (Imagen == null || Imagen.Length == 0)
+                // Validar y procesar la imagen
+                if (Imagen != null && Imagen.Length > 0)
                 {
-                    ModelState.AddModelError("RutaDeImagen", "Debe seleccionar una imagen válida.");
-                    ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", libro.IdEditorial);
-                    return View(libro);
+                    string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+                    if (!Directory.Exists(uploadsFolder))
+                    {
+                        Directory.CreateDirectory(uploadsFolder);
+                    }
+
+                    string uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(Imagen.FileName);
+                    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await Imagen.CopyToAsync(stream);
+                    }
+
+                    libro.RutaDeImagen = $"/images/{uniqueFileName}";
                 }
 
-                // Validar formatos permitidos
-                var permittedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
-                var extension = Path.GetExtension(Imagen.FileName).ToLowerInvariant();
-
-                if (string.IsNullOrEmpty(extension) || !permittedExtensions.Contains(extension))
-                {
-                    ModelState.AddModelError("RutaDeImagen", "Formato de imagen no permitido. Los formatos permitidos son: .jpg, .jpeg, .png, .gif.");
-                    ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", libro.IdEditorial);
-                    return View(libro);
-                }
-
-                // Procesar la imagen
-                string uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
-
-                if (!Directory.Exists(uploadsFolder))
-                {
-                    Directory.CreateDirectory(uploadsFolder);
-                }
-
-                string uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(Imagen.FileName);
-                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await Imagen.CopyToAsync(stream);
-                }
-
-                libro.RutaDeImagen = $"/images/{uniqueFileName}";
-
-                // Asignar valores por defecto si es necesario
+                // Asignar fecha de alta si no se proporciona
                 if (libro.FechaDeAlta == default(DateTime))
                 {
                     libro.FechaDeAlta = DateTime.Now;
                 }
 
-                // Guardar en la base de datos
-                _context.Add(libro);
+                // Guardar el libro en la base de datos
+                _context.Libros.Add(libro);
                 await _context.SaveChangesAsync();
+
+                // Crear la relación en la tabla intermedia AutorLibro
+                var autorLibro = new AutorLibro
+                {
+                    IdAutor = IdAutor,
+                    IdLibro = libro.Id
+                };
+                _context.AutorLibros.Add(autorLibro);
+                await _context.SaveChangesAsync();
+
+                // Confirmar la transacción
+                await transaction.CommitAsync();
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
             {
+                await transaction.RollbackAsync();
                 ModelState.AddModelError("", $"Error al guardar el registro: {ex.Message}");
                 ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", libro.IdEditorial);
+                ViewData["IdAutor"] = new SelectList(_context.Autors, "Id", "Nombre", IdAutor);
                 return View(libro);
             }
         }
