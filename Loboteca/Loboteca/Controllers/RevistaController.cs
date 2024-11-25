@@ -203,6 +203,7 @@ namespace Loboteca.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+<<<<<<< HEAD
             catch (DbUpdateConcurrencyException)
             {
                 if (!RevistumExists(revista.Id))
@@ -222,6 +223,10 @@ namespace Loboteca.Controllers
             // Volver a cargar las opciones de editoriales en caso de error
             ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", revista.IdEditorial);
             return View(revista);
+=======
+            ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", revistum.IdEditorial);
+            return View(revistum);
+>>>>>>> 221e2f61ba7d513e841793ee53431e6634bcfa7e
         }
 
         // GET: Revista/Delete/5
