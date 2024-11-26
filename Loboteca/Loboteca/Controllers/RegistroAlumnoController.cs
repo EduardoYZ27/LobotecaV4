@@ -33,7 +33,7 @@ namespace Loboteca.Controllers
         // POST: RegistroAlumno/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> RegistroAlumno([Bind("Nombre,ApellidoPaterno,ApellidoMaterno,Matricula,Estado,Contra,IdCarrera")] Usuario usuario)
+        public async Task<IActionResult> RegistroAlumno([Bind("Nombre,ApellidoPaterno,ApellidoMaterno,Matricula,Estado,IdCarrera")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
