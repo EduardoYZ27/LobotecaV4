@@ -77,6 +77,12 @@
                         <span asp-validation-for="Estado" class="text-danger"></span>
                     </div>
 
+                    <div class="form-group">
+                        <label asp-for="Contra" class="control-label">Contraseña</label>
+                        <input asp-for="Contra" class="form-control" />
+                        <span asp-validation-for="Contra" class="text-danger"></span>
+                    </div>
+
                     <div class="botones">
                         <input type="submit" value="Guardar" class="btn-success" />
                         <a asp-action="Index" class="btn-secondary">Regresar a la lista</a>
