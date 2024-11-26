@@ -42,7 +42,7 @@
                     @foreach (var libro in ViewBag.LibrosRecientes)
                     {
                         <div class="book">
-                            <img src="@libro.RutaImagen" alt="@libro.Titulo">
+                            <img src="@libro.RutaDeImagen" alt="@libro.Titulo">
                             <!-- Botón Leer Libro -->
                             <button class="read-button" onclick="window.open('@libro.Archivo', '_blank')">Leer Libro</button>
                             <p class="available">@libro.Estado</p>
@@ -64,7 +64,7 @@
                     @foreach (var revista in ViewBag.RevistasRecientes)
                     {
                         <div class="magazine">
-                            <img src="@revista.RutaImagen" alt="@revista.Titulo">
+                            <img src="@revista.RutaDeImagen" alt="@revista.Titulo">
                             <!-- Botón Leer Revista -->
                             <button class="read-button" onclick="window.open('@revista.Archivo', '_blank')">Leer Revista</button>
                             <p class="available">@revista.Estado</p>

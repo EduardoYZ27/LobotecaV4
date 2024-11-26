@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Loboteca.Models;
-using System.Linq;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Loboteca.Models;
 
-namespace Loboteca1.Controllers
+namespace Loboteca.Controllers
 {
     public class MecanicaController : Controller
     {
@@ -18,7 +21,7 @@ namespace Loboteca1.Controllers
         public IActionResult Mecanica()
         {
             // Suponiendo que el ID de la carrera de Mecánica es 5
-            var idCarreraMecanica = 3;
+            var idCarreraMecanica = 2;
 
             // Obtener los 6 libros más recientes para la carrera de Mecánica
             var librosRecientes = _context.ELibros

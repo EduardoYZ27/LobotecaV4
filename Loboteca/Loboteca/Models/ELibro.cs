@@ -19,7 +19,10 @@ namespace Loboteca.Models
 
         [Display(Name = "Fecha de Publicación")]
         public DateTime FechaDePublicacion { get; set; }
-        public string Genero { get; set; } = null!;
+
+        [Required(ErrorMessage = "Seleccione un género válido.")]
+        public string Genero { get; set; }
+
         public string Estado { get; set; } = null!;
         [BindNever] // Excluye esta propiedad de la validación inicial
         public string RutaDeImagen { get; set; } = null!;

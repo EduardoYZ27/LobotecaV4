@@ -1,11 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Loboteca.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Loboteca.Controllers
 {
@@ -49,12 +50,10 @@ namespace Loboteca.Controllers
         {
             ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre");
             ViewData["IdAutor"] = new SelectList(_context.Autors, "Id", "Nombre");
-            return View(); ;
+            return View();
         }
 
         // POST: ELibro/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ELibro eLibro, IFormFile Imagen, IFormFile Archivo, int IdAutor)
@@ -124,13 +123,11 @@ namespace Loboteca.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Id", eLibro.IdEditorial);
+            ViewData["IdEditorial"] = new SelectList(_context.Editorials, "Id", "Nombre", eLibro.IdEditorial);
             return View(eLibro);
         }
 
         // POST: ELibro/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, ELibro eLibro, IFormFile Imagen, IFormFile Archivo)
@@ -154,31 +151,14 @@ namespace Loboteca.Controllers
                 if (Imagen != null && Imagen.Length > 0)
                 {
                     string imagePath = Path.Combine("wwwroot/images", Guid.NewGuid() + Path.GetExtension(Imagen.FileName));
-                    if (!Directory.Exists("wwwroot/images"))
-                    {
-                        Directory.CreateDirectory("wwwroot/images");
-                    }
-
                     using (var stream = new FileStream(imagePath, FileMode.Create))
                     {
                         await Imagen.CopyToAsync(stream);
                     }
-
                     eLibro.RutaDeImagen = imagePath.Replace("wwwroot", "").Replace("\\", "/");
-
-                    // Eliminar la imagen anterior si no es la predeterminada
-                    if (!string.IsNullOrEmpty(existingELibro.RutaDeImagen) && !existingELibro.RutaDeImagen.Contains("default.jpg"))
-                    {
-                        var oldImagePath = Path.Combine("wwwroot", existingELibro.RutaDeImagen.TrimStart('/'));
-                        if (System.IO.File.Exists(oldImagePath))
-                        {
-                            System.IO.File.Delete(oldImagePath);
-                        }
-                    }
                 }
                 else
                 {
-                    // Si no se subió nueva imagen, mantener la existente
                     eLibro.RutaDeImagen = existingELibro.RutaDeImagen;
                 }
 
@@ -186,39 +166,21 @@ namespace Loboteca.Controllers
                 if (Archivo != null && Archivo.Length > 0)
                 {
                     string pdfPath = Path.Combine("wwwroot/pdf", Guid.NewGuid() + Path.GetExtension(Archivo.FileName));
-                    if (!Directory.Exists("wwwroot/pdf"))
-                    {
-                        Directory.CreateDirectory("wwwroot/pdf");
-                    }
-
                     using (var stream = new FileStream(pdfPath, FileMode.Create))
                     {
                         await Archivo.CopyToAsync(stream);
                     }
-
                     eLibro.Archivo = pdfPath.Replace("wwwroot", "").Replace("\\", "/");
-
-                    // Eliminar el archivo PDF anterior si existe
-                    if (!string.IsNullOrEmpty(existingELibro.Archivo))
-                    {
-                        var oldPdfPath = Path.Combine("wwwroot", existingELibro.Archivo.TrimStart('/'));
-                        if (System.IO.File.Exists(oldPdfPath))
-                        {
-                            System.IO.File.Delete(oldPdfPath);
-                        }
-                    }
                 }
                 else
                 {
-                    // Si no se subió nuevo archivo, mantener el existente
                     eLibro.Archivo = existingELibro.Archivo;
                 }
 
-                // Actualizar el registro en la base de datos
+                // Actualizar el registro
                 _context.Update(eLibro);
                 await _context.SaveChangesAsync();
 
-                // Confirmar la transacción
                 await transaction.CommitAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -267,20 +229,20 @@ namespace Loboteca.Controllers
                 var autorELibros = _context.AutorELibros.Where(ae => ae.IdELibro == id);
                 _context.AutorELibros.RemoveRange(autorELibros);
 
-                // Eliminar la imagen asociada al eLibro (si existe y no es predeterminada)
+                // Eliminar la imagen asociada al eLibro
                 if (!string.IsNullOrEmpty(eLibro.RutaDeImagen) && !eLibro.RutaDeImagen.Contains("default.jpg"))
                 {
-                    var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", eLibro.RutaDeImagen.TrimStart('/'));
+                    var imagePath = Path.Combine("wwwroot", eLibro.RutaDeImagen.TrimStart('/'));
                     if (System.IO.File.Exists(imagePath))
                     {
                         System.IO.File.Delete(imagePath);
                     }
                 }
 
-                // Eliminar el archivo asociado al eLibro (si existe)
+                // Eliminar el archivo asociado al eLibro
                 if (!string.IsNullOrEmpty(eLibro.Archivo))
                 {
-                    var pdfPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", eLibro.Archivo.TrimStart('/'));
+                    var pdfPath = Path.Combine("wwwroot", eLibro.Archivo.TrimStart('/'));
                     if (System.IO.File.Exists(pdfPath))
                     {
                         System.IO.File.Delete(pdfPath);

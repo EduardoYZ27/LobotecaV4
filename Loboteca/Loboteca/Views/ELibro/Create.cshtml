@@ -60,9 +60,19 @@
 
                 <div class="form-group">
                     <label asp-for="Genero" class="control-label">Género</label>
-                    <input asp-for="Genero" class="form-control" />
+                    <select asp-for="Genero" class="form-control">
+                        <option value="">Seleccione una opción</option>
+                        <option value="Bioquimica">Bioquímica</option>
+                        <option value="Automotriz">Automotriz</option>
+                        <option value="Gestion Industrial">Gestión Industrial</option>
+                        <option value="Programación">Programación</option>
+                        <option value="Energia">Energía</option>
+                        <option value="Robotica y Mecatronica">Robótica y Mecatrónica</option>
+                        <option value="Aduanas">Aduanas</option>
+                    </select>
                     <span asp-validation-for="Genero" class="text-danger"></span>
                 </div>
+
 
                 <div class="form-group">
                     <label asp-for="Estado" class="control-label">Estado</label>
