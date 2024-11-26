@@ -21,7 +21,7 @@ namespace Loboteca.Controllers
         public IActionResult Biotecnologia()
         {
             // Filtramos los 6 libros más recientes que pertenecen a la carrera de Biotecnología (suponiendo IdCarrera = 5)
-            var generosLibros = new List<string> { "Bioquimica", "Programación" };
+            var generosLibros = new List<string> { "Bioquimica", "Programación", "Tronco Comun" };
             var librosRecientes = _context.ELibros
                 .Where(l => generosLibros.Contains(l.Genero))
                 .OrderByDescending(l => l.Id)
@@ -29,7 +29,7 @@ namespace Loboteca.Controllers
                 .ToList();
 
             // Filtramos las 6 revistas más recientes que pertenecen a la carrera de Biotecnología
-            var generosRevistas = new List<string> { "Bioquimica", "Programacion" };
+            var generosRevistas = new List<string> { "Bioquimica", "Programacion", "Tronco Comun" };
             var revistasRecientes = _context.Revista
                 .Where(r => generosRevistas.Contains(r.Genero))
                 .OrderByDescending(r => r.Id)

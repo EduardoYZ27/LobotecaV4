@@ -35,22 +35,21 @@
         <section class="books-section">
             <div class="section-title">
                 <h2>Libros</h2>
-            </div>
-            <div class="carousel-container">
-                <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
-                <div class="carousel">
-                    @foreach (var libro in ViewBag.LibrosRecientes)
-                    {
-                        <div class="book">
-                            <img src="@libro.RutaDeImagen" alt="@libro.Titulo">
-                            <!-- Botón Leer Libro -->
-                            <button class="read-button" onclick="window.open('@libro.Archivo', '_blank')">Leer Libro</button>
-                            <p class="available">@libro.Estado</p>
-                        </div>
-                    }
+                <div class="carousel-container">
+                    <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
+                    <div class="carousel">
+                        @foreach (var libro in ViewBag.LibrosRecientes)
+                        {
+                            <div class="book">
+                                <a href="@libro.Archivo" target="_blank">
+                                    <img src="@libro.RutaDeImagen" alt="@libro.Titulo">
+                                </a>
+                                <p class="available">@libro.Estado</p>
+                            </div>
+                        }
+                    </div>
+                    <button class="next" onclick="moveCarousel(1)">&#10095;</button>
                 </div>
-                <button class="next" onclick="moveCarousel(1)">&#10095;</button>
-            </div>
         </section>
 
         <!-- Sección de Revistas -->

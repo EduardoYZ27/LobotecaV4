@@ -41,9 +41,9 @@
                     @foreach (var libro in ViewBag.LibrosRecientes)
                     {
                         <div class="book">
-                            <img src="@libro.RutaDeImagen" alt="@libro.Titulo">
-                            <!-- Botón Leer Libro -->
-                            <button class="read-button" onclick="window.open('@libro.Archivo', '_blank')">Leer Libro</button>
+                            <a href="@libro.Archivo" target="_blank">
+                                <img src="@libro.RutaDeImagen" alt="@libro.Titulo">
+                            </a>
                             <p class="available">@libro.Estado</p>
                         </div>
                     }

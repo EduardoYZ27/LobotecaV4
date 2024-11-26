@@ -48,12 +48,13 @@
             <div class="carousel-container">
                 <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
                 <div class="carousel">
-                    @foreach (var libro in ViewBag.LibrosMatematicas)
+                    @foreach (var libro in ViewBag.LibrosRecientes)
                     {
                         <div class="book">
-                            <img src="@libro.RutaImagen" alt="@libro.Titulo">
+                            <a href="@libro.Archivo" target="_blank">
+                                <img src="@libro.RutaDeImagen" alt="@libro.Titulo">
+                            </a>
                             <p class="available">@libro.Estado</p>
-                            <button class="read-button" onclick="window.open('@libro.Archivo', '_blank')">Leer Libro</button>
                         </div>
                     }
                 </div>

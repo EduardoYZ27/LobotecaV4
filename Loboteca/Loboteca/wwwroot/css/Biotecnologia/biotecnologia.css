@@ -91,18 +91,23 @@ body {
 .book, .magazine {
     margin: 0 10px;
     text-align: center;
-    transition: transform 0.5s ease-in-out;
     width: 200px; /* Ancho fijo para las imágenes */
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
 }
 
+    /* Imagen del libro */
     .book img, .magazine img {
         width: 100%; /* Las imágenes ocuparán todo el ancho del contenedor */
         height: 250px; /* Altura fija para las imágenes */
         object-fit: cover; /* Mantiene las proporciones */
-        border-radius: 10px;
+        border-radius: 10px; /* Bordes redondeados */
         border: 2px solid #008000; /* Borde verde */
+        
     }
 
+    /* Texto de estado del libro */
     .book p, .magazine p {
         margin-top: 10px;
         color: #008000; /* Texto verde para disponibilidad */
@@ -110,6 +115,7 @@ body {
         font-size: 14px;
     }
 
+/* Botones de navegación del carrusel */
 button.prev, button.next {
     background-color: #008000;
     border: none;
@@ -128,72 +134,6 @@ button.prev {
 
 button.next {
     right: 10px;
-}
-
-/* Estilo del botón "Leer Libro" */
-.book .read-button {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #4CAF50; /* Color amarillo */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    box-shadow: 0 4px #999; /* Sombra para el efecto 3D */
-    transition: 0.3s ease;
-}
-
-.book:hover .read-button {
-    display: block;
-}
-
-.read-button:hover {
-    background-color: #4CAF50; /* Un tono más oscuro de amarillo al hacer hover */
-    box-shadow: 0 2px #666; /* Sombra más pequeña en hover */
-    transform: translate(-50%, -50%) translateY(2px); /* Efecto de presionar hacia abajo */
-}
-
-.read-button:active {
-    box-shadow: 0 0 #666; /* Sin sombra al presionar */
-    transform: translate(-50%, -50%) translateY(4px); /* Se presiona más al hacer clic */
-}
-
-/* Estilo del botón "Leer Revista" */
-.magazine .read-button {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #4CAF50; /* Color amarillo */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    box-shadow: 0 4px #999; /* Sombra para el efecto 3D */
-    transition: 0.3s ease;
-}
-
-.magazine:hover .read-button {
-    display: block;
-}
-
-.magazine .read-button:hover {
-    background-color: #4CAF50; /* Un tono más oscuro de amarillo al hacer hover */
-    box-shadow: 0 2px #666; /* Sombra más pequeña en hover */
-    transform: translate(-50%, -50%) translateY(2px); /* Efecto de presionar hacia abajo */
-}
-
-.magazine .read-button:active {
-    box-shadow: 0 0 #666; /* Sin sombra al presionar */
-    transform: translate(-50%, -50%) translateY(4px); /* Se presiona más al hacer clic */
 }
 
 /* Footer Styles */
