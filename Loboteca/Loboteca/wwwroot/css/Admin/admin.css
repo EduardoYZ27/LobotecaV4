@@ -15,7 +15,7 @@ body {
 }
 
 .sidebar {
-    width: 200px; /* Reduce el ancho de la barra lateral */
+    width: 180px; /* Reduce el ancho de la barra lateral */
     padding-top: 10px; /* Ajusta el padding superior */
 }
 
@@ -73,7 +73,7 @@ body {
     width: 250px;
     background-color: #781c2e;
     padding-top: 20px;
-    height: 140vh; /* Asegura que la barra lateral ocupe toda la altura de la ventana */
+    height: 103vh; /* Asegura que la barra lateral ocupe toda la altura de la ventana */
 }
 
 footer {
