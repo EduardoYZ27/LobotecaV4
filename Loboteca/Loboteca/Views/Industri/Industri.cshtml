@@ -51,22 +51,25 @@
             </div>
         </section>
 
+        <!-- Sección de Revistas -->
         <section class="magazines-section" id="revistas">
             <div class="section-title">
                 <h2>Revistas</h2>
-            </div>
-            <div class="carousel-container">
-                <button class="prev" onclick="moveCarouselMagazines(-1)">&#10094;</button>
-                <div class="carousel">
-                    @foreach (var revista in ViewBag.RevistasRecientes)
-                    {
-                        <div class="magazine">
-                            <img src="@revista.RutaDeImagen" alt="@revista.Titulo">
-                            <p class="available">@revista.Estado</p>
-                        </div>
-                    }
+                <div class="carousel-container">
+                    <button class="prev" onclick="moveCarouselMagazines(-1)">&#10094;</button>
+                    <div class="carousel">
+                        @foreach (var revista in ViewBag.RevistasRecientes)
+                        {
+                            <div class="magazine">
+                                <a href="@revista.Archivo" target="_blank">
+                                    <img src="@revista.RutaDeImagen" alt="@revista.Titulo">
+                                </a>
+                                <p class="available">@revista.Estado</p>
+                            </div>
+                        }
+                    </div>
+                    <button class="next" onclick="moveCarouselMagazines(1)">&#10095;</button>
                 </div>
-                <button class="next" onclick="moveCarouselMagazines(1)">&#10095;</button>
             </div>
         </section>
     </main>

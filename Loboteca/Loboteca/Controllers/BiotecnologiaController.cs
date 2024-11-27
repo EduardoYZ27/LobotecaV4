@@ -29,7 +29,7 @@ namespace Loboteca.Controllers
                 .ToList();
 
             // Filtramos las 6 revistas más recientes que pertenecen a la carrera de Biotecnología
-            var generosRevistas = new List<string> { "Bioquimica", "Programacion", "Tronco Comun" };
+            var generosRevistas = new List<string> { "Bioquimica", "Programación", "Tronco Comun" };
             var revistasRecientes = _context.Revista
                 .Where(r => generosRevistas.Contains(r.Genero))
                 .OrderByDescending(r => r.Id)

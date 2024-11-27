@@ -17,49 +17,27 @@ namespace Loboteca1.Controllers
         // Mantén el nombre de la acción como TroncoComun para que coincida con el nombre de la vista
         public IActionResult TroncoComun()
         {
-            // Filtrar los libros que pertenecen al género "Matemáticas"
-            var librosMatematicas = _context.ELibros
-                .Where(l => l.Genero.ToLower() == "matematicas")
-                .OrderByDescending(l => l.FechaDePublicacion)
-                .Take(6) // Solo tomamos los 6 más recientes
-                .ToList();
-
-            // Filtrar los libros que pertenecen al género "Física"
-            var librosFisica = _context.ELibros
-                .Where(l => l.Genero.ToLower() == "fisica")
-                .OrderByDescending(l => l.FechaDePublicacion)
+            // Filtramos los 6 libros más recientes que pertenecen a la carrera de Biotecnología (suponiendo IdCarrera = 5)
+            var generosLibros = new List<string> { "Tronco Comun" };
+            var librosRecientes = _context.ELibros
+                .Where(l => generosLibros.Contains(l.Genero))
+                .OrderByDescending(l => l.Id)
                 .Take(6)
                 .ToList();
 
-            // Filtrar los libros que pertenecen al género "Química"
-            var librosQuimica = _context.ELibros
-                .Where(l => l.Genero.ToLower() == "quimica")
-                .OrderByDescending(l => l.FechaDePublicacion)
+            // Filtramos las 6 revistas más recientes que pertenecen a la carrera de Biotecnología
+            var generosRevistas = new List<string> { "Tronco Comun" };
+            var revistasRecientes = _context.Revista
+                .Where(r => generosRevistas.Contains(r.Genero))
+                .OrderByDescending(r => r.Id)
                 .Take(6)
                 .ToList();
 
-            // Filtrar los libros que pertenecen al género "Economía y Administración"
-            var librosEconomia = _context.ELibros
-                .Where(l => l.Genero.ToLower() == "economía y administración")
-                .OrderByDescending(l => l.FechaDePublicacion)
-                .Take(6)
-                .ToList();
+            // Pasamos los datos a la vista
+            ViewBag.LibrosRecientes = librosRecientes;
+            ViewBag.RevistasRecientes = revistasRecientes;
 
-            // Filtrar los libros que pertenecen al género "Comunicación y Habilidades Blandas"
-            var librosComunicacion = _context.ELibros
-                .Where(l => l.Genero.ToLower() == "comunicación y habilidades blandas")
-                .OrderByDescending(l => l.FechaDePublicacion)
-                .Take(6)
-                .ToList();
-
-            // Pasamos los libros a la vista utilizando ViewBag
-            ViewBag.LibrosMatematicas = librosMatematicas;
-            ViewBag.LibrosFisica = librosFisica;
-            ViewBag.LibrosQuimica = librosQuimica;
-            ViewBag.LibrosEconomia = librosEconomia;
-            ViewBag.LibrosComunicacion = librosComunicacion;
-
-            return View(); // Aquí especifica que busque la vista "TroncoComun"
+            return View();
         }
     }
 }
