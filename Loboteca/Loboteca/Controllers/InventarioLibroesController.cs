@@ -55,9 +55,10 @@ namespace Loboteca.Controllers
             }
 
             var inventarioLibro = await _context.InventarioLibros
-                .Include(i => i.IdInventarioNavigation)
-                .Include(i => i.IdLibroNavigation)
+                .Include(i => i.IdInventarioNavigation) // Cargar relación con Inventario
+                .Include(i => i.IdLibroNavigation)     // Cargar relación con Libro
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (inventarioLibro == null)
             {
                 return NotFound();

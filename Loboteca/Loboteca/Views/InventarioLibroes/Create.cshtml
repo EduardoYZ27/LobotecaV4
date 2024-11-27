@@ -1,9 +1,5 @@
 ﻿@model Loboteca.Models.InventarioLibro
 
-@{
-    Layout = null;
-}
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -35,36 +31,49 @@
     <main class="main-section">
         <h2 class="section-title">Crear Inventario de Libro</h2>
 
-        <div class="row formulario-altas">
-            <form asp-action="Create">
+        <div class="form-container">
+            <form asp-action="Create" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
                 <div class="form-group">
-                    <label asp-for="IdInventario" class="control-label">ID Inventario</label>
-                    <select asp-for="IdInventario" class="form-control" asp-items="ViewBag.IdInventario"></select>
-                </div>
-                <div class="form-group">
-                    <label asp-for="IdLibro" class="control-label">ID Libro</label>
+                    <label asp-for="IdLibro" class="control-label">Libro</label>
                     <select asp-for="IdLibro" class="form-control" asp-items="ViewBag.IdLibro"></select>
+                    <span asp-validation-for="IdLibro" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
                     <label asp-for="FechaApertura" class="control-label">Fecha de Apertura</label>
-                    <input asp-for="FechaApertura" class="form-control" />
+                    <input asp-for="FechaApertura" class="form-control" type="date" />
                     <span asp-validation-for="FechaApertura" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
                     <label asp-for="FechaCierre" class="control-label">Fecha de Cierre</label>
-                    <input asp-for="FechaCierre" class="form-control" />
+                    <input asp-for="FechaCierre" class="form-control" type="date" />
                     <span asp-validation-for="FechaCierre" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
                     <label asp-for="InventarioTipo" class="control-label">Tipo de Inventario</label>
-                    <input asp-for="InventarioTipo" class="form-control" />
+                    <select asp-for="InventarioTipo" class="form-control">
+                        <option value="Inicial">Inicial</option>
+                        <option value="General">General</option>
+                    </select>
                     <span asp-validation-for="InventarioTipo" class="text-danger"></span>
                 </div>
-                <div class="botones">
-                    <input type="submit" value="Crear" class="btn btn-success" />
-                    <a asp-action="Index" class="btn btn-secondary">Regresar a la lista</a>
+
+                <div class="form-group">
+                    <label for="cantidadReal" class="control-label">Cantidad Real</label>
+                    <input id="cantidadReal" name="cantidadReal" class="form-control" type="number" min="0" />
                 </div>
+
+                <div class="form-group">
+                    <label for="observaciones" class="control-label">Observaciones</label>
+                    <textarea id="observaciones" name="observaciones" class="form-control" rows="3"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Crear</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
             </form>
         </div>
     </main>
