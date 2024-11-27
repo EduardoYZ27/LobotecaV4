@@ -1,26 +1,66 @@
 ﻿@model List<Loboteca.Services.SearchResult>
 
-<h1>Buscar en Wikipedia</h1>
+@{
+    Layout = null;
+}
 
-<form asp-action="Search" method="post">
-    <input type="text" name="query" placeholder="Ingrese un término de búsqueda" required />
-    <button type="submit">Buscar</button>
-</form>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar en Wikipedia - Loboteca</title>
+    <link rel="stylesheet" href="~/css/Sugerencias/sugerencias.css" />
+</head>
+<body>
+    <!-- Encabezado principal -->
+    <header>
+        <nav class="navbar">
+            <ul class="logo-left">
+                <li>
+                    <img src="~/images/logo.png" alt="Logo" class="logo">
+                </li>
+            </ul>
+            <h1>LOBOTECA</h1>
+        </nav>
+    </header>
 
-@if (Model != null && Model.Any())
-{
-    <h2>Resultados de la búsqueda:</h2>
-    <ul>
-        @foreach (var result in Model)
+    <!-- Contenido principal -->
+    <main class="main-section">
+        <h2 class="section-title">Buscar en Wikipedia</h2>
+
+        <form asp-action="Search" method="post" class="search-form">
+            <input type="text" name="query" placeholder="Ingrese un término de búsqueda" required class="search-input" />
+            <button type="submit" class="btn-search">Buscar</button>
+        </form>
+
+        @if (Model != null && Model.Any())
         {
-            <li>
-                <a href="@result.Url" target="_blank"><strong>@result.Title</strong></a><br />
-                <span>@result.Snippet</span>
-            </li>
+            <h3 class="search-results-title">Resultados de la búsqueda:</h3>
+            <ul class="search-results">
+                @foreach (var result in Model)
+                {
+                    <li class="search-result-item">
+                        <a href="@result.Url" target="_blank" class="result-link"><strong>@result.Title</strong></a><br />
+                        <span class="result-snippet">@result.Snippet</span>
+                    </li>
+                }
+            </ul>
         }
-    </ul>
-}
-else if (ViewBag.Message != null)
-{
-    <p>@ViewBag.Message</p>
-}
+        else if (ViewBag.Message != null)
+        {
+            <p class="no-results">@ViewBag.Message</p>
+        }
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; Derechos Reservados Universidad Politécnica del Valle de Toluca</p>
+        <div class="social-icons">
+            <a href="#"><img src="~/images/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="~/images/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="~/images/email.png" alt="Correo"></a>
+        </div>
+    </footer>
+</body>
+</html>
