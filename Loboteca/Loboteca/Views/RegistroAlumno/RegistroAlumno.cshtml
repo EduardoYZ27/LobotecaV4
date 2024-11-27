@@ -83,6 +83,16 @@
                 <!-- Estado (campo oculto para evitar edición) -->
                 <input asp-for="Estado" type="hidden" value="Activo" />
 
+
+                <div class="form-group">
+                    <label for="Contra" class="control-label">Contraseña</label>
+                    <input asp-for="Contra" class="form-control" required />
+                    <span asp-validation-for="Contra" class="text-danger"></span>
+                </div>
+
+                <!-- Estado (campo oculto para evitar edición) -->
+                <input asp-for="Rol" type="hidden" value="Alumno" />
+
                 <!-- Selección de Carrera -->
                 <div class="form-group">
                     <label for="IdCarrera" class="control-label">Carrera</label>

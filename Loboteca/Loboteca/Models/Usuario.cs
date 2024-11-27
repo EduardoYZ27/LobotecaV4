@@ -24,6 +24,8 @@ namespace Loboteca.Models
         public string Matricula { get; set; } = null!;
         public int? IdCarrera { get; set; }
         public string Estado { get; set; } = null!;
+        public string Contra { get; set; } = null!;
+        public string Rol { get; set; } = null!;
 
         [Display(Name = "Carrera")]
         public virtual Carrera? IdCarreraNavigation { get; set; }

@@ -83,16 +83,39 @@
                     <button type="button" id="download-qr" class="btn btn-primary">Descargar QR</button>
                 </div>
 
+             
+
                 <div class="form-group">
                     <label asp-for="IdCarrera" class="control-label">Carrera</label>
-                    <select asp-for="IdCarrera" class="form-control" asp-items="ViewBag.IdCarrera"></select>
+                    <select asp-for="IdCarrera" class="form-control" asp-items="ViewBag.IdCarrera">
+                        <option value="">No Aplica</option> <!-- Opción adicional -->
+                    </select>
                 </div>
 
                 <div class="form-group">
                     <label asp-for="Estado" class="control-label">Estado</label>
-                    <input asp-for="Estado" class="form-control" />
+                    <select asp-for="Estado" class="form-control">
+                        <option value="Activo">Activo</option>
+                        <option value="Inactivo">Inactivo</option>
+                    </select>
                     <span asp-validation-for="Estado" class="text-danger"></span>
                 </div>
+
+                <div class="form-group">
+                    <label asp-for="Contra" class="control-label">Contraseña</label>
+                    <input asp-for="Contra" class="form-control" />
+                    <span asp-validation-for="Contra" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Rol" class="control-label">Rol</label>
+                    <select asp-for="Rol" class="form-control">
+                        <option value="Alumno">Alumno</option>
+                        <option value="Admin">Admin</option>
+                    </select>
+                    <span asp-validation-for="Rol" class="text-danger"></span>
+                </div>
+
 
                 <div class="botones">
                     <input type="submit" value="Crear" class="btn-success" />

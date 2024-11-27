@@ -20,6 +20,8 @@ namespace Loboteca.Models
         public string? Matricula { get; set; }
         public int? IdCarrera { get; set; }
         public string? Estado { get; set; }
+        public string Contra { get; set; } = null!;
+        public string Rol { get; set; } = null!;
 
         // Relación con la carrera
         public virtual Carrera? IdCarreraNavigation { get; set; }

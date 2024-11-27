@@ -52,6 +52,9 @@
                         <th>@Html.DisplayNameFor(model => model.ApellidoMaterno)</th>
                         <th>@Html.DisplayNameFor(model => model.Matricula)</th>
                         <th>@Html.DisplayNameFor(model => model.Estado)</th>
+                        <th>@Html.DisplayNameFor(model => model.Contra)</th>
+                        <th>@Html.DisplayNameFor(model => model.Rol)</th>
+
                         <th>@Html.DisplayNameFor(model => model.IdCarreraNavigation)</th>
                         <th>Acciones</th>
                     </tr>
@@ -65,6 +68,9 @@
                             <td>@Html.DisplayFor(modelItem => item.ApellidoMaterno)</td>
                             <td>@Html.DisplayFor(modelItem => item.Matricula)</td>
                             <td>@Html.DisplayFor(modelItem => item.Estado)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Contra)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Rol)</td>
+
                             <td>@Html.DisplayFor(modelItem => item.IdCarreraNavigation.Nombre)</td>
                             <td>
                                 <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a> |

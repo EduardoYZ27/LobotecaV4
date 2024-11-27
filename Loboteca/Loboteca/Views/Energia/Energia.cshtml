@@ -23,7 +23,7 @@
                 <li><img src="~/images/revistaE.png" alt="Revistas" class="revistas"><a href="#revistas">Revistas</a></li>
                 <li><img src="~/images/sancionesE.png" alt="Sanciones" class="sanciones"><a href="@Url.Action("Sanciones", "Sanciones")">Sanciones</a></li>
                 <li><img src="~/images/login_ama.png" alt="Perfil" class="perfil"><a href="@Url.Action("Info_user", "Info_user")">Perfil</a></li>
-                <li><button class="logout-button" id="logoutButton">Cerrar Sesión</button></li> <!-- Botón de cerrar sesión -->
+                <li><button class="btn-logout" onclick="window.location.href='@Url.Action("Logout", "Login")'">Cerrar Sesión</button></li>
 
             </ul>
         </nav>

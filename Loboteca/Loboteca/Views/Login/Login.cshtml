@@ -9,18 +9,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión - Loboteca</title>
     <link rel="stylesheet" href="~/css/login.css"> <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Carga jQuery -->
-    <script src="~/js/html5-qrcode.min.js"></script> <!-- Enlaza el archivo local de html5-qrcode -->
-    <script src="~/js/qr-reader-2.js"></script> <!-- Enlaza tu archivo JavaScript -->
+    <script src="~/js/html5-qrcode.min.js"></script> <!-- Tu librería QR -->
 
     <style>
         /* Estilos para el lector QR */
         #reader {
-            width: 300px; /* Ajusta el ancho como necesites */
-            height: 300px; /* Ajusta la altura como necesites */
-            display: none; /* Oculto por defecto */
-            margin-top: 20px; /* Espacio superior */
-            border: 1px solid #ccc; /* Borde opcional para el contenedor */
+            width: 300px;
+            height: 300px;
+            display: none;
+            margin-top: 20px;
+            border: 1px solid #ccc;
         }
     </style>
 </head>
@@ -31,44 +32,123 @@
         </div>
         <div class="right-panel">
             <h2>Iniciar sesión</h2>
-            @if (ViewBag.ErrorMessage != null)
+
+            <!-- Mostrar alertas -->
+            @if (TempData["SuccessMessage"] != null)
             {
-                <div class="error-message">
-                    @ViewBag.ErrorMessage
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    @TempData["SuccessMessage"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             }
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    @TempData["ErrorMessage"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
+            <!-- Formulario -->
             <form method="post" id="loginForm">
                 <div class="form-group">
-                    <label for="username">Usuario</label>
-                    <input type="text" id="username" name="username" class="form-control" required />
+                    <label for="Matricula">Usuario</label>
+                    <input type="text" id="Matricula" name="Matricula" class="form-control" required />
                 </div>
 
                 <div class="form-group">
-                    <label for="password">Contraseña</label>
-                    <input type="password" id="password" name="password" class="form-control" required />
+                    <label for="Contra">Contraseña</label>
+                    <input type="password" id="Contra" name="Contra" class="form-control" required />
                 </div>
                 <div class="forgot-password">
                     <a href="@Url.Action("RestablecerContraseña", "RestablecerContraseña")">Olvidé mi contraseña</a>
                 </div>
                 <div class="form-actions">
-                    <!-- Botón de Registrar con redirección -->
+                    <!-- Botón de Registrar -->
                     <button type="button" id="btnRegistrar" class="btn btn-secondary">Registrar</button>
-                    <!-- Botón de Ingresar con envío del formulario -->
+                    <!-- Botón de Ingresar -->
                     <button type="submit" class="btn btn-primary">Ingresar</button>
                 </div>
             </form>
 
-            <div id="reader"></div> <!-- Contenedor para el lector QR -->
-            <div id="resultado" style="margin-top: 20px;"></div> <!-- Contenedor para el resultado -->
-            <input type="text" id="scannedResult" class="form-control" placeholder="Código QR escaneado" readonly style="margin-top: 20px;"> <!-- Cuadro de texto para mostrar el resultado -->
+            <!-- Lector QR -->
+            <div id="reader"></div> <!-- Aquí se mostrará la cámara -->
+            <div id="resultado" style="margin-top: 20px;"></div>
+            <input type="text" id="scannedResult" class="form-control" placeholder="Código QR escaneado" readonly style="margin-top: 20px;">
+
+            <!-- Botón para iniciar el escaneo del QR -->
+            <button type="button" id="startQrButton" class="btn btn-info">Escanear QR</button>
         </div>
     </div>
 
     <script>
-        // Al hacer clic en el botón "Registrar", redirige a la página de registro
-        document.getElementById("btnRegistrar").addEventListener("click", function () {
-            window.location.href = '@Url.Action("RegistroAlumno", "RegistroAlumno")'; // Redirige a la acción Registrar
-        });
+        // Redirigir al registro
+            document.getElementById("btnRegistrar").addEventListener("click", function () {
+                    window.location.href = '@Url.Action("RegistroAlumno", "RegistroAlumno")';
+                });
+
+                // Lógica para escanear el QR
+                $(document).ready(function () {
+                    let qrEscaneado = false;
+
+                    // Manejador de clic en el botón de inicio de sesión con QR
+                    $("#startQrButton").click(function () {
+                        // Si ya se escaneó un código QR, no hacer nada
+                        if (qrEscaneado) {
+                            return; // Detener la ejecución si ya se ha escaneado
+                        }
+
+                        $("#reader").show(); // Muestra el lector QR
+
+                        // Inicializa el escáner
+                        const html5QrCode = new Html5Qrcode("reader");
+
+                        // Iniciar el escáner usando la cámara predeterminada
+                        html5QrCode.start(
+                            { facingMode: "user" },
+                            {
+                                fps: 10,
+                                qrbox: { width: 250, height: 250 }
+                            },
+                            function (qrCodeMessage) {
+                                const matricula = qrCodeMessage.trim(); // Asegúrate de que no haya espacios en blanco
+
+                                // Validar que la matrícula tenga exactamente 10 dígitos
+                                if (matricula.length !== 10) {
+                                    alert("El código QR debe tener exactamente 10 dígitos. Consulta tu matrícula.");
+                                    return; // Detener el proceso si no es válido
+                                }
+
+                                // Validar que el código QR solo contenga números
+                                if (!/^\d+$/.test(matricula)) {
+                                    alert("El código QR debe contener solo números.");
+                                    return; // Detener el proceso si no es numérico
+                                }
+
+                                // Colocar el valor escaneado en el campo "Usuario"
+                                $("#Matricula").val(matricula); // Coloca el código QR escaneado en el campo "Usuario"
+
+                                // Mostrar el alert solo una vez
+                                alert(`Matrícula válida: ${matricula}`); // Confirmación de que la matrícula fue escaneada correctamente
+
+                                // Detener el escáner después de un solo escaneo
+                                html5QrCode.stop(); // Detiene el escáner
+
+                                // Establecer que el QR ya fue escaneado para evitar que se repita el proceso
+                                qrEscaneado = true;
+
+                                // Ocultar el lector QR después de escanear
+                                $("#reader").hide();
+                            },
+                            function (errorMessage) {
+                                console.warn(`Error de escaneo: ${errorMessage}`);
+                            }
+                        ).catch(err => {
+                            console.error("Error al iniciar el escáner: ", err);
+                            alert("No se pudo iniciar el escáner. Asegúrate de que la cámara esté disponible.");
+                        });
+                    });
+                });
     </script>
 </body>
 </html>

@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Loboteca.Models.Usuario
+
+@{
     Layout = null;
 }
 
@@ -11,6 +13,7 @@
     <link rel="stylesheet" href="~/css/info.css">
 </head>
 <body>
+    <!-- Barra de navegación -->
     <!-- Barra de navegación -->
     <header>
         <nav class="navbar">
@@ -41,14 +44,17 @@
             <!-- Datos del usuario -->
             <div class="user-info">
                 <h3>Datos Personales</h3>
-                <p><strong>Nombre:</strong> Josué Martínez</p>
-                <p><strong>Email:</strong> josue.martinez@email.com</p>
-                <p><strong>Teléfono:</strong> +52 729 123 4567</p>
-                <p><strong>Dirección:</strong> Toluca, Estado de México</p>
+                <p><strong>Nombre:</strong> @Model.Nombre</p>
+                <p><strong>Apellido Paterno:</strong> @Model.ApellidoPaterno</p>
+                <p><strong>Apellido Materno:</strong> @Model.ApellidoMaterno</p>
+                <p><strong>Matrícula:</strong> @Model.Matricula</p>
+                <p><strong>Estado:</strong> @Model.Estado</p>
+                <p><strong>Carrera:</strong> @(Model.IdCarreraNavigation?.Nombre ?? "No aplica")</p>
+                <p><strong>Rol:</strong> @Model.Rol</p>
 
                 <!-- Opciones adicionales -->
                 <div class="profile-options">
-                    <button class="btn-option" id="editProfile">Editar Perfil</button>
+                    <button class="btn-option" id="btnATRAS">Regresar</button>
                     <button class="btn-option" id="changePassword">Cambiar Contraseña</button>
                 </div>
             </div>
@@ -100,6 +106,35 @@
         function cerrarAdeudos() {
             document.getElementById("adeudosFlotante").style.display = "none";
         }
+
+
+                document.getElementById("btnATRAS").addEventListener("click", function () {
+            var rol = '@ViewBag.UsuarioRol';
+            var carrera = @ViewBag.UsuarioIdCarrera;
+
+            if (rol === "Admin") {
+                window.location.href = '@Url.Action("Admin", "Admin")';
+            } else {
+                switch (carrera) {
+                    case 1:
+                        window.location.href = '@Url.Action("Tecnologias", "Tecnologias")';
+                        break;
+                    case 2:
+                        window.location.href = '@Url.Action("Bio", "Bio")';
+                        break;
+                    case 3:
+                        window.location.href = '@Url.Action("IngCivil", "Civil")';
+                        break;
+                    case 4:
+                        window.location.href = '@Url.Action("Negocios", "Negocios")';
+                        break;
+                    default:
+                        alert("No se pudo determinar tu página anterior.");
+                }
+            }
+        });
+
+  
     </script>
 </body>
 </html>
