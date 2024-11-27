@@ -5,10 +5,7 @@ namespace Loboteca.Models
 {
     public partial class Inventario
     {
-        public Inventario()
-        {
-            InventarioLibros = new HashSet<InventarioLibro>();
-        }
+      
 
         public int Id { get; set; }
         public int CantidadReal { get; set; }

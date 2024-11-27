@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Loboteca.Models
 {
@@ -22,6 +23,8 @@ namespace Loboteca.Models
         public int? IdAdministrador { get; set; }
         public int? IdLibro { get; set; }
         public int? IdUsuario { get; set; }
+        [NotMapped]
+        public bool TieneDevolucion { get; set; }
 
 
         [Display(Name = "Administrador")]

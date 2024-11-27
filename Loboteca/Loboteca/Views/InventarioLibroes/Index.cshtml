@@ -52,28 +52,42 @@
                         <th>@Html.DisplayNameFor(model => model.FechaApertura)</th>
                         <th>@Html.DisplayNameFor(model => model.FechaCierre)</th>
                         <th>@Html.DisplayNameFor(model => model.InventarioTipo)</th>
-                        <th>@Html.DisplayNameFor(model => model.IdInventarioNavigation)</th>
-                        <th>@Html.DisplayNameFor(model => model.IdLibroNavigation)</th>
+                        <th>Nombre del Libro</th>
+                        <th>Cantidad Real</th>
+                        <th>Cantidad en Sistema</th>
+                        <th>Observaciones</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model)
+                    @if (Model == null || !Model.Any())
                     {
                         <tr>
-                            <td>@Html.DisplayFor(modelItem => item.FechaApertura)</td>
-                            <td>@Html.DisplayFor(modelItem => item.FechaCierre)</td>
-                            <td>@Html.DisplayFor(modelItem => item.InventarioTipo)</td>
-                            <td>@Html.DisplayFor(modelItem => item.IdInventarioNavigation.Id)</td>
-                            <td>@Html.DisplayFor(modelItem => item.IdLibroNavigation.Id)</td>
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a> |
-                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detalles</a> |
-                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Eliminar</a>
-                            </td>
+                            <td colspan="8">No hay datos disponibles.</td>
                         </tr>
                     }
+                    else
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.FechaApertura)</td>
+                                <td>@Html.DisplayFor(modelItem => item.FechaCierre)</td>
+                                <td>@Html.DisplayFor(modelItem => item.InventarioTipo)</td>
+                                <td>@item.IdLibroNavigation?.Titulo</td>
+                                <td>@item.IdInventarioNavigation.CantidadReal</td>
+                                <td>@item.IdInventarioNavigation.CantidadSistema</td>
+                                <td>@item.IdInventarioNavigation.Observaciones</td>
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a> |
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detalles</a> |
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Eliminar</a>
+                                </td>
+                            </tr>
+                        }
+                    }
                 </tbody>
+
             </table>
         </div>
     </main>

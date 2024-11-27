@@ -64,15 +64,67 @@ namespace Loboteca.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(devolucione);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                using var transaction = await _context.Database.BeginTransactionAsync();
+                try
+                {
+                    // Registrar la devolución
+                    _context.Add(devolucione);
+
+                    // Buscar el préstamo asociado
+                    var prestamo = await _context.Prestamos
+                        .Include(p => p.IdLibroNavigation)
+                        .FirstOrDefaultAsync(p => p.Id == devolucione.IdPrestamo);
+
+                    if (prestamo == null)
+                    {
+                        ModelState.AddModelError("", "No se encontró el préstamo asociado.");
+                        return View(devolucione);
+                    }
+
+                    // Buscar el inventario asociado al libro
+                    var inventarioLibro = await _context.InventarioLibros
+                        .Include(il => il.IdInventarioNavigation)
+                        .FirstOrDefaultAsync(il => il.IdLibro == prestamo.IdLibro);
+
+                    if (inventarioLibro == null)
+                    {
+                        ModelState.AddModelError("", "No se encontró inventario para este libro.");
+                        return View(devolucione);
+                    }
+
+                    // Verificar que el inventario esté correctamente configurado
+                    if (inventarioLibro.IdInventarioNavigation == null)
+                    {
+                        ModelState.AddModelError("", "El inventario asociado al libro no está configurado correctamente.");
+                        return View(devolucione);
+                    }
+
+                    // Incrementar la cantidad en el sistema
+                    inventarioLibro.IdInventarioNavigation.CantidadSistema += 1;
+
+                    // Actualizar el inventario en el contexto
+                    _context.Update(inventarioLibro.IdInventarioNavigation);
+
+                    // Guardar los cambios y confirmar la transacción
+                    await _context.SaveChangesAsync();
+                    await transaction.CommitAsync();
+
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (Exception ex)
+                {
+                    await transaction.RollbackAsync();
+                    ModelState.AddModelError("", $"Error al registrar la devolución: {ex.Message}");
+                }
             }
+
+            // Recargar ViewBag en caso de error
             ViewData["IdAdministrador"] = new SelectList(_context.Administradors, "Id", "Nombre", devolucione.IdAdministrador);
             ViewData["IdPrestamo"] = new SelectList(_context.Prestamos, "Id", "Id", devolucione.IdPrestamo);
             ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Nombre", devolucione.IdUsuario);
             return View(devolucione);
         }
+
 
         // GET: Devoluciones/Edit/5
         public async Task<IActionResult> Edit(int? id)

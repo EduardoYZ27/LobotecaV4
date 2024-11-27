@@ -21,8 +21,29 @@ namespace Loboteca.Controllers
         // GET: InventarioLibroes
         public async Task<IActionResult> Index()
         {
-            var lobotecaContext = _context.InventarioLibros.Include(i => i.IdInventarioNavigation).Include(i => i.IdLibroNavigation);
-            return View(await lobotecaContext.ToListAsync());
+            var inventarioLibros = await _context.InventarioLibros
+                .Include(il => il.IdInventarioNavigation)
+                .Include(il => il.IdLibroNavigation)
+                .ToListAsync();
+
+            foreach (var item in inventarioLibros)
+            {
+                if (item.IdLibro != null)
+                {
+                    // Sumar los ingresos asociados al libro
+                    var totalIngresos = await _context.Ingresos
+                        .Where(i => i.IdLibro == item.IdLibro)
+                        .SumAsync(i => i.Ejemplares);
+
+                    // Actualizar la cantidad en sistema
+                    if (item.IdInventarioNavigation != null)
+                    {
+                        item.IdInventarioNavigation.CantidadSistema = totalIngresos;
+                    }
+                }
+            }
+
+            return View(inventarioLibros);
         }
 
         // GET: InventarioLibroes/Details/5
@@ -48,8 +69,7 @@ namespace Loboteca.Controllers
         // GET: InventarioLibroes/Create
         public IActionResult Create()
         {
-            ViewData["IdInventario"] = new SelectList(_context.Inventarios, "Id", "Id");
-            ViewData["IdLibro"] = new SelectList(_context.Libros, "Id", "Id");
+            ViewData["IdLibro"] = new SelectList(_context.Libros, "Id", "Titulo");
             return View();
         }
 
@@ -58,36 +78,56 @@ namespace Loboteca.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,IdInventario,IdLibro,FechaApertura,FechaCierre,InventarioTipo")] InventarioLibro inventarioLibro)
+        public async Task<IActionResult> Create(InventarioLibro inventarioLibro, int cantidadReal, string observaciones)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(inventarioLibro);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                using var transaction = await _context.Database.BeginTransactionAsync();
+
+                try
+                {
+                    // Validar las observaciones
+                    observaciones = string.IsNullOrWhiteSpace(observaciones) ? "Sin observaciones" : observaciones;
+
+                    // Crear un nuevo registro en la tabla Inventario
+                    var nuevoInventario = new Inventario
+                    {
+                        CantidadReal = cantidadReal > 0 ? cantidadReal : 0, // Validar cantidad real positiva
+                        CantidadSistema = cantidadReal > 0 ? cantidadReal : 0, // Inicializar CantidadSistema igual a CantidadReal
+                        Observaciones = observaciones
+                    };
+
+                    _context.Inventarios.Add(nuevoInventario);
+                    await _context.SaveChangesAsync();
+
+                    // Asociar el nuevo inventario al InventarioLibro
+                    inventarioLibro.IdInventario = nuevoInventario.Id;
+
+                    // Validar los valores del modelo InventarioLibro
+                    inventarioLibro.FechaApertura = inventarioLibro.FechaApertura == DateTime.MinValue ? DateTime.Now : inventarioLibro.FechaApertura;
+                    inventarioLibro.FechaCierre = inventarioLibro.FechaCierre == DateTime.MinValue ? DateTime.Now.AddMonths(1) : inventarioLibro.FechaCierre;
+                    inventarioLibro.InventarioTipo = string.IsNullOrWhiteSpace(inventarioLibro.InventarioTipo) ? "General" : inventarioLibro.InventarioTipo;
+
+                    // Agregar el nuevo registro en la tabla InventarioLibro
+                    _context.InventarioLibros.Add(inventarioLibro);
+                    await _context.SaveChangesAsync();
+
+                    // Confirmar la transacción
+                    await transaction.CommitAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+                catch (Exception ex)
+                {
+                    await transaction.RollbackAsync();
+                    ModelState.AddModelError("", $"Error al guardar: {ex.Message}");
+                }
             }
-            ViewData["IdInventario"] = new SelectList(_context.Inventarios, "Id", "Id", inventarioLibro.IdInventario);
-            ViewData["IdLibro"] = new SelectList(_context.Libros, "Id", "Id", inventarioLibro.IdLibro);
+
+            // Si falla, recargar las listas desplegables para evitar errores en la vista
+            ViewData["IdLibro"] = new SelectList(_context.Libros, "Id", "Titulo", inventarioLibro.IdLibro);
             return View(inventarioLibro);
         }
 
-        // GET: InventarioLibroes/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null || _context.InventarioLibros == null)
-            {
-                return NotFound();
-            }
-
-            var inventarioLibro = await _context.InventarioLibros.FindAsync(id);
-            if (inventarioLibro == null)
-            {
-                return NotFound();
-            }
-            ViewData["IdInventario"] = new SelectList(_context.Inventarios, "Id", "Id", inventarioLibro.IdInventario);
-            ViewData["IdLibro"] = new SelectList(_context.Libros, "Id", "Id", inventarioLibro.IdLibro);
-            return View(inventarioLibro);
-        }
 
         // POST: InventarioLibroes/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.

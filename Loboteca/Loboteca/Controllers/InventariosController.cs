@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Loboteca.Models;
 
@@ -18,47 +13,74 @@ namespace Loboteca.Controllers
             _context = context;
         }
 
-        // GET: Inventarios
         public async Task<IActionResult> Index()
         {
-              return _context.Inventarios != null ? 
-                          View(await _context.Inventarios.ToListAsync()) :
-                          Problem("Entity set 'LobotecaContext.Inventarios'  is null.");
+            // Obtener todos los inventarios
+            var inventarios = await _context.Inventarios
+                .Include(i => i.InventarioLibros)
+                .ThenInclude(il => il.IdLibroNavigation)
+                .ToListAsync();
+
+            // Calcular la cantidad en sistema dinámicamente
+            foreach (var inventario in inventarios)
+            {
+                // Obtener el ID del libro asociado al inventario
+                var libroId = inventario.InventarioLibros.FirstOrDefault()?.IdLibro;
+
+                if (libroId != null)
+                {
+                    // Sumar ingresos para este libro
+                    var totalIngresos = _context.Ingresos
+                        .Where(i => i.IdLibro == libroId)
+                        .Sum(i => i.Ejemplares);
+
+                    // Restar préstamos activos para este libro
+                    var totalPrestamos = _context.Prestamos
+                        .Where(p => p.IdLibro == libroId && !_context.Devoluciones.Any(d => d.IdPrestamo == p.Id))
+                        .Count();
+
+                    // Calcular la cantidad en sistema
+                    inventario.CantidadSistema = totalIngresos - totalPrestamos;
+                }
+                else
+                {
+                    inventario.CantidadSistema = 0; // Si no hay libros asociados, se considera 0
+                }
+            }
+
+            return View(inventarios);
         }
 
-        // GET: Inventarios/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Inventarios == null)
-            {
+            if (id == null)
                 return NotFound();
-            }
 
             var inventario = await _context.Inventarios
+                .Include(i => i.InventarioLibros)
+                .ThenInclude(il => il.IdLibroNavigation)
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (inventario == null)
-            {
                 return NotFound();
-            }
 
             return View(inventario);
         }
 
-        // GET: Inventarios/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Inventarios/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,CantidadReal,CantidadSistema,Observaciones")] Inventario inventario)
+        public async Task<IActionResult> Create([Bind("Id,CantidadReal,Observaciones")] Inventario inventario)
         {
             if (ModelState.IsValid)
             {
+                // Inicializa CantidadSistema como 0, ya que es un dato calculado.
+                inventario.CantidadSistema = 0;
+
                 _context.Add(inventario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -66,33 +88,24 @@ namespace Loboteca.Controllers
             return View(inventario);
         }
 
-        // GET: Inventarios/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Inventarios == null)
-            {
+            if (id == null)
                 return NotFound();
-            }
 
             var inventario = await _context.Inventarios.FindAsync(id);
             if (inventario == null)
-            {
                 return NotFound();
-            }
+
             return View(inventario);
         }
 
-        // POST: Inventarios/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,CantidadReal,CantidadSistema,Observaciones")] Inventario inventario)
         {
             if (id != inventario.Id)
-            {
                 return NotFound();
-            }
 
             if (ModelState.IsValid)
             {
@@ -104,59 +117,42 @@ namespace Loboteca.Controllers
                 catch (DbUpdateConcurrencyException)
                 {
                     if (!InventarioExists(inventario.Id))
-                    {
                         return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+
+                    throw;
                 }
                 return RedirectToAction(nameof(Index));
             }
             return View(inventario);
         }
 
-        // GET: Inventarios/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Inventarios == null)
-            {
+            if (id == null)
                 return NotFound();
-            }
 
-            var inventario = await _context.Inventarios
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var inventario = await _context.Inventarios.FindAsync(id);
             if (inventario == null)
-            {
                 return NotFound();
-            }
 
             return View(inventario);
         }
 
-        // POST: Inventarios/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Inventarios == null)
-            {
-                return Problem("Entity set 'LobotecaContext.Inventarios'  is null.");
-            }
             var inventario = await _context.Inventarios.FindAsync(id);
             if (inventario != null)
-            {
                 _context.Inventarios.Remove(inventario);
-            }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool InventarioExists(int id)
         {
-          return (_context.Inventarios?.Any(e => e.Id == id)).GetValueOrDefault();
+            return _context.Inventarios.Any(e => e.Id == id);
         }
     }
 }

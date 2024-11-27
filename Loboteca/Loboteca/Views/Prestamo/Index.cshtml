@@ -66,9 +66,20 @@
                             <td>@Html.DisplayFor(modelItem => item.IdLibroNavigation.Titulo)</td>
                             <td>@Html.DisplayFor(modelItem => item.IdUsuarioNavigation.Nombre)</td>
                             <td>
+
+                                @if (item.TieneDevolucion)
+                                {
+                                    <span class="text-muted">Devolución completada</span>
+                                }
+                                else
+                                {
+                                }
                                 <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a> |
                                 <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detalles</a> |
-                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Eliminar</a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Eliminar</a> |
+                                <form asp-action="Devolver" asp-route-id="@item.Id" method="post" style="display:inline;">
+                                    <button type="submit" class="btn btn-success">Devolver</button>
+                                </form>
                             </td>
                         </tr>
                     }
