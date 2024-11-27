@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Loboteca.Models;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Loboteca.Models;
 
-namespace Loboteca1.Controllers
+namespace Loboteca.Controllers
 {
     public class TecnologiasController : Controller
     {
@@ -16,21 +20,23 @@ namespace Loboteca1.Controllers
 
         public IActionResult Tecnologias()
         {
-            // Filtramos los 6 libros más recientes que pertenecen a la carrera de Tecnologías de la Información
+            // Filtramos los 6 libros más recientes que pertenecen a la carrera de Biotecnología (suponiendo IdCarrera = 5)
+            var generosLibros = new List<string> { "Programación", "Tronco Comun" };
             var librosRecientes = _context.ELibros
-                .Where(l => l.Id == 5) // Suponiendo que 2 es el ID de Tecnologías de la Información
+                .Where(l => generosLibros.Contains(l.Genero))
                 .OrderByDescending(l => l.Id)
                 .Take(6)
                 .ToList();
 
-            // Filtramos las 6 revistas más recientes que pertenecen a la carrera de Tecnologías de la Información
+            // Filtramos las 6 revistas más recientes que pertenecen a la carrera de Biotecnología
+            var generosRevistas = new List<string> { "Programación", "Tronco Comun" };
             var revistasRecientes = _context.Revista
-                .Where(r => r.Id == 5) // Suponiendo que 2 es el ID de Tecnologías de la Información
+                .Where(r => generosRevistas.Contains(r.Genero))
                 .OrderByDescending(r => r.Id)
                 .Take(6)
                 .ToList();
 
-            // Pasamos ambos conjuntos de datos a la vista
+            // Pasamos los datos a la vista
             ViewBag.LibrosRecientes = librosRecientes;
             ViewBag.RevistasRecientes = revistasRecientes;
 

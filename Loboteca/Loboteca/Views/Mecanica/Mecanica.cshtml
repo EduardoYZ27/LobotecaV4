@@ -21,7 +21,8 @@
             <ul>
                 <li><img src="~/images/libros_n.png" alt="TroncoComun" class="TroncoComun"><a href="@Url.Action("TroncoComun", "TroncoComun")">Libros de Tronco Común</a></li>
                 <li><img src="~/images/revistaMecatro.png" alt="Revistas" class="revistas"><a href="#revistas">Revistas</a></li>
-                <li><img src="~/images/sancionMecatro.png" alt="Sanciones" class="sanciones"><a href="@Url.Action("Sanciones", "Sanciones")">Sanciones</a></li>
+                <li><img src="~/images/bmecanica.png" alt="Wiki" class="Wiki"><a href="@Url.Action("Search", "Wiki")">WikiSearch</a></li>
+                <li><img src="~/images/smecanica.png" alt="Suggestion" class="Suggestion"><a href="@Url.Action("Index", "Suggestion")">Sugerencias</a></li>
                 <li><img src="~/images/login_n.png" alt="Perfil" class="perfil"><a href="@Url.Action("Info_user", "Info_user")">Perfil</a></li>
                 <li><button class="btn-logout" onclick="window.location.href='@Url.Action("Logout", "Login")'">Cerrar Sesión</button></li>
             </ul>
@@ -56,21 +57,21 @@
         <section class="magazines-section" id="revistas">
             <div class="section-title">
                 <h2>Revistas</h2>
-            </div>
-            <div class="carousel-container">
-                <button class="prev" onclick="moveCarouselMagazines(-1)">&#10094;</button>
-                <div class="carousel">
-                    @foreach (var revista in ViewBag.RevistasRecientes)
-                    {
-                        <div class="magazine">
-                            <img src="@revista.RutaDeImagen" alt="@revista.Titulo">
-                            <!-- Botón Leer Revista -->
-                            <button class="read-button" onclick="window.open('@revista.Archivo', '_blank')">Leer Revista</button>
-                            <p class="available">@revista.Estado</p>
-                        </div>
-                    }
+                <div class="carousel-container">
+                    <button class="prev" onclick="moveCarouselMagazines(-1)">&#10094;</button>
+                    <div class="carousel">
+                        @foreach (var revista in ViewBag.RevistasRecientes)
+                        {
+                            <div class="magazine">
+                                <a href="@revista.Archivo" target="_blank">
+                                    <img src="@revista.RutaDeImagen" alt="@revista.Titulo">
+                                </a>
+                                <p class="available">@revista.Estado</p>
+                            </div>
+                        }
+                    </div>
+                    <button class="next" onclick="moveCarouselMagazines(1)">&#10095;</button>
                 </div>
-                <button class="next" onclick="moveCarouselMagazines(1)">&#10095;</button>
             </div>
         </section>
     </main>

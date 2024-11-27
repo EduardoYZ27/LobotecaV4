@@ -1,24 +1,64 @@
 ﻿@model List<Loboteca.Services.BookSuggestion>
 
-<h1>Sugerencias de Libros</h1>
+@{
+    Layout = null;
+}
 
-@if (Model != null && Model.Any())
-{
-    <ul>
-        @foreach (var book in Model)
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugerencias de Libros - Loboteca</title>
+    <link rel="stylesheet" href="~/css/Sugerencias/sugerencias.css" />
+</head>
+<body>
+    <!-- Encabezado principal -->
+    <header>
+        <nav class="navbar">
+            <ul class="logo-left">
+                <li>
+                    <img src="~/images/logo.png" alt="Logo" class="logo">
+                </li>
+            </ul>
+            <h1>LOBOTECA</h1>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="main-section">
+        <h2 class="section-title">Sugerencias de Libros</h2>
+
+        @if (Model != null && Model.Any())
         {
-            <li>
-                <h2>@book.Title</h2>
-                <p>@book.Description</p>
-                @if (!string.IsNullOrEmpty(book.GoogleDocsLink))
+            <ul class="book-suggestions">
+                @foreach (var book in Model)
                 {
-                    <a href="@book.GoogleDocsLink" target="_blank">Leer en Google Docs</a>
+                    <li class="book-item">
+                        <h3>@book.Title</h3>
+                        <p>@book.Description</p>
+                        @if (!string.IsNullOrEmpty(book.GoogleDocsLink))
+                        {
+                            <a href="@book.GoogleDocsLink" target="_blank" class="btn-link">Leer en Google Docs</a>
+                        }
+                    </li>
                 }
-            </li>
+            </ul>
         }
-    </ul>
-}
-else
-{
-    <p>No hay sugerencias disponibles en este momento. Intenta más tarde.</p>
-}
+        else
+        {
+            <p class="no-suggestions">No hay sugerencias disponibles en este momento. Intenta más tarde.</p>
+        }
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; Derechos Reservados Universidad Politécnica del Valle de Toluca</p>
+        <div class="social-icons">
+            <a href="#"><img src="~/images/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="~/images/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="~/images/email.png" alt="Correo"></a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -20,24 +20,23 @@ namespace Loboteca.Controllers
 
         public IActionResult Mecanica()
         {
-            // Suponiendo que el ID de la carrera de Mecánica es 5
-            var idCarreraMecanica = 2;
-
-            // Obtener los 6 libros más recientes para la carrera de Mecánica
+            // Filtramos los 6 libros más recientes que pertenecen a la carrera de Biotecnología (suponiendo IdCarrera = 5)
+            var generosLibros = new List<string> { "Automotriz", "Programación", "Tronco Comun" };
             var librosRecientes = _context.ELibros
-                .Where(l => l.Id == idCarreraMecanica)
+                .Where(l => generosLibros.Contains(l.Genero))
                 .OrderByDescending(l => l.Id)
                 .Take(6)
                 .ToList();
 
-            // Obtener las 6 revistas más recientes para la carrera de Mecánica
+            // Filtramos las 6 revistas más recientes que pertenecen a la carrera de Biotecnología
+            var generosRevistas = new List<string> { "Automotriz", "Programación", "Tronco Comun" };
             var revistasRecientes = _context.Revista
-                .Where(r => r.Id == idCarreraMecanica)
+                .Where(r => generosRevistas.Contains(r.Genero))
                 .OrderByDescending(r => r.Id)
                 .Take(6)
                 .ToList();
 
-            // Pasar los libros y revistas a la vista usando ViewBag
+            // Pasamos los datos a la vista
             ViewBag.LibrosRecientes = librosRecientes;
             ViewBag.RevistasRecientes = revistasRecientes;
 

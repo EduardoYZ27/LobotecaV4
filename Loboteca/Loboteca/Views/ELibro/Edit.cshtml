@@ -1,94 +1,137 @@
 ﻿@model Loboteca.Models.ELibro
 
 @{
-    ViewData["Title"] = "Edit ELibro";
+    Layout = null;
 }
 
-<h1>Edit ELibro</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Libro - Loboteca</title>
+    <link rel="stylesheet" href="~/css/Autor/AutorEdit.css" />
+</head>
+<body>
+    <!-- Encabezado principal -->
+    <header>
+        <nav class="navbar">
+            <ul class="logo-left">
+                <li>
+                    <img src="~/images/logo.png" alt="Logo" class="logo">
+                </li>
+            </ul>
+            <h1>LOBOTECA</h1>
+            <ul class="account-right">
+                <li>
+                    <img src="~/images/cuenta.png" alt="Cuenta" class="icono">
+                    <a href="@Url.Action("Perfil", "Perfil")">Cuenta</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-<div class="row">
-    <div class="col-md-6">
-        <form asp-action="Edit" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
+    <!-- Contenido principal -->
+    <main class="main-section">
+        <h2 class="section-title">Editar Libro</h2>
 
-            <div class="form-group">
-                <label asp-for="Titulo" class="control-label"></label>
-                <input asp-for="Titulo" class="form-control" />
-                <span asp-validation-for="Titulo" class="text-danger"></span>
+        <div class="row">
+            <div class="col-md-6 formulario-altas">
+                <form asp-action="Edit" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id" />
+
+                    <div class="form-group">
+                        <label asp-for="Titulo" class="control-label"></label>
+                        <input asp-for="Titulo" class="form-control" />
+                        <span asp-validation-for="Titulo" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Isbn" class="control-label"></label>
+                        <input asp-for="Isbn" class="form-control" />
+                        <span asp-validation-for="Isbn" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="FechaDePublicacion" class="control-label"></label>
+                        <input asp-for="FechaDePublicacion" type="date" class="form-control" />
+                        <span asp-validation-for="FechaDePublicacion" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Genero" class="control-label">Género</label>
+                        <select asp-for="Genero" class="form-control">
+                            <option value="">Seleccione una opción</option>
+                            <option value="Bioquimica">Bioquímica</option>
+                            <option value="Automotriz">Automotriz</option>
+                            <option value="Gestion Industrial">Gestión Industrial</option>
+                            <option value="Programación">Programación</option>
+                            <option value="Energia">Energía</option>
+                            <option value="Robotica y Mecatronica">Robótica y Mecatrónica</option>
+                            <option value="Aduanas">Aduanas</option>
+                            <option value="Tronco Comun">Tronco Comun</option>
+                        </select>
+                        <span asp-validation-for="Genero" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Estado" class="control-label">Estado</label>
+                        <select asp-for="Estado" class="form-control">
+                            <option value="Activo" selected="@Model.Estado == " Activo"">Activo</option>
+                            <option value="Inactivo" selected="@Model.Estado == " Inactivo"">Inactivo</option>
+                        </select>
+                        <span asp-validation-for="Estado" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="IdEditorial" class="control-label">Editorial</label>
+                        <select asp-for="IdEditorial" class="form-control" asp-items="ViewBag.IdEditorial"></select>
+                        <span asp-validation-for="IdEditorial" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="RutaDeImagen" class="control-label">Imagen</label>
+                        <input type="file" name="Imagen" class="form-control" accept=".jpg,.jpeg,.png,.gif" onchange="previewImage(event)" />
+                        <img id="preview" src="@Model.RutaDeImagen" alt="Previsualización" style="max-width: 200px; margin-top: 10px;" />
+                        <span asp-validation-for="RutaDeImagen" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Archivo" class="control-label">Archivo PDF</label>
+                        <input type="file" name="Archivo" class="form-control" accept=".pdf" />
+                        <span asp-validation-for="Archivo" class="text-danger"></span>
+                        @if (!string.IsNullOrEmpty(Model.Archivo))
+                        {
+                            <p>Archivo actual: <a href="@Model.Archivo" target="_blank">Ver archivo</a></p>
+                        }
+                    </div>
+
+                    <div class="botones">
+                        <input type="submit" value="Guardar" class="btn-success" />
+                        <a asp-action="Index" class="btn-secondary">Regresar a la lista</a>
+                    </div>
+                </form>
             </div>
+        </div>
+    </main>
 
-            <div class="form-group">
-                <label asp-for="Isbn" class="control-label"></label>
-                <input asp-for="Isbn" class="form-control" />
-                <span asp-validation-for="Isbn" class="text-danger"></span>
-            </div>
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; Derechos Reservados Universidad Politécnica del Valle de Toluca</p>
+        <div class="social-icons">
+            <a href="#"><img src="~/images/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="~/images/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="~/images/email.png" alt="Correo"></a>
+        </div>
+    </footer>
 
-            <div class="form-group">
-                <label asp-for="FechaDePublicacion" class="control-label"></label>
-                <input asp-for="FechaDePublicacion" type="date" class="form-control" />
-                <span asp-validation-for="FechaDePublicacion" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Genero" class="control-label">Género</label>
-                <select asp-for="Genero" class="form-control">
-                    <option value="">Seleccione una opción</option>
-                    <option value="Bioquimica">Bioquímica</option>
-                    <option value="Automotriz">Automotriz</option>
-                    <option value="Gestion Industrial">Gestión Industrial</option>
-                    <option value="Programación">Programación</option>
-                    <option value="Energia">Energía</option>
-                    <option value="Robotica y Mecatronica">Robótica y Mecatrónica</option>
-                    <option value="Aduanas">Aduanas</option>
-                    <option value="Tronco Comun">Tronco Comun</option>
-                </select>
-                <span asp-validation-for="Genero" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Estado" class="control-label">Estado</label>
-                <select asp-for="Estado" class="form-control">
-                    <option value="Activo" selected="@Model.Estado == " Activo"">Activo</option>
-                    <option value="Inactivo" selected="@Model.Estado == " Inactivo"">Inactivo</option>
-                </select>
-                <span asp-validation-for="Estado" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="IdEditorial" class="control-label">Editorial</label>
-                <select asp-for="IdEditorial" class="form-control" asp-items="ViewBag.IdEditorial"></select>
-                <span asp-validation-for="IdEditorial" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="RutaDeImagen" class="control-label">Imagen</label>
-                <input type="file" name="Imagen" class="form-control" accept=".jpg,.jpeg,.png,.gif" onchange="previewImage(event)" />
-                <img id="preview" src="@Model.RutaDeImagen" alt="Previsualización" style="max-width: 200px; margin-top: 10px;" />
-                <span asp-validation-for="RutaDeImagen" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Archivo" class="control-label">Archivo PDF</label>
-                <input type="file" name="Archivo" class="form-control" accept=".pdf" />
-                <span asp-validation-for="Archivo" class="text-danger"></span>
-                @if (!string.IsNullOrEmpty(Model.Archivo))
-                {
-                    <p>Archivo actual: <a href="@Model.Archivo" target="_blank">Ver archivo</a></p>
-                }
-            </div>
-
-            <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<script>
-    function previewImage(event) {
-        const imgPreview = document.getElementById('preview');
-        imgPreview.src = URL.createObjectURL(event.target.files[0]);
-        imgPreview.style.display = 'block';
-    }
-</script>
+    <script>
+        function previewImage(event) {
+            const imgPreview = document.getElementById('preview');
+            imgPreview.src = URL.createObjectURL(event.target.files[0]);
+            imgPreview.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

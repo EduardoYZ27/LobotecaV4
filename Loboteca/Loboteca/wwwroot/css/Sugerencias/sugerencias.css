@@ -1,0 +1,122 @@
+﻿/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Barra de navegación */
+.navbar {
+    background-color: #781c2e;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .navbar h1 {
+        color: white;
+        margin-left: 1.5cm;
+    }
+
+/* Logo a la izquierda */
+.logo-left {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 10px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* Main Section Styles */
+.main-section {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.section-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Book Suggestions List */
+.book-suggestions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.book-item {
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+    .book-item h3 {
+        margin: 0 0 10px 0;
+    }
+
+    .book-item p {
+        margin: 0 0 10px 0;
+        font-size: 14px;
+        color: #666;
+    }
+
+.btn-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    .btn-link:hover {
+        text-decoration: underline;
+    }
+
+/* No Suggestions Message */
+.no-suggestions {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+}
+
+/* Pie de página */
+footer {
+    background-color: #781c2e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 290px;
+}
+
+    footer p {
+        margin: 10px 0;
+    }
+
+.social-icons {
+    margin-top: 10px;
+}
+
+    .social-icons a img {
+        width: 30px;
+        margin: 0 10px;
+    }
+
+        .social-icons a img:hover {
+            opacity: 0.7;
+        }
+
