@@ -219,14 +219,14 @@ namespace Loboteca.Controllers
             {
                 _context.Prestamos.Remove(prestamo);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool PrestamoExists(int id)
         {
-          return (_context.Prestamos?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Prestamos?.Any(e => e.Id == id)).GetValueOrDefault();
         }
 
         // POST: Prestamo/Devolucion
